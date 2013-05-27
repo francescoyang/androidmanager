@@ -81,7 +81,7 @@ void ManageWindow::UiToolInit()
 	LoadDownloadlist();
 	LoadFtpfilelist();
 	LoadQmenu();
-	
+
 
 
 	video_player();
@@ -198,7 +198,7 @@ void ManageWindow::setui_downloadlist(int row)
 	   QWidget *widget_test = new QWidget;
 
 	   QProgressBar *pushButton_test= new QProgressBar(widget_test);
-*/
+	   */
 
 	/*
 	   Downloadlist_item[i][0]->setText(QString(uiappinfo.get_info[i].appname));
@@ -533,6 +533,7 @@ void ManageWindow::LoadQmenu()
 
 	QMenu *connect= menuBar()->addMenu(tr("&选项"));
 	connect->addAction(tr("&首页"), this, SLOT(goto_connect()));
+	connect->addAction(tr("&任务列表"), this, SLOT(goto_manager()));
 
 	QMenu *tools= menuBar()->addMenu(tr("&工具箱"));
 	tools->addAction(tr("&Logcat"), this, SLOT(goto_logcat()));
@@ -624,7 +625,7 @@ void ManageWindow::LoadApp()
 			color: black;padding-left: 4px;border: 1px solid #6c6c6c;}"); //设置表头字体，颜色，模式
 
 
-	QStringList labels;
+		QStringList labels;
 	labels << tr("名称") << tr("版本")  << tr("大小") << tr("位置");
 	App_table->setHorizontalHeaderLabels(labels);
 
@@ -680,11 +681,11 @@ void ManageWindow::goto_setdownloadpath()
 {
 	QString downloadpath;
 
-/*
-	QFileDialog *chosedir= new QFileDialog(this);
-	StyleChange(settings->value( "skin",1).toInt(),chosedir);
-	downloadpath=chosedir->getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
-	*/
+	/*
+	   QFileDialog *chosedir= new QFileDialog(this);
+	   StyleChange(settings->value( "skin",1).toInt(),chosedir);
+	   downloadpath=chosedir->getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
+	   */
 
 	downloadpath=QFileDialog::getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
 	qDebug() << downloadpath;
@@ -856,13 +857,13 @@ void ManageWindow::post_softinit(int cmd){
 void ManageWindow::Makeconnect()
 {
 	/*
-	connect(this,SIGNAL(btn_connect_sig()),this,SLOT(FindDevice()));
-	connect(ui->Btn_360, SIGNAL(clicked()),this, SLOT(goto_360()));
-	connect(ui->Btn_wdj, SIGNAL(clicked()),this, SLOT(goto_wdj()));
-	connect(ui->Btn_jf, SIGNAL(clicked()),this, SLOT(goto_jf()));
-	connect(ui->Btn_manager, SIGNAL(clicked()),this, SLOT(goto_manager()));
-	connect(ui->Btn_settings, SIGNAL(clicked()),this, SLOT(goto_settings()));
-	*/
+	   connect(this,SIGNAL(btn_connect_sig()),this,SLOT(FindDevice()));
+	   connect(ui->Btn_360, SIGNAL(clicked()),this, SLOT(goto_360()));
+	   connect(ui->Btn_wdj, SIGNAL(clicked()),this, SLOT(goto_wdj()));
+	   connect(ui->Btn_jf, SIGNAL(clicked()),this, SLOT(goto_jf()));
+	   connect(ui->Btn_manager, SIGNAL(clicked()),this, SLOT(goto_manager()));
+	   connect(ui->Btn_settings, SIGNAL(clicked()),this, SLOT(goto_settings()));
+	   */
 
 	connect(ui->Btn_app, SIGNAL(clicked()),this, SLOT(btn_app_clicked()));
 	connect(ui->Btn_book, SIGNAL(clicked()),this, SLOT(btn_book_clicked()));
@@ -968,7 +969,7 @@ void ManageWindow::goto_mmsdetail()
 	if(MMSSIGN  >= 0)
 	{
 		QMessageBox::about(this, tr("短信详情"),QString(uimmsinfo.get_info[MMSSIGN].mmsnumber) +
-			 "<p>" + 	QString(uimmsinfo.get_info[MMSSIGN].mmsbody) + "<p>" + QString(uimmsinfo.get_info[MMSSIGN].mmsdate));
+				"<p>" + 	QString(uimmsinfo.get_info[MMSSIGN].mmsbody) + "<p>" + QString(uimmsinfo.get_info[MMSSIGN].mmsdate));
 	}
 
 }
@@ -1022,7 +1023,6 @@ void ManageWindow::goto_book()
 void ManageWindow::goto_appstore()
 {
 	CurrentWidget(WEBVIEW);
-	ui->Webview->load(QUrl("http://apk.hiapk.com/"));
 }
 
 void ManageWindow::goto_wdj()
@@ -1446,7 +1446,7 @@ void ManageWindow::setui_mmsinfo()
 	Mms_table->setRowCount(0);
 
 	Mms_table->clearContents();
-//	Mms_table->clear();
+	//	Mms_table->clear();
 	printf("uimmsinfo.count = %d\n",uimmsinfo.count);
 	Mms_table->setRowCount(uimmsinfo.count + 1);
 	for (int i = 0; i <= uimmsinfo.count; i++) {
@@ -1709,11 +1709,14 @@ void ManageWindow::LoadWebview()
 
 	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
 	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
+	connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
+	connect(ui->Btn_forward, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
+	connect(ui->Btn_reload, SIGNAL(clicked()), ui->Webview, SLOT(reload()));
+
+
+	ui->Webview->load(QUrl("http://apk.hiapk.com/"));
 	//	ui->Webview->load(QUrl("http://www.wandoujia.com/apps"));
 	/*	
-		connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
-		connect(ui->Btn_goto, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
-		connect(ui->Btn_reload, SIGNAL(clicked()), ui->Webview, SLOT(reload()));
 
 		connect(urlAddr, SIGNAL(returnPressed()), this, SLOT(loadUrlAddr()));
 

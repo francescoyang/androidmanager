@@ -13,7 +13,8 @@
 #include <QFile>
 #include <QTime>
 #include <QThread>
-
+#include <QSettings>
+//#include "ui_downloaditem.h"
 #define MAXLIST 10000
 
 typedef struct __downloadindex{
@@ -29,17 +30,58 @@ typedef struct __alldownloadinfo{
 }alldownloadinfo_t;
 
 
+
+
+
+
 class Downloadthread: public QThread
 {
 	Q_OBJECT
 	public:
 		void run();
+		QStringList downurllist;
+		void startNextDownload(QUrl);
+	public:
+		QString saveFileName(const QUrl &url);
 	private:
+		int iteration = 0;
+		int downloadsign= 1;
+		int beforetime = 0;
+
+
+		int downcount = -1;
+		QString filename;
+		int percent;
+		int stat;
+		double speed;
+
+		qint64 value;
+		qint64 maximum;
+
+
+		QNetworkAccessManager *managertest ;
+//		QNetworkReply reply;
+		QNetworkRequest *requesttest;
+
+
+		//		QNetworkReply *currentDownload;
+		QNetworkReply *currentDownload[10000];
+		QFile output;
+		QTime downloadTime;
+
+		QNetworkAccessManager *manager;
+		//    TextProgressBar progressBar;
+
 
 signals:
-		private slots:
+		void adddownloadurl(int,double,int,int,QString);
+		void addstartdownload(int,double,int,int,QString);
 
-	protected:
+		private slots:
+		void downloadReadyRead();
+		void downloadProgress(qint64, qint64);
+		void downloadFinished();
+
 };
 
 
@@ -50,7 +92,7 @@ class webPage : public QWebPage
 
 	public:
 		explicit webPage(QObject *parent = 0);
-		//		Downloadthread *downloadthread;
+		Downloadthread *downloadthread[1000];
 		QString saveFileName(const QUrl &url);
 		alldownloadinfo_t alldownloadinfo;
 	private:
@@ -59,6 +101,8 @@ class webPage : public QWebPage
 		int downloadsign= 1;
 		int beforetime = 0;
 
+
+		QStringList downurllist;
 		int downcount = -1;
 		QString filename;
 		int percent;
@@ -68,7 +112,6 @@ class webPage : public QWebPage
 		qint64 value;
 		qint64 maximum;
 		QList<QString> downloadwait;
-		QStringList urllist;
 
 		void startNextDownload(QUrl);
 		//		QNetworkReply *currentDownload;
@@ -76,7 +119,7 @@ class webPage : public QWebPage
 		QFile output;
 		QTime downloadTime;
 
-		QNetworkAccessManager manager;
+		QNetworkAccessManager *manager[10000];
 		//    TextProgressBar progressBar;
 
 		void Downloadthradinit();

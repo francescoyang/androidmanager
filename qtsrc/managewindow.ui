@@ -321,10 +321,10 @@ background-color:rgb(212, 9, 12); color: white;</string>
        </rect>
       </property>
       <property name="text">
-       <string/>
+       <string>后退</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Btn_goto">
+     <widget class="QPushButton" name="Btn_reload">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -334,10 +334,10 @@ background-color:rgb(212, 9, 12); color: white;</string>
        </rect>
       </property>
       <property name="text">
-       <string/>
+       <string>刷新</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Btn_reload">
+     <widget class="QPushButton" name="Btn_forward">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -347,7 +347,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
        </rect>
       </property>
       <property name="text">
-       <string/>
+       <string>前进</string>
       </property>
      </widget>
     </widget>
