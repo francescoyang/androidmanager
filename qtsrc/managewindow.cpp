@@ -1745,7 +1745,6 @@ void ManageWindow::addstartdownload(int downcount,double speed,int percent,int s
 	downname[downcount]->setText(filename);
 	//	emit refreshdowninfo(downcount,speed,percent,stat,filename); 
 	//	&downloadlist[downcount].ui->downname->setText(filename);
-
 }
 
 
