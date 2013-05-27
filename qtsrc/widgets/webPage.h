@@ -29,6 +29,17 @@ typedef struct __alldownloadinfo{
 	downloadindex_t get_info[MAXLIST];
 }alldownloadinfo_t;
 
+#define SUCCESS			1
+#define FAILURE			0
+
+#define ADB_INSTALL		1
+#define ADB_UNINSTALL	2
+#define ADB_DEVICES		3
+#define ADB_PUSH		4 
+#define ADB_PULL		5
+#define ADB_CHECKVERSION	6
+#define ADB_SENDMMS			7	
+
 
 
 
@@ -105,6 +116,7 @@ class webPage : public QWebPage
 		QStringList downurllist;
 		int downcount = -1;
 		QString filename;
+		QString path;
 		int percent;
 		int stat;
 		double speed;
@@ -129,6 +141,7 @@ signals:
 		void openLink(const QUrl & url);
 		void adddownloadurl(int,double,int,int,QString);
 		void addstartdownload(int,double,int,int,QString);
+		void downloadurlfinished(int,int,QString);
 
 		private slots:
 			void handleUnsupportedContent(QNetworkReply *reply); 

@@ -247,6 +247,7 @@ void webPage::handleUnsupportedContent(QNetworkReply *reply)
 		startNextDownload(QUrl::fromEncoded(downurllist.takeFirst().toLocal8Bit())); 
 	} else
 	{
+		downloadsign = 1;
 		return;
 	}
 }
@@ -280,7 +281,7 @@ void webPage::startNextDownload(QUrl url)
 	qDebug() << "url" <<url ;
 
 	filename = saveFileName(url);
-	QString path = "/home/acanoe/download/";
+	path = "/home/acanoe/download/";
 	QString save = "";
 	save = path + filename;
 
@@ -359,8 +360,9 @@ void webPage::downloadFinished()
 	qDebug() << "downloadFinished" << "downcount = "  << downcount;
 
 	emit adddownloadurl(downcount,speed,100,stat,filename);
+	emit downloadurlfinished(ADB_INSTALL,0,path + filename);
+
 	beforetime = 0;
-//	downloadsign = 1;
 
 	if(downurllist.size())
 	{

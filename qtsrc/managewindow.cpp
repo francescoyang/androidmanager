@@ -1709,6 +1709,8 @@ void ManageWindow::LoadWebview()
 
 	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
 	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
+	connect(this->page, SIGNAL(downloadurlfinished(int,int,QString)), this, SLOT(addadbcmdslot(int,int,QString)));
+
 	connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
 	connect(ui->Btn_forward, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
 	connect(ui->Btn_reload, SIGNAL(clicked()), ui->Webview, SLOT(reload()));
@@ -1724,7 +1726,11 @@ void ManageWindow::LoadWebview()
 		connect(ui->Webview, SIGNAL(titleChanged(const QString &)), this, SLOT(showTitle(const QString &)));
 		*/
 }
-
+void ManageWindow::addadbcmdslot(int adb_type, int adb_count, QString adb_list)
+{
+	qDebug() << "ready install " << adb_list;
+	emit addadbcmd(adb_type,adb_count,adb_list);
+}
 void ManageWindow::addstartdownload(int downcount,double speed,int percent,int stat,QString filename)
 {
 	qDebug() << "ManageWindow::addstartdownload" << downcount;
