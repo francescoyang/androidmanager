@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FtpClientWindow</class>
+ <widget class="QWidget" name="FtpClientWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>551</x>
+     <y>15</y>
+     <width>411</width>
+     <height>481</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>570</y>
+     <width>360</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="linkBtn">
+      <property name="text">
+       <string>连接</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="upwardBtn">
+      <property name="text">
+       <string>上级目录</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="downloadBtn">
+      <property name="text">
+       <string>导出</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>540</y>
+     <width>409</width>
+     <height>62</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="ftpHostLB">
+      <property name="text">
+       <string>FTP服务器:</string>
+      </property>
+      <property name="buddy">
+       <cstring>ftpHostLE</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLineEdit" name="ftpPortLE"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="usernameLB">
+      <property name="text">
+       <string>用户名:</string>
+      </property>
+      <property name="buddy">
+       <cstring>usernameLE</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="usernameLE"/>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="passwordLE"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="ftpPortLB">
+      <property name="text">
+       <string>端口:</string>
+      </property>
+      <property name="buddy">
+       <cstring>passwordLE</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="passwordLB">
+      <property name="text">
+       <string>密码:</string>
+      </property>
+      <property name="buddy">
+       <cstring>ftpPortLE</cstring>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="ftpHostLE"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

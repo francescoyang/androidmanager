@@ -1,0 +1,57 @@
+
+QComboBox{
+color:back;
+font: 75 11pt "Bitstream Charter";
+	  border-width: 2px;
+	  background-color: rgb(170, 170, 0);
+	  border-color: rgb(255, 255, 255);
+	  border-style: solid;
+	  border-radius: 5;
+}
+
+/*
+QComboBox:editable {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #9FE758,
+stop: 1.0 #80DF20);
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #9FE758,
+stop: 1.0 #80DF20);
+}
+ */
+
+
+/* QComboBox gets the "on" state when the popup is open */
+/*
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #080B10,
+stop: 1.0 #212C3F);;
+}
+ */
+
+QComboBox:on { /* shift the text when the popup opens */
+			  padding-top: 3px;
+			  padding-left: 4px;
+		  }
+QComboBox::drop-down {
+	/*
+	   subcontrol-origin: padding;
+	   subcontrol-position: top right;
+width: 15px;
+
+border-left-width: 1px;
+border-left-color: 32435E;
+border-bottom-right-radius: 3px;
+	 */
+
+
+
+
+
+QComboBox:hover{
+
+}

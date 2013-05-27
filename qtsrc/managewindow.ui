@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageWindow</class>
+ <widget class="QMainWindow" name="ManageWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ManageWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1020</width>
+      <height>701</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>6</number>
+    </property>
+    <widget class="QWidget" name="P_Menu">
+     <widget class="QPushButton" name="Btn_massage">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>404</y>
+        <width>231</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/mms.png);
+background-color:rgb(255, 15, 251); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_phone">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>74</y>
+        <width>281</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/shouji.png);
+background-color:rgb(56, 76, 255); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_app">
+      <property name="geometry">
+       <rect>
+        <x>795</x>
+        <y>244</y>
+        <width>191</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/app.png);
+background-color:rgb(48, 120, 57); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_video">
+      <property name="geometry">
+       <rect>
+        <x>795</x>
+        <y>73</y>
+        <width>191</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/video.png);
+background-color:rgb(212, 9, 12); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_image">
+      <property name="geometry">
+       <rect>
+        <x>574</x>
+        <y>73</y>
+        <width>221</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/mms.png);
+background-color:rgb(184, 193, 7); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_music">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>244</y>
+        <width>431</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/music.png);
+background-color:rgb(255, 122, 69); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_book">
+      <property name="geometry">
+       <rect>
+        <x>595</x>
+        <y>404</y>
+        <width>201</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/book.png);
+background-color:rgb(5, 255, 247); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_storage">
+      <property name="geometry">
+       <rect>
+        <x>907</x>
+        <y>584</y>
+        <width>80</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>文件管理</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>580</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>手机存储</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>600</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>SD卡存储</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="Pb_mem">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>584</y>
+        <width>760</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="Pb_sd">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>604</y>
+        <width>760</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_appstore">
+      <property name="geometry">
+       <rect>
+        <x>364</x>
+        <y>73</y>
+        <width>210</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/video.png);
+background-color:rgb(212, 9, 12); color: white;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Connect">
+     <widget class="QLabel" name="Lab_info">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>230</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;正在链接手机&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_test">
+      <property name="geometry">
+       <rect>
+        <x>5</x>
+        <y>290</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/process.png);
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Music"/>
+    <widget class="QWidget" name="P_Video">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="QWidget" name="P_Massige"/>
+    <widget class="QWidget" name="P_Image">
+     <widget class="QListView" name="imagelist">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1011</width>
+        <height>631</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Web">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QWebView" name="Webview" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>1020</width>
+        <height>655</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:rgb(202, 202, 202)</string>
+      </property>
+      <property name="url" stdset="0">
+       <url>
+        <string>about:blank</string>
+       </url>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_back">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_goto">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>0</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_reload">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>0</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Book">
+     <widget class="QWidget" name="W_Book" native="true">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>0</y>
+        <width>680</width>
+        <height>671</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_call">
+      <property name="geometry">
+       <rect>
+        <x>898</x>
+        <y>20</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>打电话</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_booksendmms">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>70</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>发短信</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_App">
+     <widget class="QWidget" name="app_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>36</y>
+        <width>810</width>
+        <height>635</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_uninstall">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>50</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>卸载</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_install">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>10</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>安装</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="Cmbx_appclass">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>811</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_uninstall_2">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>90</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>备份</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Mms">
+     <widget class="QPushButton" name="Btn_sendmms">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>62</y>
+        <width>79</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>回复</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="mms_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>4</y>
+        <width>800</width>
+        <height>668</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_detail">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>21</y>
+        <width>79</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>查看详细</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_mmsrefresh">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>600</y>
+        <width>79</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>刷新</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Settings">
+     <widget class="QSlider" name="pellucidity">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>113</y>
+        <width>105</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="skinstyle">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>70</y>
+        <width>111</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_dirpath">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>170</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>/home/acanoe/下载</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Btn_changedir">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>162</y>
+        <width>106</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>修改下载目录</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_skin">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>74</y>
+        <width>180</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>皮肤</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_p">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>120</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>透明度</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_p_2">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>300</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>卸载时提示</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_p_3">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>350</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>下载并安装</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_p_4">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>243</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>并行任务个数 &lt; 10</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>240</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>311</x>
+        <y>303</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_2">
+      <property name="geometry">
+       <rect>
+        <x>311</x>
+        <y>347</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Lab_p_5">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>400</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>安装软件到SDcard</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_3">
+      <property name="geometry">
+       <rect>
+        <x>311</x>
+        <y>400</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>888</x>
+        <y>603</y>
+        <width>100</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>恢复默认设置</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Storage"/>
+    <widget class="QWidget" name="P_Downloadlist">
+     <widget class="QWidget" name="downloadlist_widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>0</y>
+        <width>810</width>
+        <height>641</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>918</x>
+        <y>30</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除任务</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Test"/>
+   </widget>
+   <widget class="QLabel" name="Lab_refresh">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>250</y>
+      <width>12</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/process.png);
+background-color:rgb(212, 9, 12); color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1020</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

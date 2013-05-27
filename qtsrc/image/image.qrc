@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/home/acanoe/qt/androidmanage/qtsrc/image">
+        <file>dianhua.jpg</file>
+        <file>duanxin.jpg</file>
+        <file>background.jpg</file>
+        <file>shouji.png</file>
+        <file>shipin.png</file>
+        <file>app.png</file>
+        <file>yinyue.jpg</file>
+        <file>mms.png</file>
+        <file>video.png</file>
+        <file>music.png</file>
+        <file>book.png</file>
+        <file>process.png</file>
+    </qresource>
+</RCC>

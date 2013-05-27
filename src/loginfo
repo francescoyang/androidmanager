@@ -1,0 +1,11 @@
+D/TAG     (13404): main---->ServiceBroadcastReceiver onReceive
+D/TAG     (13404): main---->ServiceBroadcastReceiver onReceive stop end
+D/TAG     (13404): main---->ServiceBroadcastReceiver onReceive
+D/TAG     (13404): main---->ServiceBroadcastReceiver onReceive start end
+V/TAG     (13404): main---->  onCreate
+V/TAG     (13404): main---->sysRegisterReceiver
+D/TAG     (13404): Thread-10----> doListen() START
+D/TAG     (13404): Thread-10----> doListen() new serverSocket
+D/TAG     (13404): Thread-10----> doListen() listen
+D/TAG     (13404): main----> onStart()
+

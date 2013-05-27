@@ -1,0 +1,70 @@
+ifeq ($(V),1)
+Q=
+else
+Q=@
+endif
+
+AR		:= ar
+ARFLAGS		:= rcs
+CC		:= gcc 
+CXX		:= g++
+CFLAGS		+= -g -Wall $(INCLUDE)  
+CXXFLAGS	+= 
+LDFLAGS		+= 
+LDLIBS		+=
+
+ifeq ($(SIMULATIONTEST), 1)
+CFLAGS 		+= -DSIMULATIONTEST=1  
+endif
+
+OBJS            := $(filter %.o, $(obj-y))
+CPPSRCS		:= $(filter %.cpp, $(cpp-y))
+CPPOBJS		:= $(CPPSRCS:%cpp=%o)
+LIBS		:= $(foreach i,$(lib-y),$(subst lib,,$(i))) 
+SRCS            := $(OBJS:%o=%c)
+EXES		:= $(foreach i,$(exe-y),$(basename $(i)))
+
+ifneq ($(binary),)
+all:$(binary) $(EXES)
+
+else
+
+ifneq ($(library),)
+all:$(library) $(EXES)
+else
+all:$(EXES)
+endif
+
+endif
+
+
+$(library):$(OBJS) $(CPPOBJS)
+	$(AR) $(ARFLAGS) $(OBJDIR)/$@ $^
+	@echo CC $@
+$(binary):$(OBJS) $(CPPOBJS)
+	@echo $(CPPOBJS)
+	$(Q) $(LD) $(LDFLAGS) $(OBJDIR)/$@ $^
+.o.a:
+	$(Q) $(AR) $(ARFLAGS) $(OBJDIR)/lib$@ $^ 
+	@echo CC $@
+ifeq ($(CPPOBJS),)		   
+.c.o:
+	$(Q) $(CC) $(INCLUDE) $(CFLAGS) -c -o $@ $<
+	@echo CC $@
+else		   
+.cpp.o:
+	$(Q) $(CXX) $(INCLUDE) $(CFLAGS) -c -o $@ $<
+	@echo CC $@
+endif		   
+%:%.o
+	@$(Q) $(CC) $(INCLUDE) $(CFLAGS) $(LDFLAGS) -o $@ $< $(LDLIBS)
+	@echo CC $@
+	
+.PHONY:clean 
+clean:
+	rm -f *.o *.a
+	rm -f $(OBJDIR)/*.o $(OBJDIR)*.a
+	rm -f $(EXES)
+
+
+

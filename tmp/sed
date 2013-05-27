@@ -1,0 +1,8 @@
+UPDATE_SERVER_IP=$(sed -n '1p' /opt/jpsystem/etc/update_config)
+19 UPDATE_SERVER_DIR=$(sed -n '2p' /opt/jpsystem/etc/update_config)
+20 UPDATE_SERVER_FILESIZE=$(sed -n '3p' /opt/jpsystem/etc/update_config)
+21 UPDATEFILE=$(sed -n '4p' /opt/jpsystem/etc/update_config)
+22 UPDATEMD5FILE=$(sed -n '5p' /opt/jpsystem/etc/update_config)
+23 UPDATEDIR=$(sed -n '6p' /opt/jpsystem/etc/update_config)
+24 
+

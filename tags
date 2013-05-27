@@ -1,0 +1,1241 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACK	src/amservice.c	/^int ACK		= 0x01;$/;"	v
+ADB_CHECKVERSION	inc/manager_api.h	19;"	d
+ADB_CHECKVERSION	qtsrc/classes/processpthread.h	16;"	d
+ADB_DEVICES	inc/manager_api.h	16;"	d
+ADB_DEVICES	qtsrc/classes/processpthread.h	13;"	d
+ADB_INSTALL	inc/manager_api.h	14;"	d
+ADB_INSTALL	qtsrc/classes/processpthread.h	11;"	d
+ADB_PULL	inc/manager_api.h	18;"	d
+ADB_PULL	qtsrc/classes/processpthread.h	15;"	d
+ADB_PUSH	inc/manager_api.h	17;"	d
+ADB_PUSH	qtsrc/classes/processpthread.h	14;"	d
+ADB_SENDMMS	inc/manager_api.h	20;"	d
+ADB_SENDMMS	qtsrc/classes/processpthread.h	17;"	d
+ADB_UNINSTALL	inc/manager_api.h	15;"	d
+ADB_UNINSTALL	qtsrc/classes/processpthread.h	12;"	d
+ADD_USB	inc/pthread_api.h	8;"	d
+ADD_USB	qtsrc/classes/daemon.h	13;"	d
+AMEVENT_DAEMON	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_DAEMON= (QEvent::Type)3003;$/;"	v
+AMEVENT_EXIT	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_EXIT= (QEvent::Type)3007;$/;"	v
+AMEVENT_INITEVENT	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_INITEVENT = (QEvent::Type)3002;$/;"	v
+AMEVENT_INSTALL	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_INSTALL= (QEvent::Type)3006;$/;"	v
+AMEVENT_REFRESH	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_REFRESH= (QEvent::Type)3009;$/;"	v
+AMEVENT_SENDMMS	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_SENDMMS= (QEvent::Type)3008;$/;"	v
+AMEVENT_TEST	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_TEST= (QEvent::Type)3004;$/;"	v
+AMEVENT_UNINSTALL	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_UNINSTALL= (QEvent::Type)3005;$/;"	v
+AMEVENT_USBEVENT	qtsrc/amevent.h	/^const QEvent::Type AMEVENT_USBEVENT = (QEvent::Type)3001;$/;"	v
+AMEvent	qtsrc/amevent.h	/^class AMEvent : public QEvent$/;"	c
+AMEvent	qtsrc/backpthread.cpp	/^AMEvent::AMEvent(QEvent::Type etype,int re) :$/;"	f	class:AMEvent
+ANIMATION_H	qtsrc/animation.h	42;"	d
+APP	qtsrc/managewindow.h	46;"	d
+APPINDEX	qtsrc/managewindow.h	/^		char APPINDEX = 0;$/;"	m	class:ManageWindow
+APPMAXNU	inc/typestruct_api.h	4;"	d
+APPSIGN	qtsrc/managewindow.h	/^		char APPSIGN = -1;$/;"	m	class:ManageWindow
+Animation	qtsrc/animation.h	/^    Animation(QObject *target, const QByteArray &prop)$/;"	f	class:Animation
+Animation	qtsrc/animation.h	/^class Animation : public QPropertyAnimation {$/;"	c
+Animationinit	qtsrc/managewindow.cpp	/^void ManageWindow::Animationinit()$/;"	f	class:ManageWindow
+App_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::App_clicked(int x,int y)$/;"	f	class:ManageWindow
+App_item	qtsrc/managewindow.h	/^		QTableWidgetItem *App_item[300][3];$/;"	m	class:ManageWindow
+App_table	qtsrc/managewindow.h	/^		QTableWidget* App_table;$/;"	m	class:ManageWindow
+BACKLOG	src/sampleclient.c	13;"	d	file:
+BOOK	qtsrc/managewindow.h	48;"	d
+BOOKMAXNU	inc/typestruct_api.h	5;"	d
+BOOKSIGN	qtsrc/managewindow.h	/^		char BOOKSIGN = -1;$/;"	m	class:ManageWindow
+BackQthreadInit	qtsrc/managewindow.cpp	/^void ManageWindow::BackQthreadInit()$/;"	f	class:ManageWindow
+BackThread	qtsrc/managewindow.h	/^		Backthread* BackThread;$/;"	m	class:ManageWindow
+Backthread	qtsrc/backpthread.cpp	/^Backthread::Backthread(QWidget* objwidget) :$/;"	f	class:Backthread
+Backthread	qtsrc/backpthread.h	/^class Backthread : public QObject$/;"	c
+Book_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::Book_clicked(int x,int y)$/;"	f	class:ManageWindow
+Book_item	qtsrc/managewindow.h	/^		QTableWidgetItem *Book_item[1000][3];$/;"	m	class:ManageWindow
+Book_table	qtsrc/managewindow.h	/^		QTableWidget* Book_table;$/;"	m	class:ManageWindow
+Btn_360	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_360;$/;"	m	class:Ui_ManageWindow
+Btn_app	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_app;$/;"	m	class:Ui_ManageWindow
+Btn_back	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_back;$/;"	m	class:Ui_ManageWindow
+Btn_book	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_book;$/;"	m	class:Ui_ManageWindow
+Btn_booksendmms	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_booksendmms;$/;"	m	class:Ui_ManageWindow
+Btn_call	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_call;$/;"	m	class:Ui_ManageWindow
+Btn_changedir	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_changedir;$/;"	m	class:Ui_ManageWindow
+Btn_connect	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_connect;$/;"	m	class:Ui_ManageWindow
+Btn_detail	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_detail;$/;"	m	class:Ui_ManageWindow
+Btn_goto	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_goto;$/;"	m	class:Ui_ManageWindow
+Btn_image	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_image;$/;"	m	class:Ui_ManageWindow
+Btn_install	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_install;$/;"	m	class:Ui_ManageWindow
+Btn_jf	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_jf;$/;"	m	class:Ui_ManageWindow
+Btn_manager	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_manager;$/;"	m	class:Ui_ManageWindow
+Btn_massage	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_massage;$/;"	m	class:Ui_ManageWindow
+Btn_music	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_music;$/;"	m	class:Ui_ManageWindow
+Btn_phone	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_phone;$/;"	m	class:Ui_ManageWindow
+Btn_reload	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_reload;$/;"	m	class:Ui_ManageWindow
+Btn_send	qtsrc/ui_mms_dialog.h	/^    QPushButton *Btn_send;$/;"	m	class:Ui_MMS_Dialog
+Btn_sendmms	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_sendmms;$/;"	m	class:Ui_ManageWindow
+Btn_settings	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_settings;$/;"	m	class:Ui_ManageWindow
+Btn_storage	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_storage;$/;"	m	class:Ui_ManageWindow
+Btn_uninstall	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_uninstall;$/;"	m	class:Ui_ManageWindow
+Btn_video	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_video;$/;"	m	class:Ui_ManageWindow
+Btn_wdj	qtsrc/ui_managewindow.h	/^    QPushButton *Btn_wdj;$/;"	m	class:Ui_ManageWindow
+CANCEL	qtsrc/classes/downloadpthread.h	26;"	d
+CHECKAPP	inc/pthread_api.h	11;"	d
+CMD_APP	inc/typestruct_api.h	11;"	d
+CMD_BOOK	inc/typestruct_api.h	13;"	d
+CMD_IMAGE	inc/typestruct_api.h	8;"	d
+CMD_MMS	inc/typestruct_api.h	12;"	d
+CMD_MUSIC	inc/typestruct_api.h	10;"	d
+CMD_SENDMMS	inc/typestruct_api.h	15;"	d
+CMD_STORAGE	inc/typestruct_api.h	14;"	d
+CMD_VIDEO	inc/typestruct_api.h	9;"	d
+CONNECT	qtsrc/managewindow.h	39;"	d
+CirclePath	qtsrc/animation.h	/^        CirclePath,$/;"	e	enum:Animation::PathType
+ClassTestInit	qtsrc/managewindow.cpp	/^void ManageWindow::ClassTestInit()$/;"	f	class:ManageWindow
+Cmbx_appclass	qtsrc/ui_managewindow.h	/^    QComboBox *Cmbx_appclass;$/;"	m	class:Ui_ManageWindow
+CmdList	qtsrc/classes/processpthread.h	/^		QStringList CmdList;$/;"	m	class:ProcessThread
+ConnectThread	qtsrc/connectionthread.h	/^class ConnectThread : public QThread$/;"	c
+Connecttestinit	qtsrc/classes/daemon.cpp	/^void Daemon::Connecttestinit()$/;"	f	class:Daemon
+CurrentWidget	qtsrc/managewindow.cpp	/^void ManageWindow::CurrentWidget(int P_NUM)$/;"	f	class:ManageWindow
+DATA_READY	inc/pthread_api.h	13;"	d
+DEVICE	qtsrc/classes/daemon.h	17;"	d
+DEVICE	qtsrc/classes/downloadpthread.h	19;"	d
+DEVICE	qtsrc/connectionthread.h	14;"	d
+DISCONNECTED	qtsrc/classes/daemon.h	16;"	d
+DISCONNECTED	qtsrc/classes/downloadpthread.h	18;"	d
+DISCONNECTED	qtsrc/connectionthread.h	13;"	d
+DOWNLOADED	qtsrc/classes/downloadpthread.h	25;"	d
+DOWNLOADING	qtsrc/classes/downloadpthread.h	24;"	d
+DOWNLOADLIST	qtsrc/managewindow.h	50;"	d
+DOWNLOADLIST	qtsrc/widgets/downlist.h	2;"	d
+DOWNLOADMANAGER_H	qtsrc/classes/downloadmanager.h	42;"	d
+DOWNLOADPTHREAD_H	qtsrc/classes/downloadpthread.h	2;"	d
+DOWNLOADSIGN	qtsrc/managewindow.h	/^		char DOWNLOADSIGN = -1;$/;"	m	class:ManageWindow
+Daemon	qtsrc/classes/daemon.cpp	/^Daemon::Daemon(QWidget* objwidget) :$/;"	f	class:Daemon
+Daemon	qtsrc/classes/daemon.h	/^class Daemon : public QObject$/;"	c
+DaemonQthreadInit	qtsrc/managewindow.cpp	/^void ManageWindow::DaemonQthreadInit()$/;"	f	class:ManageWindow
+DaemonThread	qtsrc/managewindow.h	/^		Daemon* DaemonThread;$/;"	m	class:ManageWindow
+DoubleClicked	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::DoubleClicked(QListWidgetItem *item)$/;"	f	class:FtpClientWindow
+DownloadManager	qtsrc/classes/downloadmanager.cpp	/^DownloadManager::DownloadManager(QObject *parent)$/;"	f	class:DownloadManager
+DownloadManager	qtsrc/classes/downloadmanager.h	/^class DownloadManager: public QObject$/;"	c
+DownloadThread	qtsrc/classes/downloadpthread.h	/^class DownloadThread: public QThread$/;"	c
+Download_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::Download_clicked(int x,int y)$/;"	f	class:ManageWindow
+Downloadlist	qtsrc/widgets/downlist.cpp	/^Downloadlist::Downloadlist(QWidget *parent) :$/;"	f	class:Downloadlist
+Downloadlist	qtsrc/widgets/downlist.h	/^class Downloadlist: public QWidget$/;"	c
+Downloadlist_item	qtsrc/managewindow.h	/^		QTableWidgetItem *Downloadlist_item[300][3];$/;"	m	class:ManageWindow
+Downloadlist_table	qtsrc/managewindow.h	/^		QTableWidget* Downloadlist_table;$/;"	m	class:ManageWindow
+Downloadthradinit	qtsrc/classes/daemon.cpp	/^void Daemon::Downloadthradinit()$/;"	f	class:Daemon
+Downloadthradinit	qtsrc/widgets/webPage.cpp	/^void webPage::Downloadthradinit()$/;"	f	class:webPage
+ERR_ACCEPT	src/sockserver.h	78;"	d
+ERR_BIND	src/sockserver.h	76;"	d
+ERR_CONNECT	src/sockserver.h	75;"	d
+ERR_CREATSOCKET	src/sockserver.h	74;"	d
+ERR_FD	src/sockserver.h	79;"	d
+ERR_LINSTEN	src/sockserver.h	77;"	d
+ERR_MALLOC	src/sockserver.h	73;"	d
+ERR_RECV	src/sockserver.h	81;"	d
+ERR_SEND	src/sockserver.h	80;"	d
+ERR_TOOMANYSOCKET	src/sockserver.h	72;"	d
+ERR_TYPE	src/sockserver.h	84;"	d
+ERR_UDP_RECV	src/sockserver.h	83;"	d
+ERR_UDP_SEND	src/sockserver.h	82;"	d
+FAILURE	inc/manager_api.h	12;"	d
+FAILURE	qtsrc/classes/processpthread.h	9;"	d
+FASTBOOT	qtsrc/classes/daemon.h	19;"	d
+FASTBOOT	qtsrc/classes/downloadpthread.h	21;"	d
+FASTBOOT	qtsrc/connectionthread.h	16;"	d
+FIND	inc/pthread_api.h	10;"	d
+FINDDEVICE	qtsrc/classes/daemon.h	/^		int FINDDEVICE  = 0;$/;"	m	class:Daemon
+FREE_CLIENT	src/sockserverlib_api.h	22;"	d
+FREE_CLINT	src/sockserver.h	94;"	d
+FREE_SERVER	src/sockserver.h	93;"	d
+FREE_SERVER	src/sockserverlib_api.h	21;"	d
+FTPCLIENTWINDOW_H	qtsrc/widgets/ftpclientwindow.h	2;"	d
+FTPCLIENT_H	qtsrc/widgets/ftpclient.h	2;"	d
+FindDevice	qtsrc/managewindow.cpp	/^void ManageWindow::FindDevice()$/;"	f	class:ManageWindow
+FtpClientWindow	qtsrc/ui_ftpclientwindow.h	/^    class FtpClientWindow: public Ui_FtpClientWindow {};$/;"	c	namespace:Ui
+FtpClientWindow	qtsrc/widgets/ftpclientwindow.cpp	/^FtpClientWindow::FtpClientWindow(QWidget *parent) :$/;"	f	class:FtpClientWindow
+FtpClientWindow	qtsrc/widgets/ftpclientwindow.h	/^class FtpClientWindow : public QWidget$/;"	c
+Ftpclient	qtsrc/widgets/ftpclient.cpp	/^Ftpclient::Ftpclient(QObject *parent) :$/;"	f	class:Ftpclient
+Ftpclient	qtsrc/widgets/ftpclient.h	/^class Ftpclient : public QObject$/;"	c
+IMAGE	qtsrc/managewindow.h	45;"	d
+INCPATH	qtsrc/Makefile	/^INCPATH		:= -I..\/inc -I\/usr\/local\/Trolltech\/Qt-4.8.4\/include$/;"	m
+INSTALLAPP	inc/pthread_api.h	12;"	d
+INSTALLED	qtsrc/classes/downloadpthread.h	28;"	d
+INSTALLING	qtsrc/classes/downloadpthread.h	27;"	d
+INVALIDFD	src/sockserver.h	91;"	d
+JPEVENT_H	qtsrc/amevent.h	2;"	d
+JPNETRECVTRYTIME	src/sockserver.h	95;"	d
+JPTIMER_H	qtsrc/classes/daemon.h	2;"	d
+JUDGECFD	src/sockserver.h	89;"	d
+JUDGESFD	src/sockserver.h	90;"	d
+KONG_USB	inc/pthread_api.h	9;"	d
+LIBS	qtsrc/Makefile	/^LIBS		:= -L..\/libs -landroidmanage  -L\/usr\/local\/Trolltech\/Qt-4.8.4\/lib$/;"	m
+LOGCATDIALOG_H	qtsrc/dialogs/logcatdialog.h	22;"	d
+LOGCATMODEL_H	qtsrc/classes/models/logcatmodel.h	22;"	d
+L_uninstallinfo	qtsrc/ui_dialog.h	/^    QLabel *L_uninstallinfo;$/;"	m	class:Ui_dialog
+Lab_dirpath	qtsrc/ui_managewindow.h	/^    QLabel *Lab_dirpath;$/;"	m	class:Ui_ManageWindow
+Lab_info	qtsrc/ui_managewindow.h	/^    QLabel *Lab_info;$/;"	m	class:Ui_ManageWindow
+Lab_p	qtsrc/ui_managewindow.h	/^    QLabel *Lab_p;$/;"	m	class:Ui_ManageWindow
+Lab_refresh	qtsrc/ui_managewindow.h	/^    QLabel *Lab_refresh;$/;"	m	class:Ui_ManageWindow
+Lab_skin	qtsrc/ui_managewindow.h	/^    QLabel *Lab_skin;$/;"	m	class:Ui_ManageWindow
+Lab_test	qtsrc/ui_managewindow.h	/^    QLabel *Lab_test;$/;"	m	class:Ui_ManageWindow
+LinearPath	qtsrc/animation.h	/^        LinearPath,$/;"	e	enum:Animation::PathType
+LoadApp	qtsrc/managewindow.cpp	/^void ManageWindow::LoadApp()$/;"	f	class:ManageWindow
+LoadBook	qtsrc/managewindow.cpp	/^void ManageWindow::LoadBook()$/;"	f	class:ManageWindow
+LoadConnect	qtsrc/managewindow.cpp	/^void ManageWindow::LoadConnect()$/;"	f	class:ManageWindow
+LoadDownloadlist	qtsrc/managewindow.cpp	/^void ManageWindow::LoadDownloadlist()$/;"	f	class:ManageWindow
+LoadFtpfilelist	qtsrc/managewindow.cpp	/^void ManageWindow::LoadFtpfilelist()$/;"	f	class:ManageWindow
+LoadImage	qtsrc/managewindow.cpp	/^void ManageWindow::LoadImage()$/;"	f	class:ManageWindow
+LoadMms	qtsrc/managewindow.cpp	/^void ManageWindow::LoadMms()$/;"	f	class:ManageWindow
+LoadMusic	qtsrc/managewindow.cpp	/^void ManageWindow::LoadMusic()$/;"	f	class:ManageWindow
+LoadQmenu	qtsrc/managewindow.cpp	/^void ManageWindow::LoadQmenu()$/;"	f	class:ManageWindow
+LoadSettings	qtsrc/managewindow.cpp	/^void ManageWindow::LoadSettings()$/;"	f	class:ManageWindow
+LoadVideo	qtsrc/managewindow.cpp	/^void ManageWindow::LoadVideo()$/;"	f	class:ManageWindow
+LoadWebview	qtsrc/managewindow.cpp	/^void ManageWindow::LoadWebview()$/;"	f	class:ManageWindow
+LogcatDialog	qtsrc/dialogs/logcatdialog.cpp	/^LogcatDialog::LogcatDialog(QWidget *parent) :$/;"	f	class:LogcatDialog
+LogcatDialog	qtsrc/dialogs/logcatdialog.h	/^class LogcatDialog : public QDialog, public Ui::LogcatDialog$/;"	c
+LogcatDialog	qtsrc/ui_logcatdialog.h	/^    class LogcatDialog: public Ui_LogcatDialog {};$/;"	c	namespace:Ui
+LogcatMessage	qtsrc/classes/models/logcatmodel.cpp	/^LogcatMessage::LogcatMessage(QObject *parent)$/;"	f	class:LogcatMessage
+LogcatMessage	qtsrc/classes/models/logcatmodel.cpp	/^LogcatMessage::LogcatMessage(const LogcatMessage& logcatMessage)$/;"	f	class:LogcatMessage
+LogcatMessage	qtsrc/classes/models/logcatmodel.h	/^class LogcatMessage : public QObject{$/;"	c
+LogcatModel	qtsrc/classes/models/logcatmodel.cpp	/^LogcatModel::LogcatModel(QList< LogcatMessage > logcatList, QObject *parent)$/;"	f	class:LogcatModel
+LogcatModel	qtsrc/classes/models/logcatmodel.cpp	/^LogcatModel::LogcatModel(QObject *parent)$/;"	f	class:LogcatModel
+LogcatModel	qtsrc/classes/models/logcatmodel.h	/^class LogcatModel : public QAbstractTableModel$/;"	c
+Login	qtsrc/classes/settings.h	/^struct Login {$/;"	s
+MANAGEWINDOW_H	qtsrc/managewindow.h	2;"	d
+MASSIGE	qtsrc/managewindow.h	42;"	d
+MAXDATASIZE	src/sampleclient.c	14;"	d	file:
+MAXDATASIZE	test/client.c	11;"	d	file:
+MAXERRNO	src/sockserver.h	86;"	d
+MAXLEN	inc/manager_api.h	8;"	d
+MAXLIST	qtsrc/managewindow.h	52;"	d
+MAXLIST	qtsrc/widgets/webPage.h	15;"	d
+MAXNU	inc/typestruct_api.h	3;"	d
+MAXSOCKETNO	src/sockserver.h	88;"	d
+MENU	qtsrc/managewindow.h	38;"	d
+MMS	qtsrc/managewindow.h	44;"	d
+MMSSIGN	qtsrc/managewindow.h	/^		char MMSSIGN = -1;$/;"	m	class:ManageWindow
+MMS_DIALOG_H	qtsrc/dialogs/mms_dialog.h	2;"	d
+MMS_Dialog	qtsrc/dialogs/mms_dialog.cpp	/^MMS_Dialog::MMS_Dialog(QWidget *parent) :$/;"	f	class:MMS_Dialog
+MMS_Dialog	qtsrc/dialogs/mms_dialog.h	/^class MMS_Dialog : public QDialog$/;"	c
+MMS_Dialog	qtsrc/ui_mms_dialog.h	/^    class MMS_Dialog: public Ui_MMS_Dialog {};$/;"	c	namespace:Ui
+MONITOR_USB	qtsrc/amevent.h	9;"	d
+MUSIC	qtsrc/managewindow.h	41;"	d
+MUTEX	qtsrc/classes/daemon.h	/^		int MUTEX	= 0;$/;"	m	class:Daemon
+MainWidget	qtsrc/backpthread.h	/^	QObject* MainWidget;$/;"	m	class:Backthread
+MainWidget	qtsrc/classes/daemon.h	/^		QObject* MainWidget;$/;"	m	class:Daemon
+MainWidget	qtsrc/classes/settings.h	/^		QObject* MainWidget;$/;"	m	class:Mysetting
+Makeconnect	qtsrc/managewindow.cpp	/^void ManageWindow::Makeconnect()$/;"	f	class:ManageWindow
+ManageWindow	qtsrc/managewindow.cpp	/^ManageWindow::ManageWindow(QWidget *parent) :$/;"	f	class:ManageWindow
+ManageWindow	qtsrc/managewindow.h	/^class ManageWindow : public QMainWindow$/;"	c
+ManageWindow	qtsrc/ui_managewindow.h	/^    class ManageWindow: public Ui_ManageWindow {};$/;"	c	namespace:Ui
+Menuaction	qtsrc/managewindow.cpp	/^void ManageWindow::Menuaction(int P_NUM)$/;"	f	class:ManageWindow
+Mms_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::Mms_clicked(int a, int b)$/;"	f	class:ManageWindow
+Mms_item	qtsrc/managewindow.h	/^		QTableWidgetItem *Mms_item[500][3];$/;"	m	class:ManageWindow
+Mms_table	qtsrc/managewindow.h	/^		QTableWidget* Mms_table;$/;"	m	class:ManageWindow
+Mysetting	qtsrc/classes/settings.cpp	/^Mysetting::Mysetting(QSettings* objwidget)$/;"	f	class:Mysetting
+Mysetting	qtsrc/classes/settings.h	/^class Mysetting : public QSettings$/;"	c
+Mysettingsinit	qtsrc/managewindow.cpp	/^void ManageWindow::Mysettingsinit()$/;"	f	class:ManageWindow
+NPathTypes	qtsrc/animation.h	/^        NPathTypes$/;"	e	enum:Animation::PathType
+OVERSIGN	src/amservice.c	/^int OVERSIGN = 0;$/;"	v
+PACKET_LENG	src/sockserver.h	37;"	d
+PICTURELISTMODEL_H_	qtsrc/picturelistmodel.h	14;"	d
+PORT	src/sampleclient.c	12;"	d	file:
+PROCESSPTHREAD_H	qtsrc/classes/processpthread.h	2;"	d
+PTHREAD_EXIT_SIG	src/mainthread.c	/^	int PTHREAD_EXIT_SIG = 0;$/;"	v
+P_App	qtsrc/ui_managewindow.h	/^    QWidget *P_App;$/;"	m	class:Ui_ManageWindow
+P_Book	qtsrc/ui_managewindow.h	/^    QWidget *P_Book;$/;"	m	class:Ui_ManageWindow
+P_Connect	qtsrc/ui_managewindow.h	/^    QWidget *P_Connect;$/;"	m	class:Ui_ManageWindow
+P_Downloadlist	qtsrc/ui_managewindow.h	/^    QWidget *P_Downloadlist;$/;"	m	class:Ui_ManageWindow
+P_Image	qtsrc/ui_managewindow.h	/^    QWidget *P_Image;$/;"	m	class:Ui_ManageWindow
+P_Massige	qtsrc/ui_managewindow.h	/^    QWidget *P_Massige;$/;"	m	class:Ui_ManageWindow
+P_Menu	qtsrc/ui_managewindow.h	/^    QWidget *P_Menu;$/;"	m	class:Ui_ManageWindow
+P_Mms	qtsrc/ui_managewindow.h	/^    QWidget *P_Mms;$/;"	m	class:Ui_ManageWindow
+P_Music	qtsrc/ui_managewindow.h	/^    QWidget *P_Music;$/;"	m	class:Ui_ManageWindow
+P_Settings	qtsrc/ui_managewindow.h	/^    QWidget *P_Settings;$/;"	m	class:Ui_ManageWindow
+P_Storage	qtsrc/ui_managewindow.h	/^    QWidget *P_Storage;$/;"	m	class:Ui_ManageWindow
+P_Test	qtsrc/ui_managewindow.h	/^    QWidget *P_Test;$/;"	m	class:Ui_ManageWindow
+P_Video	qtsrc/ui_managewindow.h	/^    QWidget *P_Video;$/;"	m	class:Ui_ManageWindow
+P_Web	qtsrc/ui_managewindow.h	/^    QWidget *P_Web;$/;"	m	class:Ui_ManageWindow
+PathType	qtsrc/animation.h	/^    enum PathType {$/;"	g	class:Animation
+Pb_mem	qtsrc/ui_managewindow.h	/^    QProgressBar *Pb_mem;$/;"	m	class:Ui_ManageWindow
+Pb_sd	qtsrc/ui_managewindow.h	/^    QProgressBar *Pb_sd;$/;"	m	class:Ui_ManageWindow
+PictureListModel	qtsrc/picturelistmodel.cpp	/^PictureListModel::PictureListModel(QObject *parent)$/;"	f	class:PictureListModel
+PictureListModel	qtsrc/picturelistmodel.h	/^class PictureListModel : public QAbstractListModel$/;"	c
+Player	qtsrc/player.cpp	/^Player::Player(QWidget * parent)$/;"	f	class:Player
+Player	qtsrc/player.h	/^class Player : public QWidget$/;"	c
+ProcessThread	qtsrc/classes/processpthread.h	/^class ProcessThread: public QThread$/;"	c
+ProcessThreadInit	qtsrc/managewindow.cpp	/^void ManageWindow::ProcessThreadInit()$/;"	f	class:ManageWindow
+Q_OBJECT	qtsrc/picturelistmodel.h	/^	Q_OBJECT;$/;"	m	class:PictureListModel
+Qssinit	qtsrc/managewindow.cpp	/^void ManageWindow::Qssinit(int argc)     \/\/透明度$/;"	f	class:ManageWindow
+READDOWNLOAD	qtsrc/classes/downloadpthread.h	23;"	d
+RECOVERY	qtsrc/classes/daemon.h	18;"	d
+RECOVERY	qtsrc/classes/downloadpthread.h	20;"	d
+RECOVERY	qtsrc/connectionthread.h	15;"	d
+REFRESHSIGN	src/amservice.c	/^int REFRESHSIGN = 0;$/;"	v
+REMOVE_USB	inc/pthread_api.h	7;"	d
+REMOVE_USB	qtsrc/classes/daemon.h	14;"	d
+RESEND	src/amservice.c	/^int RESEND	= 0x02;$/;"	v
+REVERSE16	src/sockserver.h	38;"	d
+REVERSE32	src/sockserver.h	39;"	d
+Refreshlabinit	qtsrc/managewindow.cpp	/^void ManageWindow::Refreshlabinit()$/;"	f	class:ManageWindow
+SEND_CMD	src/amservice.c	/^char SEND_CMD = 0;$/;"	v
+SERVPORT	src/amservice.c	15;"	d	file:
+SERVPORT	test/client.c	10;"	d	file:
+SETTINGS	qtsrc/managewindow.h	47;"	d
+SIG_START	inc/typestruct_api.h	7;"	d
+SIZE	src/amservice.c	/^int SIZE = 0;$/;"	v
+SOFT_INIT	qtsrc/amevent.h	8;"	d
+START_DAEMON	qtsrc/amevent.h	10;"	d
+STORAGE	qtsrc/managewindow.h	49;"	d
+SUCCEESS	src/sockserver.h	71;"	d
+SUCCESS	inc/manager_api.h	11;"	d
+SUCCESS	qtsrc/classes/processpthread.h	8;"	d
+SortFilterProxyModel	qtsrc/classes/models/logcatmodel.cpp	/^SortFilterProxyModel::SortFilterProxyModel(QObject *parent) : QSortFilterProxyModel(parent)$/;"	f	class:SortFilterProxyModel
+SortFilterProxyModel	qtsrc/classes/models/logcatmodel.h	/^class SortFilterProxyModel : public QSortFilterProxyModel$/;"	c
+TEST	qtsrc/managewindow.h	51;"	d
+TEXTPROGRESSBAR_H	qtsrc/classes/textprogressbar.h	42;"	d
+TYPESTRUCT_H	inc/typestruct.h	2;"	d
+Tedt_data	qtsrc/ui_mms_dialog.h	/^    QTextEdit *Tedt_data;$/;"	m	class:Ui_MMS_Dialog
+Tedt_number	qtsrc/ui_mms_dialog.h	/^    QTextEdit *Tedt_number;$/;"	m	class:Ui_MMS_Dialog
+TextProgressBar	qtsrc/classes/textprogressbar.cpp	/^TextProgressBar::TextProgressBar()$/;"	f	class:TextProgressBar
+TextProgressBar	qtsrc/classes/textprogressbar.h	/^class TextProgressBar$/;"	c
+UEVENT_BUFFER_SIZE	src/mainthread.c	16;"	d	file:
+UEVENT_BUFFER_SIZE	src/usbevent.c	7;"	d	file:
+UEVENT_BUFFER_SIZE	src/usbpthread.c	15;"	d	file:
+UI_DIALOG_H	qtsrc/ui_dialog.h	11;"	d
+UI_DOWNLIST_H	qtsrc/ui_downlist.h	11;"	d
+UI_FTPCLIENTWINDOW_H	qtsrc/ui_ftpclientwindow.h	11;"	d
+UI_LOGCATDIALOG_H	qtsrc/ui_logcatdialog.h	11;"	d
+UI_MANAGEWINDOW_H	qtsrc/ui_managewindow.h	11;"	d
+UI_MMS_DIALOG_H	qtsrc/ui_mms_dialog.h	11;"	d
+USB_STATE	src/usbpthread.c	/^	int USB_STATE = KONG_USB;$/;"	v
+Ui	qtsrc/dialogs/mms_dialog.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/managewindow.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_dialog.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_downlist.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_ftpclientwindow.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_logcatdialog.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_managewindow.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/ui_mms_dialog.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/widgets/downlist.h	/^namespace Ui {$/;"	n
+Ui	qtsrc/widgets/ftpclientwindow.h	/^namespace Ui {$/;"	n
+UiDownlist	qtsrc/managewindow.h	/^		QWidget UiDownlist[1000];$/;"	m	class:ManageWindow
+UiDownlist	qtsrc/ui_downlist.h	/^    class UiDownlist: public Ui_UiDownlist {};$/;"	c	namespace:Ui
+UiToolInit	qtsrc/managewindow.cpp	/^void ManageWindow::UiToolInit()$/;"	f	class:ManageWindow
+Ui_FtpClientWindow	qtsrc/ui_ftpclientwindow.h	/^class Ui_FtpClientWindow$/;"	c
+Ui_LogcatDialog	qtsrc/ui_logcatdialog.h	/^class Ui_LogcatDialog$/;"	c
+Ui_MMS_Dialog	qtsrc/ui_mms_dialog.h	/^class Ui_MMS_Dialog$/;"	c
+Ui_ManageWindow	qtsrc/ui_managewindow.h	/^class Ui_ManageWindow$/;"	c
+Ui_UiDownlist	qtsrc/ui_downlist.h	/^class Ui_UiDownlist$/;"	c
+Ui_dialog	qtsrc/ui_dialog.h	/^class Ui_dialog$/;"	c
+VIDEO	qtsrc/managewindow.h	40;"	d
+WAITDATA	inc/pthread_api.h	14;"	d
+WEBPAGE_H	qtsrc/widgets/webPage.h	2;"	d
+WEBVIEW	qtsrc/managewindow.h	43;"	d
+W_Book	qtsrc/ui_managewindow.h	/^    QWidget *W_Book;$/;"	m	class:Ui_ManageWindow
+W_kouzhan	qtsrc/ui_managewindow.h	/^    QWidget *W_kouzhan;$/;"	m	class:Ui_ManageWindow
+Webview	qtsrc/ui_managewindow.h	/^    QWebView *Webview;$/;"	m	class:Ui_ManageWindow
+_QT__	qtsrc/Makefile	/^	make __QT__=1$/;"	m
+__PLAYER_H_	qtsrc/player.h	2;"	d
+__SOCKSERVERLIB_API_H__	src/sockserverlib_api.h	2;"	d
+__SOCKSERVER_H__	src/sockserver.h	2;"	d
+__allappnfo	inc/typestruct_api.h	/^	typedef struct __allappnfo{$/;"	s
+__allbookinfo	inc/typestruct_api.h	/^	typedef struct __allbookinfo{$/;"	s
+__alldownloadinfo	qtsrc/widgets/webPage.h	/^typedef struct __alldownloadinfo{$/;"	s
+__allinfo	inc/typestruct_api.h	/^	typedef struct __allinfo{$/;"	s
+__allmmsinfo	inc/typestruct_api.h	/^	typedef struct __allmmsinfo{$/;"	s
+__appinfo	inc/typestruct_api.h	/^	typedef struct __appinfo{$/;"	s
+__appthread	src/appthread.c	/^typedef struct __appthread{$/;"	s	file:
+__bookinfo	inc/typestruct_api.h	/^	typedef struct __bookinfo{$/;"	s
+__cmr_msglib	src/sockserver.h	/^typedef struct __cmr_msglib{$/;"	s
+__deviceslist	inc/manager_api.h	/^typedef struct __deviceslist{$/;"	s
+__downloadindex	qtsrc/managewindow.h	/^		typedef struct __downloadindex{$/;"	s	class:ManageWindow
+__downloadindex	qtsrc/widgets/webPage.h	/^typedef struct __downloadindex{$/;"	s
+__downthread	src/downthread.c	/^typedef struct __downthread{$/;"	s	file:
+__fileinfo	inc/typestruct_api.h	/^	typedef struct __fileinfo{$/;"	s
+__filethread	src/filethread.c	/^typedef struct __filethread{$/;"	s	file:
+__mainthread	src/mainthread.c	/^	typedef struct __mainthread{$/;"	s	file:
+__managermod	src/monitorusb.c	/^typedef struct __managermod{$/;"	s	file:
+__mmsinfo	inc/typestruct_api.h	/^	typedef struct __mmsinfo{$/;"	s
+__msglib_errno	src/sockserver.h	/^typedef struct __msglib_errno{$/;"	s
+__mutexthread	src/mutexpthread.c	/^typedef struct __mutexthread{$/;"	s	file:
+__netthread	src/netthread.c	/^typedef struct __netthread{$/;"	s	file:
+__refreshsign	qtsrc/managewindow.h	/^typedef struct __refreshsign{$/;"	s
+__sendmessage	inc/typestruct_api.h	/^	typedef struct __sendmessage{$/;"	s
+__sendmmsinfo	src/manage.c	/^	typedef struct __sendmmsinfo{$/;"	s	file:
+__settingsargv	qtsrc/managewindow.h	/^typedef struct __settingsargv{$/;"	s
+__sockthread	src/amservice.c	/^typedef struct __sockthread{$/;"	s	file:
+__storageinfo	inc/typestruct_api.h	/^	typedef struct __storageinfo{$/;"	s
+__usbthread	src/usbpthread.c	/^	typedef struct __usbthread{$/;"	s	file:
+accept	qtsrc/managewindow.cpp	/^void ManageWindow::accept()$/;"	f	class:ManageWindow
+acceptNavigationRequest	qtsrc/widgets/webPage.cpp	/^bool webPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type){$/;"	f	class:webPage
+adbargv	qtsrc/classes/processpthread.h	/^		QString adbargv;$/;"	m	class:ProcessThread
+adbcount	qtsrc/classes/processpthread.h	/^		int adbcount = 0;$/;"	m	class:ProcessThread
+adbcount	qtsrc/managewindow.h	/^		int adbcount = 0;$/;"	m	class:ManageWindow
+adbresult	qtsrc/managewindow.cpp	/^void ManageWindow::adbresult(int resulttype ,int adbcount,int result)$/;"	f	class:ManageWindow
+adbresult	qtsrc/moc_processpthread.cpp	/^void ProcessThread::adbresult(int _t1, int _t2, int _t3)$/;"	f	class:ProcessThread
+adbthread	qtsrc/managewindow.h	/^		ProcessThread *adbthread;$/;"	m	class:ManageWindow
+addFilterRegExp	qtsrc/classes/models/logcatmodel.cpp	/^void SortFilterProxyModel::addFilterRegExp(qint32 column, const QRegExp &pattern)$/;"	f	class:SortFilterProxyModel
+addPictures	qtsrc/picturelistmodel.cpp	/^void PictureListModel::addPictures(QString directory)$/;"	f	class:PictureListModel
+addToList	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::addToList(const QUrlInfo &urlInfo)$/;"	f	class:Ftpclient
+addToList	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::addToList(const QUrlInfo &urlInfo)$/;"	f	class:FtpClientWindow
+addadbcmd	qtsrc/classes/processpthread.cpp	/^void ProcessThread::addadbcmd(int cmdtype,int adbcount ,QString cmd)$/;"	f	class:ProcessThread
+addadbcmd	qtsrc/moc_managewindow.cpp	/^void ManageWindow::addadbcmd(int _t1, int _t2, QString _t3)$/;"	f	class:ManageWindow
+adddownloadurl	qtsrc/classes/downloadpthread.cpp	/^void DownloadThread::adddownloadurl(int downloadcount,QString url)$/;"	f	class:DownloadThread
+adddownloadurl	qtsrc/managewindow.cpp	/^void ManageWindow::adddownloadurl(int downcount,double speed,int percent,int stat,QString filename)$/;"	f	class:ManageWindow
+adddownloadurl	qtsrc/moc_webPage.cpp	/^void webPage::adddownloadurl(int _t1, double _t2, int _t3, int _t4, QString _t5)$/;"	f	class:webPage
+addmanager	qtsrc/managewindow.h	/^		DownloadManager *addmanager;$/;"	m	class:ManageWindow
+addstartdownload	qtsrc/managewindow.cpp	/^void ManageWindow::addstartdownload(int downcount,double speed,int percent,int stat,QString filename)$/;"	f	class:ManageWindow
+addstartdownload	qtsrc/moc_webPage.cpp	/^void webPage::addstartdownload(int _t1, double _t2, int _t3, int _t4, QString _t5)$/;"	f	class:webPage
+allappinfo_t	inc/typestruct_api.h	/^	}allappinfo_t;$/;"	t	typeref:struct:__allappnfo
+allbookinfo_t	inc/typestruct_api.h	/^	}allbookinfo_t;$/;"	t	typeref:struct:__allbookinfo
+alldownloadinfo	qtsrc/widgets/webPage.h	/^		alldownloadinfo_t alldownloadinfo;$/;"	m	class:webPage
+alldownloadinfo_t	qtsrc/widgets/webPage.h	/^}alldownloadinfo_t;$/;"	t	typeref:struct:__alldownloadinfo
+allinfo_t	inc/typestruct_api.h	/^	}allinfo_t;$/;"	t	typeref:struct:__allinfo
+allmmsinfo_t	inc/typestruct_api.h	/^	}allmmsinfo_t;$/;"	t	typeref:struct:__allmmsinfo
+allpthread_exit	src/mainthread.c	/^	void allpthread_exit()$/;"	f
+amservicestart	src/amservice.c	/^int amservicestart() $/;"	f
+app	qtsrc/managewindow.h	/^	int app	= 1;$/;"	m	struct:__refreshsign
+app_install	src/manage.c	/^	int app_install(char *argv)$/;"	f
+app_pthread	src/appthread.c	/^void* app_pthread(void* arg) $/;"	f
+app_show	src/manage.c	/^	char * app_show(char *argv)$/;"	f
+app_thread_init	src/appthread.c	/^int app_thread_init(void)$/;"	f
+app_uninstall	src/manage.c	/^	int app_uninstall(char *argv)$/;"	f
+app_widget	qtsrc/ui_managewindow.h	/^    QWidget *app_widget;$/;"	m	class:Ui_ManageWindow
+appattribute	inc/typestruct_api.h	/^		int  appattribute;  \/\/ system app or user app$/;"	m	struct:__appinfo
+append	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::append(const QStringList &urlList)$/;"	f	class:DownloadManager
+append	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::append(const QUrl &url)$/;"	f	class:DownloadManager
+appindex	qtsrc/managewindow.h	/^		int appindex[4][100];$/;"	m	class:ManageWindow
+appinfo	inc/typestruct.h	/^allappinfo_t appinfo;$/;"	v
+appinfo_t	inc/typestruct_api.h	/^	}appinfo_t;$/;"	t	typeref:struct:__appinfo
+appname	inc/typestruct_api.h	/^		char appname[50];$/;"	m	struct:__appinfo
+apppackname	inc/typestruct_api.h	/^		char apppackname[100];$/;"	m	struct:__appinfo
+apppath	inc/typestruct_api.h	/^		int  apppath;       \/\/ in sdcard or phonestore$/;"	m	struct:__appinfo
+appsize	inc/typestruct_api.h	/^		char appsize[16];$/;"	m	struct:__appinfo
+appthread	src/appthread.c	/^static appthread_t appthread;$/;"	v	file:
+appthread_t	src/appthread.c	/^}appthread_t;$/;"	t	typeref:struct:__appthread	file:
+appversion	inc/typestruct_api.h	/^		char appversion[15];$/;"	m	struct:__appinfo
+arguments	qtsrc/classes/downloadpthread.h	/^		QStringList arguments;$/;"	m	class:DownloadThread
+backappinfo	qtsrc/backpthread.cpp	/^allappinfo_t backappinfo;$/;"	v
+backwardButton	qtsrc/managewindow.h	/^		QPushButton *backwardButton;$/;"	m	class:ManageWindow
+beforetime	qtsrc/widgets/webPage.h	/^		int beforetime = 0;$/;"	m	class:webPage
+book	qtsrc/managewindow.h	/^	int book = 1;$/;"	m	struct:__refreshsign
+bookinfo	inc/typestruct.h	/^allbookinfo_t bookinfo;$/;"	v
+bookinfo_t	inc/typestruct_api.h	/^	}bookinfo_t;$/;"	t	typeref:struct:__bookinfo
+bookname	inc/typestruct_api.h	/^		char bookname[20]; $/;"	m	struct:__bookinfo
+booknumber	inc/typestruct_api.h	/^		char booknumber[18];$/;"	m	struct:__bookinfo
+btn_app_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::btn_app_clicked()$/;"	f	class:ManageWindow
+btn_book_clicked	qtsrc/managewindow.cpp	/^void ManageWindow::btn_book_clicked()$/;"	f	class:ManageWindow
+btn_connect_sig	qtsrc/moc_managewindow.cpp	/^void ManageWindow::btn_connect_sig()$/;"	f	class:ManageWindow
+bufferLimit	qtsrc/dialogs/logcatdialog.h	/^    int bufferLimit;$/;"	m	class:LogcatDialog
+buffersize	src/usbpthread.c	/^	int buffersize = 1024;$/;"	v
+buttonBox	qtsrc/ui_dialog.h	/^    QDialogButtonBox *buttonBox;$/;"	m	class:Ui_dialog
+buttonLayout	qtsrc/managewindow.h	/^		QHBoxLayout *buttonLayout;$/;"	m	class:ManageWindow
+c_addr	src/sockserver.h	/^	struct sockaddr_in c_addr;$/;"	m	struct:dtmsg	typeref:struct:dtmsg::sockaddr_in
+c_addrsize	src/sockserver.h	/^	socklen_t c_addrsize;$/;"	m	struct:dtmsg
+c_delay	src/manage.c	/^	void c_delay(int num)$/;"	f
+callDownload	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::callDownload()$/;"	f	class:FtpClientWindow
+centralWidget	qtsrc/ui_managewindow.h	/^    QWidget *centralWidget;$/;"	m	class:Ui_ManageWindow
+cfd	src/sockserver.h	/^	int cfd;$/;"	m	struct:dtmsg
+changeDir	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::changeDir(const QString &dir)$/;"	f	class:Ftpclient
+changeToParrent	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::changeToParrent()$/;"	f	class:FtpClientWindow
+checkBox	qtsrc/ui_dialog.h	/^    QCheckBox *checkBox;$/;"	m	class:Ui_dialog
+checkBoxAutoScroll	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxAutoScroll;$/;"	m	class:Ui_LogcatDialog
+checkBoxDebug	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxDebug;$/;"	m	class:Ui_LogcatDialog
+checkBoxErrors	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxErrors;$/;"	m	class:Ui_LogcatDialog
+checkBoxInformations	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxInformations;$/;"	m	class:Ui_LogcatDialog
+checkBoxVerbose	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxVerbose;$/;"	m	class:Ui_LogcatDialog
+checkBoxWarnings	qtsrc/ui_logcatdialog.h	/^    QCheckBox *checkBoxWarnings;$/;"	m	class:Ui_LogcatDialog
+checkapp	qtsrc/classes/daemon.cpp	/^int Daemon::checkapp()$/;"	f	class:Daemon
+checkappversion	src/manage.c	/^	int checkappversion()$/;"	f
+cleanbuf	src/mainthread.c	/^	void cleanbuf()$/;"	f
+cleansig	src/amservice.c	/^void cleansig()$/;"	f
+clear	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::clear()$/;"	f	class:LogcatModel
+clear	qtsrc/classes/textprogressbar.cpp	/^void TextProgressBar::clear()$/;"	f	class:TextProgressBar
+clearFilters	qtsrc/classes/models/logcatmodel.cpp	/^void SortFilterProxyModel::clearFilters()$/;"	f	class:SortFilterProxyModel
+clearMemory	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::clearMemory(QList<QListWidgetItem*> &listItemCtn)$/;"	f	class:FtpClientWindow
+client	src/usbpthread.c	/^	struct sockaddr_nl client;$/;"	v	typeref:struct:sockaddr_nl
+closeEvent	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::closeEvent(QCloseEvent *event)$/;"	f	class:LogcatDialog
+closeEvent	qtsrc/managewindow.cpp	/^void ManageWindow::closeEvent(QCloseEvent *event)$/;"	f	class:ManageWindow
+closeId	qtsrc/widgets/ftpclient.h	/^    int connectId, loginId, closeId;$/;"	m	class:Ftpclient
+cmd	qtsrc/classes/daemon.h	/^	int cmd;$/;"	m	struct:tag_timerdata
+cmdAddToList	qtsrc/moc_ftpclient.cpp	/^void Ftpclient::cmdAddToList(const QUrlInfo & _t1)$/;"	f	class:Ftpclient
+cmdinfo	qtsrc/classes/downloadpthread.h	/^		int	cmdinfo = 0;$/;"	m	class:DownloadThread
+cmdtype	qtsrc/classes/processpthread.h	/^		int cmdtype  = 0;$/;"	m	class:ProcessThread
+cmr_msglib_t	src/sockserver.h	/^}cmr_msglib_t;$/;"	t	typeref:struct:__cmr_msglib
+columnCount	qtsrc/classes/models/logcatmodel.cpp	/^int LogcatModel::columnCount(const QModelIndex &parent) const$/;"	f	class:LogcatModel
+comboBox	qtsrc/ui_logcatdialog.h	/^    QComboBox *comboBox;$/;"	m	class:Ui_LogcatDialog
+configWidget	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::configWidget()$/;"	f	class:FtpClientWindow
+connectId	qtsrc/widgets/ftpclient.h	/^    int connectId, loginId, closeId;$/;"	m	class:Ftpclient
+connected	qtsrc/widgets/ftpclient.h	/^    bool connected;$/;"	m	class:Ftpclient
+connectinit	qtsrc/managewindow.cpp	/^void ManageWindow::connectinit()$/;"	f	class:ManageWindow
+connectionChanged	qtsrc/moc_connectionthread.cpp	/^void ConnectThread::connectionChanged(int _t1, QString _t2)$/;"	f	class:ConnectThread
+connecttest	qtsrc/classes/daemon.h	/^		ConnectThread  *connecttest;$/;"	m	class:Daemon
+contextMenu	qtsrc/dialogs/logcatdialog.h	/^    QMenu *contextMenu;$/;"	m	class:LogcatDialog
+controlCmd	qtsrc/player.cpp	/^void Player::controlCmd(const QString &cmd)$/;"	f	class:Player
+copySelectedToClipboard	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::copySelectedToClipboard()$/;"	f	class:LogcatDialog
+count	inc/typestruct_api.h	/^		int count;$/;"	m	struct:__allappnfo
+count	inc/typestruct_api.h	/^		int count;$/;"	m	struct:__allbookinfo
+count	inc/typestruct_api.h	/^		int count;$/;"	m	struct:__allinfo
+count	inc/typestruct_api.h	/^		int count;$/;"	m	struct:__allmmsinfo
+curPath	qtsrc/widgets/ftpclient.h	/^    QString curPath;$/;"	m	class:Ftpclient
+currentDownload	qtsrc/classes/downloadmanager.h	/^    QNetworkReply *currentDownload;$/;"	m	class:DownloadManager
+currentDownload	qtsrc/widgets/webPage.h	/^		QNetworkReply *currentDownload[10000];$/;"	m	class:webPage
+currentFileName	qtsrc/managewindow.h	/^		QString currentFileName;$/;"	m	class:ManageWindow
+currentPathChanged	qtsrc/moc_ftpclient.cpp	/^void Ftpclient::currentPathChanged(const QString & _t1)$/;"	f	class:Ftpclient
+current_device	inc/manager_api.h	/^	char current_device[16];$/;"	m	struct:__deviceslist
+customEvent	qtsrc/backpthread.cpp	/^void Backthread::customEvent(QEvent* e){$/;"	f	class:Backthread
+customEvent	qtsrc/classes/daemon.cpp	/^void Daemon::customEvent(QEvent* e){$/;"	f	class:Daemon
+customEvent	qtsrc/managewindow.cpp	/^void ManageWindow::customEvent(QEvent* e){$/;"	f	class:ManageWindow
+data	qtsrc/classes/models/logcatmodel.cpp	/^QVariant LogcatModel::data(const QModelIndex &index, int role) const$/;"	f	class:LogcatModel
+data	qtsrc/picturelistmodel.cpp	/^QVariant PictureListModel::data(const QModelIndex &index, int role) const$/;"	f	class:PictureListModel
+deviceinit	src/mainthread.c	/^	void deviceinit()$/;"	f
+devicelist	src/manage.c	/^	char devicelist[20];$/;"	v
+deviceslist_t	inc/manager_api.h	/^}deviceslist_t;$/;"	t	typeref:struct:__deviceslist
+dialog	qtsrc/ui_dialog.h	/^    class dialog: public Ui_dialog {};$/;"	c	namespace:Ui
+dialogUi	qtsrc/managewindow.h	/^		Ui::dialog *dialogUi; $/;"	m	class:ManageWindow
+dialog_accept	qtsrc/dialogs/mms_dialog.cpp	/^void MMS_Dialog::dialog_accept()$/;"	f	class:MMS_Dialog
+displayUrlAddr	qtsrc/managewindow.cpp	/^void ManageWindow::displayUrlAddr(const QUrl &url)$/;"	f	class:ManageWindow
+dlg	qtsrc/managewindow.h	/^		QDialog *dlg = new QDialog;$/;"	m	class:ManageWindow
+down	src/down.c	/^void down()$/;"	f
+downLoadFile	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::downLoadFile(const QString &filename)$/;"	f	class:FtpClientWindow
+down_pthread	src/downthread.c	/^void* down_pthread(void* arg) $/;"	f
+downcount	qtsrc/widgets/webPage.h	/^		int downcount = -1;$/;"	m	class:webPage
+downcount	qtsrc/widgets/webPage.h	/^	int downcount;$/;"	m	struct:__alldownloadinfo
+downloadBtn	qtsrc/ui_ftpclientwindow.h	/^    QPushButton *downloadBtn;$/;"	m	class:Ui_FtpClientWindow
+downloadFile	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::downloadFile(const QString &filename)$/;"	f	class:Ftpclient
+downloadFinished	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::downloadFinished()$/;"	f	class:DownloadManager
+downloadFinished	qtsrc/widgets/webPage.cpp	/^void webPage::downloadFinished()$/;"	f	class:webPage
+downloadProgress	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)$/;"	f	class:DownloadManager
+downloadProgress	qtsrc/widgets/webPage.cpp	/^void webPage::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)$/;"	f	class:webPage
+downloadQueue	qtsrc/classes/downloadmanager.h	/^    QQueue<QUrl> downloadQueue;$/;"	m	class:DownloadManager
+downloadReadyRead	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::downloadReadyRead()$/;"	f	class:DownloadManager
+downloadReadyRead	qtsrc/widgets/webPage.cpp	/^void webPage::downloadReadyRead()$/;"	f	class:webPage
+downloadTime	qtsrc/classes/downloadmanager.h	/^    QTime downloadTime;$/;"	m	class:DownloadManager
+downloadTime	qtsrc/widgets/webPage.h	/^		QTime downloadTime;$/;"	m	class:webPage
+download_info	qtsrc/managewindow.h	/^		downloadindex_t download_info[MAXLIST];$/;"	m	class:ManageWindow
+download_thread_init	src/downthread.c	/^int download_thread_init(void)$/;"	f
+downloadcount	qtsrc/classes/downloadpthread.h	/^		int downloadcount = 0; $/;"	m	class:DownloadThread
+downloadedCount	qtsrc/classes/downloadmanager.h	/^    int downloadedCount;$/;"	m	class:DownloadManager
+downloadindex_t	qtsrc/managewindow.h	/^		}downloadindex_t;$/;"	t	class:ManageWindow	typeref:struct:ManageWindow::__downloadindex
+downloadindex_t	qtsrc/widgets/webPage.h	/^}downloadindex_t;$/;"	t	typeref:struct:__downloadindex
+downloadinfo	qtsrc/classes/downloadpthread.cpp	/^void DownloadThread::downloadinfo(int count ,QString name,QString size,QString pecent, int speed,int state)$/;"	f	class:DownloadThread
+downloadlist	qtsrc/classes/downloadpthread.h	/^		QList<QString> downloadlist;$/;"	m	class:DownloadThread
+downloadlist	qtsrc/managewindow.h	/^		Downloadlist  downloadlist[1000];	$/;"	m	class:ManageWindow
+downloadlist_widget	qtsrc/ui_managewindow.h	/^    QWidget *downloadlist_widget;$/;"	m	class:Ui_ManageWindow
+downloadpath	qtsrc/managewindow.h	/^	QString downloadpath;$/;"	m	struct:__settingsargv
+downloadsign	qtsrc/widgets/webPage.h	/^		int downloadsign= 1;$/;"	m	class:webPage
+downloadthread	qtsrc/classes/daemon.h	/^		DownloadThread *downloadthread;$/;"	m	class:Daemon
+downloadwait	qtsrc/widgets/webPage.h	/^		QList<QString> downloadwait;$/;"	m	class:webPage
+downname	qtsrc/managewindow.h	/^		QLabel *downname[1000];$/;"	m	class:ManageWindow
+downname	qtsrc/ui_downlist.h	/^    QLabel *downname;$/;"	m	class:Ui_UiDownlist
+downprogress	qtsrc/managewindow.h	/^		QProgressBar *downprogress[1000];$/;"	m	class:ManageWindow
+downprogress	qtsrc/ui_downlist.h	/^    QProgressBar *downprogress;$/;"	m	class:Ui_UiDownlist
+downstat	qtsrc/managewindow.h	/^		QLabel *downstat[1000];$/;"	m	class:ManageWindow
+downstat	qtsrc/ui_downlist.h	/^    QLabel *downstat;$/;"	m	class:Ui_UiDownlist
+downthread	src/downthread.c	/^static downthread_t downthread;$/;"	v	file:
+downthread_t	src/downthread.c	/^}downthread_t;$/;"	t	typeref:struct:__downthread	file:
+dtcmr_accept	src/sockserver.c	/^	int dtcmr_accept(int fd)$/;"	f
+dtcmr_client_creat	src/sockserver.c	/^	int dtcmr_client_creat(char *serverip, short port, int type)$/;"	f
+dtcmr_free	src/sockserver.c	/^	void dtcmr_free(int fd)$/;"	f
+dtcmr_msg_t	src/sockserver.h	/^}dtcmr_msg_t;$/;"	t	typeref:struct:dtmsg
+dtcmr_rcvtimeout	src/sockserver.c	/^	static int dtcmr_rcvtimeout(int fd, char *buf, int leng, struct timeval *timeout)$/;"	f	file:
+dtcmr_recv	src/sockserver.c	/^	int dtcmr_recv(int fd, char *buf, int leng) $/;"	f
+dtcmr_recv_timeout	src/sockserver.c	/^	int dtcmr_recv_timeout(int fd, char *buf, int leng, struct timeval *timeout) $/;"	f
+dtcmr_send	src/sockserver.c	/^	int dtcmr_send(int fd, char *buf, int leng)$/;"	f
+dtcmr_serv_creat	src/sockserver.c	/^	int dtcmr_serv_creat(short sport, int listenback, int type)$/;"	f
+dtcmr_shotdown	src/sockserver.c	/^	void dtcmr_shotdown(int fd, int flags)$/;"	f
+dtcmr_udp_recv	src/sockserver.c	/^	int dtcmr_udp_recv(int fd, char *buf, int leng) $/;"	f
+dtcmr_udp_send	src/sockserver.c	/^	int dtcmr_udp_send(int fd, char *buf, int leng)$/;"	f
+dtmsg	src/sockserver.h	/^	dtcmr_msg_t *dtmsg;$/;"	m	struct:__cmr_msglib
+dtmsg	src/sockserver.h	/^typedef struct dtmsg{$/;"	s
+errnb	src/sockserver.h	/^	int errnb;$/;"	m	struct:__msglib_errno
+error	qtsrc/moc_player.cpp	/^void Player::error(QProcess::ProcessError _t1)$/;"	f	class:Player
+errstr	src/sockserver.h	/^	char *errstr;$/;"	m	struct:__msglib_errno
+exec_system	src/sh_module.c	/^int exec_system(char *argv)$/;"	f
+executeBufferLimitation	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::executeBufferLimitation()$/;"	f	class:LogcatDialog
+exitBtn	qtsrc/ui_ftpclientwindow.h	/^    QPushButton *exitBtn;$/;"	m	class:Ui_FtpClientWindow
+exit_sock	src/amservice.c	/^void exit_sock()$/;"	f
+exportSelectedToFile	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::exportSelectedToFile()$/;"	f	class:LogcatDialog
+fd	src/amservice.c	/^int fd;$/;"	v
+fds	src/usbpthread.c	/^	fd_set fds;$/;"	v
+file	qtsrc/widgets/ftpclient.h	/^    QFile *file;$/;"	m	class:Ftpclient
+file	src/file.c	/^file()$/;"	f
+file_pthread	src/filethread.c	/^void* file_pthread(void* arg) $/;"	f
+file_thread_init	src/filethread.c	/^int file_thread_init(void)$/;"	f
+fileinfo_t	inc/typestruct_api.h	/^	}fileinfo_t;$/;"	t	typeref:struct:__fileinfo
+filename	inc/typestruct_api.h	/^		char filename[50];$/;"	m	struct:__fileinfo
+filename	qtsrc/managewindow.h	/^			QString filename;$/;"	m	struct:ManageWindow::__downloadindex
+filename	qtsrc/widgets/webPage.h	/^		QString filename;$/;"	m	class:webPage
+filename	qtsrc/widgets/webPage.h	/^	QString filename;$/;"	m	struct:__downloadindex
+filepath	inc/typestruct_api.h	/^		char filepath[200];$/;"	m	struct:__fileinfo
+filesize	inc/typestruct_api.h	/^		char filesize[16];$/;"	m	struct:__fileinfo
+filethread	src/filethread.c	/^static filethread_t filethread;$/;"	v	file:
+filethread_t	src/filethread.c	/^}filethread_t;$/;"	t	typeref:struct:__filethread	file:
+filter	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::filter()$/;"	f	class:LogcatDialog
+filterAcceptsRow	qtsrc/classes/models/logcatmodel.cpp	/^bool SortFilterProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const$/;"	f	class:SortFilterProxyModel
+filterModel	qtsrc/dialogs/logcatdialog.h	/^    SortFilterProxyModel *filterModel;$/;"	m	class:LogcatDialog
+find_devices	src/manage.c	/^	int find_devices()$/;"	f
+finished	qtsrc/moc_downloadmanager.cpp	/^void DownloadManager::finished()$/;"	f	class:DownloadManager
+finished	qtsrc/moc_player.cpp	/^void Player::finished(int _t1, QProcess::ExitStatus _t2)$/;"	f	class:Player
+flags	qtsrc/classes/models/logcatmodel.cpp	/^Qt::ItemFlags LogcatModel::flags(const QModelIndex &index) const$/;"	f	class:LogcatModel
+freeresource	src/sockserver.c	/^	static inline void freeresource(int fd) $/;"	f	file:
+ftp	qtsrc/widgets/ftpclient.h	/^    QFtp ftp;$/;"	m	class:Ftpclient
+ftpConnect	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::ftpConnect()$/;"	f	class:Ftpclient
+ftpConnect	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::ftpConnect()$/;"	f	class:FtpClientWindow
+ftpHostChanged	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::ftpHostChanged()$/;"	f	class:FtpClientWindow
+ftpHostLB	qtsrc/ui_ftpclientwindow.h	/^    QLabel *ftpHostLB;$/;"	m	class:Ui_FtpClientWindow
+ftpHostLE	qtsrc/ui_ftpclientwindow.h	/^    QLineEdit *ftpHostLE;$/;"	m	class:Ui_FtpClientWindow
+ftpLogout	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::ftpLogout()$/;"	f	class:Ftpclient
+ftpPortChanged	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::ftpPortChanged()$/;"	f	class:FtpClientWindow
+ftpPortLB	qtsrc/ui_ftpclientwindow.h	/^    QLabel *ftpPortLB;$/;"	m	class:Ui_FtpClientWindow
+ftpPortLE	qtsrc/ui_ftpclientwindow.h	/^    QLineEdit *ftpPortLE;$/;"	m	class:Ui_FtpClientWindow
+ftpPwdChanged	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::ftpPwdChanged()$/;"	f	class:FtpClientWindow
+ftpUserChanged	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::ftpUserChanged()$/;"	f	class:FtpClientWindow
+ftpclient	qtsrc/widgets/ftpclientwindow.h	/^    Ftpclient ftpclient;$/;"	m	class:FtpClientWindow
+ftpcommandFinished	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::ftpcommandFinished(int id, bool error)$/;"	f	class:Ftpclient
+ftpcommandStarted	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::ftpcommandStarted(int id)$/;"	f	class:Ftpclient
+ftpfilelist	qtsrc/managewindow.h	/^		FtpClientWindow *ftpfilelist;$/;"	m	class:ManageWindow
+getCurrentPath	qtsrc/widgets/ftpclient.h	/^    QString getCurrentPath() const { return curPath; }$/;"	f	class:Ftpclient
+getList	qtsrc/classes/models/logcatmodel.cpp	/^QList< LogcatMessage > LogcatModel::getList()$/;"	f	class:LogcatModel
+getRow	qtsrc/classes/models/logcatmodel.cpp	/^LogcatMessage LogcatModel::getRow(int row)$/;"	f	class:LogcatModel
+getStaticMetaObject	qtsrc/moc_backpthread.cpp	/^const QMetaObject &Backthread::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Backthread
+getStaticMetaObject	qtsrc/moc_connectionthread.cpp	/^const QMetaObject &ConnectThread::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:ConnectThread
+getStaticMetaObject	qtsrc/moc_daemon.cpp	/^const QMetaObject &Daemon::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Daemon
+getStaticMetaObject	qtsrc/moc_downlist.cpp	/^const QMetaObject &Downloadlist::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Downloadlist
+getStaticMetaObject	qtsrc/moc_downloadmanager.cpp	/^const QMetaObject &DownloadManager::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:DownloadManager
+getStaticMetaObject	qtsrc/moc_downloadpthread.cpp	/^const QMetaObject &DownloadThread::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:DownloadThread
+getStaticMetaObject	qtsrc/moc_ftpclient.cpp	/^const QMetaObject &Ftpclient::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Ftpclient
+getStaticMetaObject	qtsrc/moc_ftpclientwindow.cpp	/^const QMetaObject &FtpClientWindow::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:FtpClientWindow
+getStaticMetaObject	qtsrc/moc_logcatdialog.cpp	/^const QMetaObject &LogcatDialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:LogcatDialog
+getStaticMetaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject &LogcatModel::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:LogcatModel
+getStaticMetaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject &SortFilterProxyModel::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:SortFilterProxyModel
+getStaticMetaObject	qtsrc/moc_managewindow.cpp	/^const QMetaObject &ManageWindow::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:ManageWindow
+getStaticMetaObject	qtsrc/moc_mms_dialog.cpp	/^const QMetaObject &MMS_Dialog::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:MMS_Dialog
+getStaticMetaObject	qtsrc/moc_picturelistmodel.cpp	/^const QMetaObject &PictureListModel::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:PictureListModel
+getStaticMetaObject	qtsrc/moc_player.cpp	/^const QMetaObject &Player::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Player
+getStaticMetaObject	qtsrc/moc_processpthread.cpp	/^const QMetaObject &ProcessThread::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:ProcessThread
+getStaticMetaObject	qtsrc/moc_settings.cpp	/^const QMetaObject &Mysetting::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:Mysetting
+getStaticMetaObject	qtsrc/moc_webPage.cpp	/^const QMetaObject &webPage::getStaticMetaObject() { return staticMetaObject; }$/;"	f	class:webPage
+getUrlStr	qtsrc/widgets/ftpclient.cpp	/^QString Ftpclient::getUrlStr(const QUrl &url)$/;"	f	class:Ftpclient
+get_curdev	src/manage.c	/^	void get_curdev(char *devname)$/;"	f
+get_data	qtsrc/dialogs/mms_dialog.cpp	/^void MMS_Dialog::get_data()$/;"	f	class:MMS_Dialog
+get_info	inc/typestruct_api.h	/^		appinfo_t get_info[APPMAXNU];$/;"	m	struct:__allappnfo
+get_info	inc/typestruct_api.h	/^		bookinfo_t get_info[BOOKMAXNU];$/;"	m	struct:__allbookinfo
+get_info	inc/typestruct_api.h	/^		fileinfo_t get_info[MAXNU];$/;"	m	struct:__allinfo
+get_info	inc/typestruct_api.h	/^		mmsinfo_t get_info[BOOKMAXNU];$/;"	m	struct:__allmmsinfo
+get_info	qtsrc/widgets/webPage.h	/^	downloadindex_t get_info[MAXLIST];$/;"	m	struct:__alldownloadinfo
+get_message	qtsrc/managewindow.cpp	/^void ManageWindow::get_message()$/;"	f	class:ManageWindow
+getappinfo	src/app.c	/^	void getappinfo(allappinfo_t *uiappinfo)$/;"	f
+getbookbuf	src/amservice.c	/^char getbookbuf[1024 * 1000] = {0};$/;"	v
+getbookinfo	src/book.c	/^	void getbookinfo(allbookinfo_t *uibookinfo)$/;"	f
+getbuf	src/amservice.c	/^char getbuf[1024 * 1000] = {0};$/;"	v
+getminmsglibfd	src/sockserver.c	/^	static inline int getminmsglibfd(void)$/;"	f	file:
+getmmsbuf	src/amservice.c	/^char getmmsbuf[1024 * 10000] = {0};$/;"	v
+getmmsinfo	src/mms.c	/^	void getmmsinfo(allmmsinfo_t *uimmsinfo)$/;"	f
+getmsgliberrinfo	src/sockserver.c	/^	char *getmsgliberrinfo(int errnb)$/;"	f
+getstoragebuf	src/amservice.c	/^char getstoragebuf[200] = {0};$/;"	v
+getstorageinfo	src/storage.c	/^	void getstorageinfo(storageinfo_t *uistorageinfo)$/;"	f
+goBack	qtsrc/managewindow.h	/^		QPushButton *goBack;$/;"	m	class:ManageWindow
+goForward	qtsrc/managewindow.h	/^		QPushButton *goForward;$/;"	m	class:ManageWindow
+goto_360	qtsrc/managewindow.cpp	/^void ManageWindow::goto_360()$/;"	f	class:ManageWindow
+goto_applist	qtsrc/managewindow.cpp	/^void ManageWindow::goto_applist()$/;"	f	class:ManageWindow
+goto_book	qtsrc/managewindow.cpp	/^void ManageWindow::goto_book()$/;"	f	class:ManageWindow
+goto_booksendmms	qtsrc/managewindow.cpp	/^void ManageWindow::goto_booksendmms()$/;"	f	class:ManageWindow
+goto_call	qtsrc/managewindow.cpp	/^void ManageWindow::goto_call()$/;"	f	class:ManageWindow
+goto_imagelist	qtsrc/managewindow.cpp	/^void ManageWindow::goto_imagelist()$/;"	f	class:ManageWindow
+goto_install	qtsrc/managewindow.cpp	/^void ManageWindow::goto_install()$/;"	f	class:ManageWindow
+goto_jf	qtsrc/managewindow.cpp	/^void ManageWindow::goto_jf()$/;"	f	class:ManageWindow
+goto_manager	qtsrc/managewindow.cpp	/^void ManageWindow::goto_manager()$/;"	f	class:ManageWindow
+goto_sendmms	qtsrc/managewindow.cpp	/^void ManageWindow::goto_sendmms()$/;"	f	class:ManageWindow
+goto_setdownloadpath	qtsrc/managewindow.cpp	/^void ManageWindow::goto_setdownloadpath()$/;"	f	class:ManageWindow
+goto_settings	qtsrc/managewindow.cpp	/^void ManageWindow::goto_settings()$/;"	f	class:ManageWindow
+goto_storage	qtsrc/managewindow.cpp	/^void ManageWindow::goto_storage()$/;"	f	class:ManageWindow
+goto_uninstall	qtsrc/managewindow.cpp	/^void ManageWindow::goto_uninstall()$/;"	f	class:ManageWindow
+goto_wdj	qtsrc/managewindow.cpp	/^void ManageWindow::goto_wdj()$/;"	f	class:ManageWindow
+gridLayout	qtsrc/ui_ftpclientwindow.h	/^    QGridLayout *gridLayout;$/;"	m	class:Ui_FtpClientWindow
+gridLayoutWidget	qtsrc/ui_logcatdialog.h	/^    QWidget *gridLayoutWidget;$/;"	m	class:Ui_LogcatDialog
+handleUnsupportedContent	qtsrc/widgets/webPage.cpp	/^void webPage::handleUnsupportedContent(QNetworkReply *reply)$/;"	f	class:webPage
+handle_error	src/sockserver.h	34;"	d
+headerData	qtsrc/classes/models/logcatmodel.cpp	/^QVariant LogcatModel::headerData(int section, Qt::Orientation orientation, int role) const$/;"	f	class:LogcatModel
+horizontalLayout	qtsrc/ui_ftpclientwindow.h	/^    QHBoxLayout *horizontalLayout;$/;"	m	class:Ui_FtpClientWindow
+horizontalSpacer	qtsrc/ui_logcatdialog.h	/^    QSpacerItem *horizontalSpacer;$/;"	m	class:Ui_LogcatDialog
+horizontalSpacer_2	qtsrc/ui_logcatdialog.h	/^    QSpacerItem *horizontalSpacer_2;$/;"	m	class:Ui_LogcatDialog
+horizontalSpacer_3	qtsrc/ui_logcatdialog.h	/^    QSpacerItem *horizontalSpacer_3;$/;"	m	class:Ui_LogcatDialog
+i	src/amservice.c	/^int i = 0;$/;"	v
+image	qtsrc/managewindow.h	/^	int image= 1;$/;"	m	struct:__refreshsign
+imageinfo	inc/typestruct.h	/^allinfo_t imageinfo;$/;"	v
+imagelist	qtsrc/ui_managewindow.h	/^    QListView *imagelist;$/;"	m	class:Ui_ManageWindow
+initConnection	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::initConnection()$/;"	f	class:Ftpclient
+initConnection	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::initConnection()$/;"	f	class:FtpClientWindow
+insertMessage	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::insertMessage(LogcatMessage logcatMessage)$/;"	f	class:LogcatModel
+insertMessage	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::insertMessage(int position, LogcatMessage logcatMessage)$/;"	f	class:LogcatModel
+insertRows	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::insertRows(int position, int rows, const QModelIndex &index)$/;"	f	class:LogcatModel
+installapp	src/manage.c	/^	char installapp[100] = {0};$/;"	v
+isDir	qtsrc/widgets/ftpclient.cpp	/^bool Ftpclient::isDir(const QString &str) const$/;"	f	class:Ftpclient
+isDir	qtsrc/widgets/ftpclientwindow.cpp	/^bool FtpClientWindow::isDir(const QString &str) const$/;"	f	class:FtpClientWindow
+isDirHash	qtsrc/widgets/ftpclient.h	/^	QHash<QString, bool> isDirHash;$/;"	m	class:Ftpclient
+iteration	qtsrc/classes/textprogressbar.h	/^    int iteration;$/;"	m	class:TextProgressBar
+iteration	qtsrc/widgets/webPage.h	/^		int iteration = 0;$/;"	m	class:webPage
+judgefd	src/sockserver.c	/^	static inline int judgefd(int fd, int flags)$/;"	f	file:
+label	qtsrc/managewindow.h	/^		QLabel* label;$/;"	m	class:ManageWindow
+label	qtsrc/ui_logcatdialog.h	/^    QLabel *label;$/;"	m	class:Ui_LogcatDialog
+label_5	qtsrc/ui_managewindow.h	/^    QLabel *label_5;$/;"	m	class:Ui_ManageWindow
+label_6	qtsrc/ui_managewindow.h	/^    QLabel *label_6;$/;"	m	class:Ui_ManageWindow
+layoutLogcat	qtsrc/ui_logcatdialog.h	/^    QGridLayout *layoutLogcat;$/;"	m	class:Ui_LogcatDialog
+layoutWidget	qtsrc/ui_ftpclientwindow.h	/^    QWidget *layoutWidget;$/;"	m	class:Ui_FtpClientWindow
+layoutWidget_2	qtsrc/ui_ftpclientwindow.h	/^    QWidget *layoutWidget_2;$/;"	m	class:Ui_FtpClientWindow
+len	src/manage.c	/^	int len  = 0;$/;"	v
+limit	qtsrc/classes/downloadpthread.h	/^		int limit	= 0;$/;"	m	class:DownloadThread
+lineEdit	qtsrc/ui_logcatdialog.h	/^    QLineEdit *lineEdit;$/;"	m	class:Ui_LogcatDialog
+linkBtn	qtsrc/ui_ftpclientwindow.h	/^    QPushButton *linkBtn;$/;"	m	class:Ui_FtpClientWindow
+list	inc/manager_api.h	/^	char * list[16];$/;"	m	struct:__deviceslist
+listItemChanged	qtsrc/managewindow.cpp	/^void ManageWindow::listItemChanged(const QModelIndex &current, const QModelIndex &previous)$/;"	f	class:ManageWindow
+listItemCtn	qtsrc/widgets/ftpclientwindow.h	/^	QList<QListWidgetItem*> listItemCtn;$/;"	m	class:FtpClientWindow
+listModel	qtsrc/managewindow.h	/^		PictureListModel *listModel;$/;"	m	class:ManageWindow
+listWidget	qtsrc/ui_ftpclientwindow.h	/^    QListWidget *listWidget;$/;"	m	class:Ui_FtpClientWindow
+loadLink	qtsrc/moc_webPage.cpp	/^void webPage::loadLink(const QUrl & _t1)$/;"	f	class:webPage
+loadUrlAddr	qtsrc/managewindow.cpp	/^void ManageWindow::loadUrlAddr()$/;"	f	class:ManageWindow
+logcatList	qtsrc/classes/models/logcatmodel.h	/^    QList< LogcatMessage > logcatList;$/;"	m	class:LogcatModel
+logcatModel	qtsrc/dialogs/logcatdialog.h	/^    LogcatModel *logcatModel;$/;"	m	class:LogcatDialog
+logfp	qtsrc/backpthread.h	/^	FILE* logfp;$/;"	m	class:Backthread
+loginId	qtsrc/widgets/ftpclient.h	/^    int connectId, loginId, closeId;$/;"	m	class:Ftpclient
+m_anim	qtsrc/managewindow.h	/^		Animation *m_anim;$/;"	m	class:ManageWindow
+m_devices	qtsrc/managewindow.h	/^		deviceslist_t m_devices;$/;"	m	class:ManageWindow
+m_path	qtsrc/animation.h	/^    QPainterPath m_path;$/;"	m	class:Animation
+m_pathType	qtsrc/animation.h	/^    PathType m_pathType;$/;"	m	class:Animation
+m_requestFileName	qtsrc/widgets/webPage.h	/^		bool m_requestFileName;$/;"	m	class:webPage
+main	qtsrc/main.cpp	/^int main(int argc, char *argv[])$/;"	f
+main	src/usbevent.c	/^main()$/;"	f
+main	test/client.c	/^int main(int argc,char *argv[])$/;"	f
+mainWindowQuit	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::mainWindowQuit()$/;"	f	class:FtpClientWindow
+main_pthread	src/mainthread.c	/^	void* main_pthread(void* arg) $/;"	f
+main_thread_init	src/mainthread.c	/^	int main_thread_init(void)$/;"	f
+mainthread	src/mainthread.c	/^	static mainthread_t mainthread;$/;"	v	file:
+mainthread_t	src/mainthread.c	/^	}mainthread_t;$/;"	t	typeref:struct:__mainthread	file:
+manager	qtsrc/classes/downloadmanager.h	/^    QNetworkAccessManager manager;$/;"	m	class:DownloadManager
+manager	qtsrc/widgets/webPage.h	/^		QNetworkAccessManager manager;$/;"	m	class:webPage
+manager_modulse_init	src/monitorusb.c	/^int manager_modulse_init(void)$/;"	f
+manager_pthread	src/monitorusb.c	/^void* manager_pthread(void* arg) $/;"	f
+managermod	src/monitorusb.c	/^static managermod_t managermod;$/;"	v	file:
+managermod_t	src/monitorusb.c	/^}managermod_t;$/;"	t	typeref:struct:__managermod	file:
+managerp	src/amservice.c	/^	void *managerp;$/;"	m	struct:__sockthread	file:
+managerp	src/appthread.c	/^	void *managerp;$/;"	m	struct:__appthread	file:
+managerp	src/downthread.c	/^	void *managerp;$/;"	m	struct:__downthread	file:
+managerp	src/filethread.c	/^	void *managerp;$/;"	m	struct:__filethread	file:
+managerp	src/mainthread.c	/^		void *managerp;$/;"	m	struct:__mainthread	file:
+managerp	src/monitorusb.c	/^	void *managerp;$/;"	m	struct:__managermod	file:
+managerp	src/mutexpthread.c	/^	void *managerp;$/;"	m	struct:__mutexthread	file:
+managerp	src/netthread.c	/^	void *managerp;$/;"	m	struct:__netthread	file:
+managerp	src/usbpthread.c	/^		void *managerp;$/;"	m	struct:__usbthread	file:
+maximum	qtsrc/classes/textprogressbar.h	/^    qint64 maximum;$/;"	m	class:TextProgressBar
+maximum	qtsrc/widgets/webPage.h	/^		qint64 maximum;$/;"	m	class:webPage
+memoryAvail	inc/typestruct_api.h	/^		char memoryAvail[32];       \/\/ 手机内存剩余容量$/;"	m	struct:__storageinfo
+memorySize	inc/typestruct_api.h	/^		char memorySize[32];        \/\/ 手机内存总容量$/;"	m	struct:__storageinfo
+menuBar	qtsrc/ui_managewindow.h	/^    QMenuBar *menuBar;$/;"	m	class:Ui_ManageWindow
+message	qtsrc/classes/models/logcatmodel.h	/^    QString message;$/;"	m	class:LogcatMessage
+message	qtsrc/classes/textprogressbar.h	/^    QString message;$/;"	m	class:TextProgressBar
+metaObject	qtsrc/moc_backpthread.cpp	/^const QMetaObject *Backthread::metaObject() const$/;"	f	class:Backthread
+metaObject	qtsrc/moc_connectionthread.cpp	/^const QMetaObject *ConnectThread::metaObject() const$/;"	f	class:ConnectThread
+metaObject	qtsrc/moc_daemon.cpp	/^const QMetaObject *Daemon::metaObject() const$/;"	f	class:Daemon
+metaObject	qtsrc/moc_downlist.cpp	/^const QMetaObject *Downloadlist::metaObject() const$/;"	f	class:Downloadlist
+metaObject	qtsrc/moc_downloadmanager.cpp	/^const QMetaObject *DownloadManager::metaObject() const$/;"	f	class:DownloadManager
+metaObject	qtsrc/moc_downloadpthread.cpp	/^const QMetaObject *DownloadThread::metaObject() const$/;"	f	class:DownloadThread
+metaObject	qtsrc/moc_ftpclient.cpp	/^const QMetaObject *Ftpclient::metaObject() const$/;"	f	class:Ftpclient
+metaObject	qtsrc/moc_ftpclientwindow.cpp	/^const QMetaObject *FtpClientWindow::metaObject() const$/;"	f	class:FtpClientWindow
+metaObject	qtsrc/moc_logcatdialog.cpp	/^const QMetaObject *LogcatDialog::metaObject() const$/;"	f	class:LogcatDialog
+metaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject *LogcatModel::metaObject() const$/;"	f	class:LogcatModel
+metaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject *SortFilterProxyModel::metaObject() const$/;"	f	class:SortFilterProxyModel
+metaObject	qtsrc/moc_managewindow.cpp	/^const QMetaObject *ManageWindow::metaObject() const$/;"	f	class:ManageWindow
+metaObject	qtsrc/moc_mms_dialog.cpp	/^const QMetaObject *MMS_Dialog::metaObject() const$/;"	f	class:MMS_Dialog
+metaObject	qtsrc/moc_picturelistmodel.cpp	/^const QMetaObject *PictureListModel::metaObject() const$/;"	f	class:PictureListModel
+metaObject	qtsrc/moc_player.cpp	/^const QMetaObject *Player::metaObject() const$/;"	f	class:Player
+metaObject	qtsrc/moc_processpthread.cpp	/^const QMetaObject *ProcessThread::metaObject() const$/;"	f	class:ProcessThread
+metaObject	qtsrc/moc_settings.cpp	/^const QMetaObject *Mysetting::metaObject() const$/;"	f	class:Mysetting
+metaObject	qtsrc/moc_webPage.cpp	/^const QMetaObject *webPage::metaObject() const$/;"	f	class:webPage
+mms	qtsrc/managewindow.h	/^	int mms	= 1;$/;"	m	struct:__refreshsign
+mms_dialog	qtsrc/managewindow.h	/^		MMS_Dialog *mms_dialog;$/;"	m	class:ManageWindow
+mms_info	src/manage.c	/^		char mms_info[200];$/;"	m	struct:__sendmmsinfo	file:
+mms_no	src/manage.c	/^		char mms_no[15];$/;"	m	struct:__sendmmsinfo	file:
+mms_widget	qtsrc/ui_managewindow.h	/^    QWidget *mms_widget;$/;"	m	class:Ui_ManageWindow
+mmsbody	inc/typestruct_api.h	/^		char mmsbody[1024*2];$/;"	m	struct:__mmsinfo
+mmsdata	inc/typestruct_api.h	/^		char mmsdata[1024];$/;"	m	struct:__sendmessage
+mmsdata	qtsrc/dialogs/mms_dialog.h	/^		QString mmsdata;$/;"	m	class:MMS_Dialog
+mmsdata	qtsrc/managewindow.h	/^		QString mmsdata;$/;"	m	class:ManageWindow
+mmsdate	inc/typestruct_api.h	/^		char mmsdate[25];$/;"	m	struct:__mmsinfo
+mmsdlg_accept	qtsrc/moc_mms_dialog.cpp	/^void MMS_Dialog::mmsdlg_accept()$/;"	f	class:MMS_Dialog
+mmsinfo	inc/typestruct.h	/^allmmsinfo_t mmsinfo;$/;"	v
+mmsinfo_t	inc/typestruct_api.h	/^	}mmsinfo_t;$/;"	t	typeref:struct:__mmsinfo
+mmsname	inc/typestruct_api.h	/^		char mmsname[20];$/;"	m	struct:__mmsinfo
+mmsnumber	inc/typestruct_api.h	/^		char mmsnumber[18];$/;"	m	struct:__mmsinfo
+mmsnumber	inc/typestruct_api.h	/^		char mmsnumber[18];$/;"	m	struct:__sendmessage
+mmsnumber	qtsrc/dialogs/mms_dialog.h	/^		QString mmsnumber;$/;"	m	class:MMS_Dialog
+mmsnumber	qtsrc/managewindow.h	/^		QString mmsnumber;$/;"	m	class:ManageWindow
+monitor_usb	src/usbpthread.c	/^	int monitor_usb()$/;"	f
+mplayerProcess	qtsrc/player.h	/^	QProcess *mplayerProcess;$/;"	m	class:Player
+msg	qtsrc/backpthread.cpp	/^int AMEvent::msg() const{$/;"	f	class:AMEvent
+msgfd	src/sockserver.h	/^	int msgfd;$/;"	m	struct:__cmr_msglib
+msglib_errno_t	src/sockserver.h	/^}msglib_errno_t;$/;"	t	typeref:struct:__msglib_errno
+msgliberr_table	src/sockserver.c	/^	msglib_errno_t msgliberr_table[] = {$/;"	v
+msglibfd	src/sockserver.c	/^	static cmr_msglib_t msglibfd[MAXSOCKETNO];$/;"	v	file:
+music	qtsrc/managewindow.h	/^	int music= 1;$/;"	m	struct:__refreshsign
+muteButton	qtsrc/managewindow.h	/^		QPushButton *muteButton;$/;"	m	class:ManageWindow
+mutex_pthread	src/mutexpthread.c	/^void* mutex_pthread(void* arg) $/;"	f
+mutex_pthread_modules_kill	src/mutexpthread.c	/^void mutex_pthread_modules_kill()$/;"	f
+mutex_thread_init	src/mutexpthread.c	/^int mutex_thread_init(void)$/;"	f
+mutexmanager	src/amservice.c	/^int mutexmanager()$/;"	f
+mutexthread	src/mutexpthread.c	/^static mutexthread_t mutexthread;$/;"	v	file:
+mutexthread_t	src/mutexpthread.c	/^}mutexthread_t;$/;"	t	typeref:struct:__mutexthread	file:
+mysettingdefault	qtsrc/classes/settings.cpp	/^void Mysetting::mysettingdefault()$/;"	f	class:Mysetting
+mysettinginit	qtsrc/classes/settings.cpp	/^void Mysetting::mysettinginit()$/;"	f	class:Mysetting
+net_mutex	src/amservice.c	/^static pthread_mutex_t net_mutex;$/;"	v	file:
+net_pthread	src/netthread.c	/^void* net_pthread(void* arg) $/;"	f
+net_pthread_modules_kill	src/netthread.c	/^void net_pthread_modules_kill()$/;"	f
+net_thread_init	src/netthread.c	/^int net_thread_init(void)$/;"	f
+netthread	src/netthread.c	/^static netthread_t netthread;$/;"	v	file:
+netthread_t	src/netthread.c	/^}netthread_t;$/;"	t	typeref:struct:__netthread	file:
+num	src/amservice.c	/^int num=1;$/;"	v
+on_Btn_app_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_app_clicked()$/;"	f	class:ManageWindow
+on_Btn_book_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_book_clicked()$/;"	f	class:ManageWindow
+on_Btn_connect_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_connect_clicked()$/;"	f	class:ManageWindow
+on_Btn_massage_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_massage_clicked()$/;"	f	class:ManageWindow
+on_Btn_music_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_music_clicked()$/;"	f	class:ManageWindow
+on_Btn_video_clicked	qtsrc/managewindow.cpp	/^void  ManageWindow::on_Btn_video_clicked()$/;"	f	class:ManageWindow
+on_checkBoxAutoScroll_toggled	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::on_checkBoxAutoScroll_toggled(bool checked)$/;"	f	class:LogcatDialog
+on_pushButtonClearLogcat_pressed	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::on_pushButtonClearLogcat_pressed()$/;"	f	class:LogcatDialog
+on_spinBoxBufferLimit_editingFinished	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::on_spinBoxBufferLimit_editingFinished()$/;"	f	class:LogcatDialog
+opacity	qtsrc/managewindow.h	/^	int opacity = 0;$/;"	m	struct:__settingsargv
+openFileButton	qtsrc/managewindow.h	/^		QPushButton *openFileButton;$/;"	m	class:ManageWindow
+openLink	qtsrc/moc_webPage.cpp	/^void webPage::openLink(const QUrl & _t1)$/;"	f	class:webPage
+open_jpsystem_init	src/monitorusb.c	/^static int open_jpsystem_init(void)$/;"	f	file:
+open_logcat	qtsrc/managewindow.cpp	/^void ManageWindow::open_logcat()$/;"	f	class:ManageWindow
+operator =	qtsrc/classes/models/logcatmodel.cpp	/^LogcatMessage& LogcatMessage::operator =(const LogcatMessage& logcatMessage)$/;"	f	class:LogcatMessage
+output	qtsrc/classes/downloadmanager.h	/^    QFile output;$/;"	m	class:DownloadManager
+output	qtsrc/classes/processpthread.h	/^		QString output = NULL;$/;"	m	class:ProcessThread
+output	qtsrc/widgets/webPage.h	/^		QFile output;$/;"	m	class:webPage
+page	qtsrc/managewindow.h	/^		webPage *page;$/;"	m	class:ManageWindow
+pageReload	qtsrc/managewindow.h	/^		QPushButton *pageReload;$/;"	m	class:ManageWindow
+pageStop	qtsrc/managewindow.h	/^		QPushButton *pageStop;$/;"	m	class:ManageWindow
+password	qtsrc/classes/settings.h	/^	QString password;$/;"	m	struct:Login
+passwordLB	qtsrc/ui_ftpclientwindow.h	/^    QLabel *passwordLB;$/;"	m	class:Ui_FtpClientWindow
+passwordLE	qtsrc/ui_ftpclientwindow.h	/^    QLineEdit *passwordLE;$/;"	m	class:Ui_FtpClientWindow
+pellucidity	qtsrc/ui_managewindow.h	/^    QSlider *pellucidity;$/;"	m	class:Ui_ManageWindow
+percent	qtsrc/managewindow.h	/^			int percent;$/;"	m	struct:ManageWindow::__downloadindex
+percent	qtsrc/widgets/webPage.h	/^		int percent;$/;"	m	class:webPage
+percent	qtsrc/widgets/webPage.h	/^	int percent;$/;"	m	struct:__downloadindex
+pictureFiles	qtsrc/picturelistmodel.h	/^	QStringList pictureFiles;$/;"	m	class:PictureListModel
+pid	qtsrc/classes/models/logcatmodel.h	/^    QString pid;$/;"	m	class:LogcatMessage
+pixmaps	qtsrc/picturelistmodel.h	/^	QList<QPixmap> pixmaps;$/;"	m	class:PictureListModel
+play	qtsrc/player.cpp	/^void Player::play(const QString &fileName)$/;"	f	class:Player
+playButton	qtsrc/managewindow.h	/^		QPushButton *playButton;$/;"	m	class:ManageWindow
+player	qtsrc/managewindow.h	/^		Player *player;$/;"	m	class:ManageWindow
+post_daemon	qtsrc/classes/daemon.cpp	/^void Daemon::post_daemon(int cmd){$/;"	f	class:Daemon
+post_daemon	qtsrc/managewindow.cpp	/^void ManageWindow::post_daemon(int cmd){$/;"	f	class:ManageWindow
+post_exit	qtsrc/managewindow.cpp	/^void ManageWindow::post_exit(int cmd){$/;"	f	class:ManageWindow
+post_insatll	qtsrc/backpthread.cpp	/^void Backthread::post_insatll(int res){$/;"	f	class:Backthread
+post_install	qtsrc/managewindow.cpp	/^void ManageWindow::post_install(int cmd){$/;"	f	class:ManageWindow
+post_monitorusb	qtsrc/managewindow.cpp	/^void ManageWindow::post_monitorusb(int cmd){$/;"	f	class:ManageWindow
+post_refresh	qtsrc/classes/daemon.cpp	/^void Daemon::post_refresh(int cmd){$/;"	f	class:Daemon
+post_refresh	qtsrc/managewindow.cpp	/^void ManageWindow::post_refresh(int cmd){$/;"	f	class:ManageWindow
+post_sendmms	qtsrc/backpthread.cpp	/^void Backthread::post_sendmms(int res){$/;"	f	class:Backthread
+post_sendmms	qtsrc/managewindow.cpp	/^void ManageWindow::post_sendmms(int cmd){$/;"	f	class:ManageWindow
+post_softinit	qtsrc/backpthread.cpp	/^void Backthread::post_softinit(int res){$/;"	f	class:Backthread
+post_softinit	qtsrc/managewindow.cpp	/^void ManageWindow::post_softinit(int cmd){$/;"	f	class:ManageWindow
+post_test	qtsrc/managewindow.cpp	/^void ManageWindow::post_test(int cmd){$/;"	f	class:ManageWindow
+post_uninsatll	qtsrc/backpthread.cpp	/^void Backthread::post_uninsatll(int res){$/;"	f	class:Backthread
+post_uninstall	qtsrc/managewindow.cpp	/^void ManageWindow::post_uninstall(int cmd){$/;"	f	class:ManageWindow
+post_usbevent	qtsrc/backpthread.cpp	/^void Backthread::post_usbevent(int res){$/;"	f	class:Backthread
+proces	qtsrc/dialogs/logcatdialog.h	/^    QProcess *proces;$/;"	m	class:LogcatDialog
+progressBar	qtsrc/classes/downloadmanager.h	/^    TextProgressBar progressBar;$/;"	m	class:DownloadManager
+progressDlg	qtsrc/widgets/ftpclient.h	/^    QProgressDialog *progressDlg;$/;"	m	class:Ftpclient
+pushButton	qtsrc/ui_managewindow.h	/^    QPushButton *pushButton;$/;"	m	class:Ui_ManageWindow
+pushButtonClearLogcat	qtsrc/ui_logcatdialog.h	/^    QPushButton *pushButtonClearLogcat;$/;"	m	class:Ui_LogcatDialog
+qCleanupResources_image	qtsrc/qrc_image.cpp	/^int QT_MANGLE_NAMESPACE(qCleanupResources_image)()$/;"	f
+qInitResources_image	qtsrc/qrc_image.cpp	/^int QT_MANGLE_NAMESPACE(qInitResources_image)()$/;"	f
+qt_meta_data_Backthread	qtsrc/moc_backpthread.cpp	/^static const uint qt_meta_data_Backthread[] = {$/;"	v	file:
+qt_meta_data_ConnectThread	qtsrc/moc_connectionthread.cpp	/^static const uint qt_meta_data_ConnectThread[] = {$/;"	v	file:
+qt_meta_data_Daemon	qtsrc/moc_daemon.cpp	/^static const uint qt_meta_data_Daemon[] = {$/;"	v	file:
+qt_meta_data_DownloadManager	qtsrc/moc_downloadmanager.cpp	/^static const uint qt_meta_data_DownloadManager[] = {$/;"	v	file:
+qt_meta_data_DownloadThread	qtsrc/moc_downloadpthread.cpp	/^static const uint qt_meta_data_DownloadThread[] = {$/;"	v	file:
+qt_meta_data_Downloadlist	qtsrc/moc_downlist.cpp	/^static const uint qt_meta_data_Downloadlist[] = {$/;"	v	file:
+qt_meta_data_FtpClientWindow	qtsrc/moc_ftpclientwindow.cpp	/^static const uint qt_meta_data_FtpClientWindow[] = {$/;"	v	file:
+qt_meta_data_Ftpclient	qtsrc/moc_ftpclient.cpp	/^static const uint qt_meta_data_Ftpclient[] = {$/;"	v	file:
+qt_meta_data_LogcatDialog	qtsrc/moc_logcatdialog.cpp	/^static const uint qt_meta_data_LogcatDialog[] = {$/;"	v	file:
+qt_meta_data_LogcatModel	qtsrc/moc_logcatmodel.cpp	/^static const uint qt_meta_data_LogcatModel[] = {$/;"	v	file:
+qt_meta_data_MMS_Dialog	qtsrc/moc_mms_dialog.cpp	/^static const uint qt_meta_data_MMS_Dialog[] = {$/;"	v	file:
+qt_meta_data_ManageWindow	qtsrc/moc_managewindow.cpp	/^static const uint qt_meta_data_ManageWindow[] = {$/;"	v	file:
+qt_meta_data_Mysetting	qtsrc/moc_settings.cpp	/^static const uint qt_meta_data_Mysetting[] = {$/;"	v	file:
+qt_meta_data_PictureListModel	qtsrc/moc_picturelistmodel.cpp	/^static const uint qt_meta_data_PictureListModel[] = {$/;"	v	file:
+qt_meta_data_Player	qtsrc/moc_player.cpp	/^static const uint qt_meta_data_Player[] = {$/;"	v	file:
+qt_meta_data_ProcessThread	qtsrc/moc_processpthread.cpp	/^static const uint qt_meta_data_ProcessThread[] = {$/;"	v	file:
+qt_meta_data_SortFilterProxyModel	qtsrc/moc_logcatmodel.cpp	/^static const uint qt_meta_data_SortFilterProxyModel[] = {$/;"	v	file:
+qt_meta_data_webPage	qtsrc/moc_webPage.cpp	/^static const uint qt_meta_data_webPage[] = {$/;"	v	file:
+qt_meta_stringdata_Backthread	qtsrc/moc_backpthread.cpp	/^static const char qt_meta_stringdata_Backthread[] = {$/;"	v	file:
+qt_meta_stringdata_ConnectThread	qtsrc/moc_connectionthread.cpp	/^static const char qt_meta_stringdata_ConnectThread[] = {$/;"	v	file:
+qt_meta_stringdata_Daemon	qtsrc/moc_daemon.cpp	/^static const char qt_meta_stringdata_Daemon[] = {$/;"	v	file:
+qt_meta_stringdata_DownloadManager	qtsrc/moc_downloadmanager.cpp	/^static const char qt_meta_stringdata_DownloadManager[] = {$/;"	v	file:
+qt_meta_stringdata_DownloadThread	qtsrc/moc_downloadpthread.cpp	/^static const char qt_meta_stringdata_DownloadThread[] = {$/;"	v	file:
+qt_meta_stringdata_Downloadlist	qtsrc/moc_downlist.cpp	/^static const char qt_meta_stringdata_Downloadlist[] = {$/;"	v	file:
+qt_meta_stringdata_FtpClientWindow	qtsrc/moc_ftpclientwindow.cpp	/^static const char qt_meta_stringdata_FtpClientWindow[] = {$/;"	v	file:
+qt_meta_stringdata_Ftpclient	qtsrc/moc_ftpclient.cpp	/^static const char qt_meta_stringdata_Ftpclient[] = {$/;"	v	file:
+qt_meta_stringdata_LogcatDialog	qtsrc/moc_logcatdialog.cpp	/^static const char qt_meta_stringdata_LogcatDialog[] = {$/;"	v	file:
+qt_meta_stringdata_LogcatModel	qtsrc/moc_logcatmodel.cpp	/^static const char qt_meta_stringdata_LogcatModel[] = {$/;"	v	file:
+qt_meta_stringdata_MMS_Dialog	qtsrc/moc_mms_dialog.cpp	/^static const char qt_meta_stringdata_MMS_Dialog[] = {$/;"	v	file:
+qt_meta_stringdata_ManageWindow	qtsrc/moc_managewindow.cpp	/^static const char qt_meta_stringdata_ManageWindow[] = {$/;"	v	file:
+qt_meta_stringdata_Mysetting	qtsrc/moc_settings.cpp	/^static const char qt_meta_stringdata_Mysetting[] = {$/;"	v	file:
+qt_meta_stringdata_PictureListModel	qtsrc/moc_picturelistmodel.cpp	/^static const char qt_meta_stringdata_PictureListModel[] = {$/;"	v	file:
+qt_meta_stringdata_Player	qtsrc/moc_player.cpp	/^static const char qt_meta_stringdata_Player[] = {$/;"	v	file:
+qt_meta_stringdata_ProcessThread	qtsrc/moc_processpthread.cpp	/^static const char qt_meta_stringdata_ProcessThread[] = {$/;"	v	file:
+qt_meta_stringdata_SortFilterProxyModel	qtsrc/moc_logcatmodel.cpp	/^static const char qt_meta_stringdata_SortFilterProxyModel[] = {$/;"	v	file:
+qt_meta_stringdata_webPage	qtsrc/moc_webPage.cpp	/^static const char qt_meta_stringdata_webPage[] = {$/;"	v	file:
+qt_metacall	qtsrc/moc_backpthread.cpp	/^int Backthread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Backthread
+qt_metacall	qtsrc/moc_connectionthread.cpp	/^int ConnectThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ConnectThread
+qt_metacall	qtsrc/moc_daemon.cpp	/^int Daemon::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Daemon
+qt_metacall	qtsrc/moc_downlist.cpp	/^int Downloadlist::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Downloadlist
+qt_metacall	qtsrc/moc_downloadmanager.cpp	/^int DownloadManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:DownloadManager
+qt_metacall	qtsrc/moc_downloadpthread.cpp	/^int DownloadThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:DownloadThread
+qt_metacall	qtsrc/moc_ftpclient.cpp	/^int Ftpclient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Ftpclient
+qt_metacall	qtsrc/moc_ftpclientwindow.cpp	/^int FtpClientWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:FtpClientWindow
+qt_metacall	qtsrc/moc_logcatdialog.cpp	/^int LogcatDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogcatDialog
+qt_metacall	qtsrc/moc_logcatmodel.cpp	/^int LogcatModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogcatModel
+qt_metacall	qtsrc/moc_logcatmodel.cpp	/^int SortFilterProxyModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:SortFilterProxyModel
+qt_metacall	qtsrc/moc_managewindow.cpp	/^int ManageWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ManageWindow
+qt_metacall	qtsrc/moc_mms_dialog.cpp	/^int MMS_Dialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:MMS_Dialog
+qt_metacall	qtsrc/moc_picturelistmodel.cpp	/^int PictureListModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:PictureListModel
+qt_metacall	qtsrc/moc_player.cpp	/^int Player::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Player
+qt_metacall	qtsrc/moc_processpthread.cpp	/^int ProcessThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ProcessThread
+qt_metacall	qtsrc/moc_settings.cpp	/^int Mysetting::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Mysetting
+qt_metacall	qtsrc/moc_webPage.cpp	/^int webPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:webPage
+qt_metacast	qtsrc/moc_backpthread.cpp	/^void *Backthread::qt_metacast(const char *_clname)$/;"	f	class:Backthread
+qt_metacast	qtsrc/moc_connectionthread.cpp	/^void *ConnectThread::qt_metacast(const char *_clname)$/;"	f	class:ConnectThread
+qt_metacast	qtsrc/moc_daemon.cpp	/^void *Daemon::qt_metacast(const char *_clname)$/;"	f	class:Daemon
+qt_metacast	qtsrc/moc_downlist.cpp	/^void *Downloadlist::qt_metacast(const char *_clname)$/;"	f	class:Downloadlist
+qt_metacast	qtsrc/moc_downloadmanager.cpp	/^void *DownloadManager::qt_metacast(const char *_clname)$/;"	f	class:DownloadManager
+qt_metacast	qtsrc/moc_downloadpthread.cpp	/^void *DownloadThread::qt_metacast(const char *_clname)$/;"	f	class:DownloadThread
+qt_metacast	qtsrc/moc_ftpclient.cpp	/^void *Ftpclient::qt_metacast(const char *_clname)$/;"	f	class:Ftpclient
+qt_metacast	qtsrc/moc_ftpclientwindow.cpp	/^void *FtpClientWindow::qt_metacast(const char *_clname)$/;"	f	class:FtpClientWindow
+qt_metacast	qtsrc/moc_logcatdialog.cpp	/^void *LogcatDialog::qt_metacast(const char *_clname)$/;"	f	class:LogcatDialog
+qt_metacast	qtsrc/moc_logcatmodel.cpp	/^void *LogcatModel::qt_metacast(const char *_clname)$/;"	f	class:LogcatModel
+qt_metacast	qtsrc/moc_logcatmodel.cpp	/^void *SortFilterProxyModel::qt_metacast(const char *_clname)$/;"	f	class:SortFilterProxyModel
+qt_metacast	qtsrc/moc_managewindow.cpp	/^void *ManageWindow::qt_metacast(const char *_clname)$/;"	f	class:ManageWindow
+qt_metacast	qtsrc/moc_mms_dialog.cpp	/^void *MMS_Dialog::qt_metacast(const char *_clname)$/;"	f	class:MMS_Dialog
+qt_metacast	qtsrc/moc_picturelistmodel.cpp	/^void *PictureListModel::qt_metacast(const char *_clname)$/;"	f	class:PictureListModel
+qt_metacast	qtsrc/moc_player.cpp	/^void *Player::qt_metacast(const char *_clname)$/;"	f	class:Player
+qt_metacast	qtsrc/moc_processpthread.cpp	/^void *ProcessThread::qt_metacast(const char *_clname)$/;"	f	class:ProcessThread
+qt_metacast	qtsrc/moc_settings.cpp	/^void *Mysetting::qt_metacast(const char *_clname)$/;"	f	class:Mysetting
+qt_metacast	qtsrc/moc_webPage.cpp	/^void *webPage::qt_metacast(const char *_clname)$/;"	f	class:webPage
+qt_resource_data	qtsrc/qrc_image.cpp	/^static const unsigned char qt_resource_data[] = {$/;"	v	file:
+qt_resource_name	qtsrc/qrc_image.cpp	/^static const unsigned char qt_resource_name[] = {$/;"	v	file:
+qt_resource_struct	qtsrc/qrc_image.cpp	/^static const unsigned char qt_resource_struct[] = {$/;"	v	file:
+qt_static_metacall	qtsrc/moc_backpthread.cpp	/^void Backthread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Backthread
+qt_static_metacall	qtsrc/moc_connectionthread.cpp	/^void ConnectThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ConnectThread
+qt_static_metacall	qtsrc/moc_daemon.cpp	/^void Daemon::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Daemon
+qt_static_metacall	qtsrc/moc_downlist.cpp	/^void Downloadlist::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Downloadlist
+qt_static_metacall	qtsrc/moc_downloadmanager.cpp	/^void DownloadManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:DownloadManager
+qt_static_metacall	qtsrc/moc_downloadpthread.cpp	/^void DownloadThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:DownloadThread
+qt_static_metacall	qtsrc/moc_ftpclient.cpp	/^void Ftpclient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Ftpclient
+qt_static_metacall	qtsrc/moc_ftpclientwindow.cpp	/^void FtpClientWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:FtpClientWindow
+qt_static_metacall	qtsrc/moc_logcatdialog.cpp	/^void LogcatDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogcatDialog
+qt_static_metacall	qtsrc/moc_logcatmodel.cpp	/^void LogcatModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:LogcatModel
+qt_static_metacall	qtsrc/moc_logcatmodel.cpp	/^void SortFilterProxyModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:SortFilterProxyModel
+qt_static_metacall	qtsrc/moc_managewindow.cpp	/^void ManageWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ManageWindow
+qt_static_metacall	qtsrc/moc_mms_dialog.cpp	/^void MMS_Dialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:MMS_Dialog
+qt_static_metacall	qtsrc/moc_picturelistmodel.cpp	/^void PictureListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:PictureListModel
+qt_static_metacall	qtsrc/moc_player.cpp	/^void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Player
+qt_static_metacall	qtsrc/moc_processpthread.cpp	/^void ProcessThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:ProcessThread
+qt_static_metacall	qtsrc/moc_settings.cpp	/^void Mysetting::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:Mysetting
+qt_static_metacall	qtsrc/moc_webPage.cpp	/^void webPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)$/;"	f	class:webPage
+rcvlen	src/usbpthread.c	/^	int skfd, rcvlen, ret;$/;"	v
+read	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::read()$/;"	f	class:LogcatDialog
+read_shfile	src/sh_module.c	/^int read_shfile(char *argv,char *readbuf,int readlen)$/;"	f
+readyReadStandardOutput	qtsrc/moc_player.cpp	/^void Player::readyReadStandardOutput()$/;"	f	class:Player
+recmessage	src/sampleclient.c	/^void recmessage(void){$/;"	f
+recthread	src/sampleclient.c	/^pthread_t recthread;$/;"	v
+recv_buf	src/amservice.c	/^char recv_buf = 0;$/;"	v
+recv_daemon	qtsrc/classes/daemon.cpp	/^void Daemon::recv_daemon(int cmd){$/;"	f	class:Daemon
+recv_daemon	qtsrc/managewindow.cpp	/^void ManageWindow::recv_daemon(int cmd){$/;"	f	class:ManageWindow
+recv_daemoninit	qtsrc/classes/daemon.cpp	/^void Daemon:: recv_daemoninit()$/;"	f	class:Daemon
+recv_exit	qtsrc/backpthread.cpp	/^void Backthread::recv_exit(int cmd)$/;"	f	class:Backthread
+recv_install	qtsrc/backpthread.cpp	/^void Backthread::recv_install(int cmd)$/;"	f	class:Backthread
+recv_install	qtsrc/managewindow.cpp	/^void ManageWindow::recv_install(int res)$/;"	f	class:ManageWindow
+recv_leng	src/amservice.c	/^int recv_leng = 0;$/;"	v
+recv_monitorusb	qtsrc/managewindow.cpp	/^void ManageWindow::recv_monitorusb(int res){$/;"	f	class:ManageWindow
+recv_pack	src/amservice.c	/^recv_pack()$/;"	f
+recv_refresh	qtsrc/backpthread.cpp	/^void Backthread::recv_refresh(int cmd)$/;"	f	class:Backthread
+recv_refresh	qtsrc/managewindow.cpp	/^void ManageWindow::recv_refresh(int res)$/;"	f	class:ManageWindow
+recv_sendmms	qtsrc/backpthread.cpp	/^void Backthread::recv_sendmms(int cmd)$/;"	f	class:Backthread
+recv_sendmms	qtsrc/managewindow.cpp	/^void ManageWindow::recv_sendmms(int res)$/;"	f	class:ManageWindow
+recv_softinit	qtsrc/backpthread.cpp	/^void Backthread::recv_softinit(int cmd)$/;"	f	class:Backthread
+recv_softinit	qtsrc/managewindow.cpp	/^void ManageWindow::recv_softinit(int res)$/;"	f	class:ManageWindow
+recv_test	qtsrc/managewindow.cpp	/^void ManageWindow::recv_test(int res){$/;"	f	class:ManageWindow
+recv_uirefresh	qtsrc/classes/daemon.cpp	/^void Daemon::recv_uirefresh(int cmd)$/;"	f	class:Daemon
+recv_uninstall	qtsrc/backpthread.cpp	/^void Backthread::recv_uninstall(int cmd)$/;"	f	class:Backthread
+recv_uninstall	qtsrc/managewindow.cpp	/^void ManageWindow::recv_uninstall(int res)$/;"	f	class:ManageWindow
+recv_usbevent	qtsrc/backpthread.cpp	/^void Backthread::recv_usbevent(int cmd){$/;"	f	class:Backthread
+recvmsg	src/sockserver.h	/^	long recvmsg[PACKET_LENG];$/;"	m	struct:dtmsg
+recvmsgleng	src/sockserver.h	/^	int recvmsgleng;	$/;"	m	struct:dtmsg
+refresh_anim	qtsrc/managewindow.h	/^		Animation *refresh_anim;$/;"	m	class:ManageWindow
+refreshdowninfo	qtsrc/moc_managewindow.cpp	/^void ManageWindow::refreshdowninfo(int _t1, double _t2, int _t3, int _t4, QString _t5)$/;"	f	class:ManageWindow
+refreshdowninfo	qtsrc/widgets/downlist.cpp	/^void Downloadlist::refreshdowninfo(int downcount,double speed,int percent,int stat,QString filename)$/;"	f	class:Downloadlist
+refreshinfo	src/amservice.c	/^int refreshinfo()$/;"	f
+refreshsign	qtsrc/managewindow.h	/^		refreshsign_t refreshsign;$/;"	m	class:ManageWindow
+refreshsign_t	qtsrc/managewindow.h	/^}refreshsign_t;$/;"	t	typeref:struct:__refreshsign
+regExp	qtsrc/classes/models/logcatmodel.h	/^    QList<QRegExp> regExp;$/;"	m	class:SortFilterProxyModel
+reget	src/amservice.c	/^sem_t reget[10]; $/;"	v
+regetinfo	src/amservice.c	/^int regetinfo(int argc)$/;"	f
+reject	qtsrc/managewindow.cpp	/^void ManageWindow::reject()$/;"	f	class:ManageWindow
+removeRows	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::removeRows(int position, int rows, const QModelIndex &index)$/;"	f	class:LogcatModel
+removeRows	qtsrc/picturelistmodel.cpp	/^bool PictureListModel::removeRows(int row, int count, const QModelIndex &parent)$/;"	f	class:PictureListModel
+renderTarget	qtsrc/player.h	/^	QWidget *renderTarget;$/;"	m	class:Player
+resizeEvent	qtsrc/player.cpp	/^void Player::resizeEvent(QResizeEvent * event)$/;"	f	class:Player
+ret	qtsrc/amevent.h	/^	int ret;$/;"	m	class:AMEvent
+ret	src/amservice.c	/^int ret;$/;"	v
+ret	src/usbpthread.c	/^	int skfd, rcvlen, ret;$/;"	v
+retranslateUi	qtsrc/ui_dialog.h	/^    void retranslateUi(QDialog *dialog)$/;"	f	class:Ui_dialog
+retranslateUi	qtsrc/ui_downlist.h	/^    void retranslateUi(QWidget *UiDownlist)$/;"	f	class:Ui_UiDownlist
+retranslateUi	qtsrc/ui_ftpclientwindow.h	/^    void retranslateUi(QWidget *FtpClientWindow)$/;"	f	class:Ui_FtpClientWindow
+retranslateUi	qtsrc/ui_logcatdialog.h	/^    void retranslateUi(QDialog *LogcatDialog)$/;"	f	class:Ui_LogcatDialog
+retranslateUi	qtsrc/ui_managewindow.h	/^    void retranslateUi(QMainWindow *ManageWindow)$/;"	f	class:Ui_ManageWindow
+retranslateUi	qtsrc/ui_mms_dialog.h	/^    void retranslateUi(QDialog *MMS_Dialog)$/;"	f	class:Ui_MMS_Dialog
+return_usb	src/usbpthread.c	/^	int return_usb = KONG_USB;$/;"	v
+rowCount	qtsrc/classes/models/logcatmodel.cpp	/^int LogcatModel::rowCount()$/;"	f	class:LogcatModel
+rowCount	qtsrc/classes/models/logcatmodel.cpp	/^int LogcatModel::rowCount(const QModelIndex &parent) const$/;"	f	class:LogcatModel
+rowCount	qtsrc/picturelistmodel.cpp	/^int PictureListModel::rowCount(const QModelIndex &parent) const$/;"	f	class:PictureListModel
+run	qtsrc/classes/downloadpthread.cpp	/^void DownloadThread::run()$/;"	f	class:DownloadThread
+run	qtsrc/classes/processpthread.cpp	/^void ProcessThread::run()$/;"	f	class:ProcessThread
+run	qtsrc/connectionthread.cpp	/^void ConnectThread::run()$/;"	f	class:ConnectThread
+s_addr	src/sockserver.h	/^	struct sockaddr_in s_addr;$/;"	m	struct:dtmsg	typeref:struct:dtmsg::sockaddr_in
+s_addrsize	src/sockserver.h	/^	socklen_t s_addrsize;$/;"	m	struct:dtmsg
+s_devices	src/manage.c	/^	deviceslist_t  s_devices;$/;"	v
+sampleclient	src/sampleclient.c	/^int sampleclient(){$/;"	f
+saveFileName	qtsrc/classes/downloadmanager.cpp	/^QString DownloadManager::saveFileName(const QUrl &url)$/;"	f	class:DownloadManager
+saveFileName	qtsrc/widgets/webPage.cpp	/^QString webPage::saveFileName(const QUrl &url)$/;"	f	class:webPage
+sdAvail	inc/typestruct_api.h	/^		char sdAvail[32];           \/\/ SD卡剩余容量$/;"	m	struct:__storageinfo
+sdSize	inc/typestruct_api.h	/^		char sdSize[32];            \/\/ SD卡总容量$/;"	m	struct:__storageinfo
+sddata	src/amservice.c	/^int sddata[1024];$/;"	v
+sdk	qtsrc/dialogs/logcatdialog.h	/^    QString sdk;$/;"	m	class:LogcatDialog
+seminit	src/amservice.c	/^int seminit()$/;"	f
+send_num	src/amservice.c	/^char send_num = 4;$/;"	v
+send_pack	src/amservice.c	/^send_pack()$/;"	f
+send_pthread	src/amservice.c	/^void* send_pthread(void* arg) $/;"	f
+send_pthread_init	src/amservice.c	/^int send_pthread_init()$/;"	f
+sender	qtsrc/classes/models/logcatmodel.h	/^    QString sender;$/;"	m	class:LogcatMessage
+sendmessage	inc/typestruct.h	/^sendmessage_t sendmessage;$/;"	v
+sendmessage_t	inc/typestruct_api.h	/^	}sendmessage_t;$/;"	t	typeref:struct:__sendmessage
+sendmmsinfo	src/manage.c	/^	sendmmsinfo_t sendmmsinfo;$/;"	v
+sendmmsinfo_t	src/manage.c	/^	}sendmmsinfo_t;$/;"	t	typeref:struct:__sendmmsinfo	file:
+sendmsg	src/sockserver.h	/^	long sendmsg[PACKET_LENG];$/;"	m	struct:dtmsg
+sendmsgleng	src/sockserver.h	/^	int sendmsgleng;	$/;"	m	struct:dtmsg
+sendthread	src/amservice.c	/^static sockthread_t sendthread;$/;"	v	file:
+serialNumber	qtsrc/classes/daemon.h	/^		QString serialNumber;$/;"	m	class:Daemon
+setCurrentPath	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::setCurrentPath(QString &path)$/;"	f	class:Ftpclient
+setData	qtsrc/classes/models/logcatmodel.cpp	/^bool LogcatModel::setData(const QModelIndex &index, const QVariant &value, int role)$/;"	f	class:LogcatModel
+setIcon	qtsrc/managewindow.cpp	/^void ManageWindow::setIcon()$/;"	f	class:ManageWindow
+setMessage	qtsrc/classes/textprogressbar.cpp	/^void TextProgressBar::setMessage(const QString &m)$/;"	f	class:TextProgressBar
+setPathType	qtsrc/animation.h	/^    void setPathType(PathType pathType)$/;"	f	class:Animation
+setPwd	qtsrc/widgets/ftpclient.h	/^    void setPwd(const QString &pwd) { strPwd = pwd; }$/;"	f	class:Ftpclient
+setServerName	qtsrc/widgets/ftpclient.h	/^    void setServerName(const QString &server) { strSrvName = server; }$/;"	f	class:Ftpclient
+setServerPort	qtsrc/widgets/ftpclient.h	/^    void setServerPort(const QString &port) { strSrvPort = port; }$/;"	f	class:Ftpclient
+setStatus	qtsrc/classes/textprogressbar.cpp	/^void TextProgressBar::setStatus(qint64 val, qint64 max)$/;"	f	class:TextProgressBar
+setUserName	qtsrc/widgets/ftpclient.h	/^    void setUserName(const QString &userName) { strUser = userName; }$/;"	f	class:Ftpclient
+setdaownloadpath	qtsrc/classes/settings.cpp	/^void Mysetting::setdaownloadpath(char *)$/;"	f	class:Mysetting
+setinstallapp	src/manage.c	/^	void setinstallapp(char *apppath)$/;"	f
+setmessageinfo	src/amservice.c	/^void setmessageinfo(char *char_mmsnumber,char *char_mmsdata)$/;"	f
+setnumber	qtsrc/dialogs/mms_dialog.cpp	/^void MMS_Dialog::setnumber(QString number)$/;"	f	class:MMS_Dialog
+setsendmmsinfo	src/manage.c	/^	void setsendmmsinfo(char *qtmms_no, char *qtmms_info)$/;"	f
+settings	qtsrc/classes/settings.h	/^		QSettings  settings;$/;"	m	class:Mysetting
+settings	qtsrc/managewindow.h	/^		QSettings * settings;$/;"	m	class:ManageWindow
+settingsargv	qtsrc/managewindow.h	/^		settingsargv_t settingsargv;$/;"	m	class:ManageWindow
+settingsargv_t	qtsrc/managewindow.h	/^}settingsargv_t;$/;"	t	typeref:struct:__settingsargv
+setui_appclass	qtsrc/managewindow.cpp	/^void ManageWindow::setui_appclass(int Appclass)     $/;"	f	class:ManageWindow
+setui_appinfo	qtsrc/managewindow.cpp	/^void ManageWindow::setui_appinfo()$/;"	f	class:ManageWindow
+setui_bookinfo	qtsrc/managewindow.cpp	/^void ManageWindow::setui_bookinfo()$/;"	f	class:ManageWindow
+setui_clean	qtsrc/managewindow.cpp	/^void ManageWindow::setui_clean()$/;"	f	class:ManageWindow
+setui_downloadlist	qtsrc/managewindow.cpp	/^void ManageWindow::setui_downloadlist(int row)$/;"	f	class:ManageWindow
+setui_mmsinfo	qtsrc/managewindow.cpp	/^void ManageWindow::setui_mmsinfo()$/;"	f	class:ManageWindow
+setui_storageinfo	qtsrc/managewindow.cpp	/^void ManageWindow::setui_storageinfo()$/;"	f	class:ManageWindow
+setupUi	qtsrc/ui_dialog.h	/^    void setupUi(QDialog *dialog)$/;"	f	class:Ui_dialog
+setupUi	qtsrc/ui_downlist.h	/^    void setupUi(QWidget *UiDownlist)$/;"	f	class:Ui_UiDownlist
+setupUi	qtsrc/ui_ftpclientwindow.h	/^    void setupUi(QWidget *FtpClientWindow)$/;"	f	class:Ui_FtpClientWindow
+setupUi	qtsrc/ui_logcatdialog.h	/^    void setupUi(QDialog *LogcatDialog)$/;"	f	class:Ui_LogcatDialog
+setupUi	qtsrc/ui_managewindow.h	/^    void setupUi(QMainWindow *ManageWindow)$/;"	f	class:Ui_ManageWindow
+setupUi	qtsrc/ui_mms_dialog.h	/^    void setupUi(QDialog *MMS_Dialog)$/;"	f	class:Ui_MMS_Dialog
+sfd	src/sockserver.h	/^	int sfd;$/;"	m	struct:dtmsg
+sh_module	src/sh_module.c	/^int sh_module(int adbcmd,char *argv)$/;"	f
+shcmd	src/manage.c	/^	char shcmd[MAXLEN] = {0};$/;"	v
+showContextMenu	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::showContextMenu(QPoint point)$/;"	f	class:LogcatDialog
+showPicture	qtsrc/managewindow.cpp	/^void ManageWindow::showPicture(const QModelIndex &index)$/;"	f	class:ManageWindow
+showTitle	qtsrc/managewindow.cpp	/^void ManageWindow::showTitle(const QString &title)$/;"	f	class:ManageWindow
+skfd	src/usbpthread.c	/^	int skfd, rcvlen, ret;$/;"	v
+skin	qtsrc/managewindow.h	/^	int skin = 1;$/;"	m	struct:__settingsargv
+skinstyle	qtsrc/ui_managewindow.h	/^    QComboBox *skinstyle;$/;"	m	class:Ui_ManageWindow
+slotAboutApplication	qtsrc/managewindow.cpp	/^void ManageWindow::slotAboutApplication()$/;"	f	class:ManageWindow
+slotBackMessage	qtsrc/managewindow.cpp	/^void ManageWindow::slotBackMessage()$/;"	f	class:ManageWindow
+slotBackward	qtsrc/managewindow.cpp	/^void ManageWindow::slotBackward()$/;"	f	class:ManageWindow
+slotConnectionChanged	qtsrc/classes/daemon.cpp	/^void Daemon::slotConnectionChanged(int state,QString serialNumber)$/;"	f	class:Daemon
+slotError	qtsrc/managewindow.cpp	/^void ManageWindow::slotError(QProcess::ProcessError \/*error*\/)$/;"	f	class:ManageWindow
+slotFinished	qtsrc/managewindow.cpp	/^void ManageWindow::slotFinished(int \/*exitCode*\/, QProcess::ExitStatus \/*exitStatus*\/)$/;"	f	class:ManageWindow
+slotMute	qtsrc/managewindow.cpp	/^void ManageWindow::slotMute(bool \/*status*\/)$/;"	f	class:ManageWindow
+slotOpenFile	qtsrc/managewindow.cpp	/^void ManageWindow::slotOpenFile()$/;"	f	class:ManageWindow
+slotPlay	qtsrc/managewindow.cpp	/^void ManageWindow::slotPlay()$/;"	f	class:ManageWindow
+slotStarted	qtsrc/managewindow.cpp	/^void ManageWindow::slotStarted()$/;"	f	class:ManageWindow
+slotStep	qtsrc/managewindow.cpp	/^void ManageWindow::slotStep()$/;"	f	class:ManageWindow
+slotStop	qtsrc/managewindow.cpp	/^void ManageWindow::slotStop()$/;"	f	class:ManageWindow
+slotStyleChange	qtsrc/managewindow.cpp	/^void ManageWindow::slotStyleChange(int StyleString)     \/\/透明度$/;"	f	class:ManageWindow
+slotTrans	qtsrc/managewindow.cpp	/^void ManageWindow::slotTrans(int value)     \/\/透明度$/;"	f	class:ManageWindow
+slotappclasschange	qtsrc/managewindow.cpp	/^void ManageWindow::slotappclasschange(int Appclass)     $/;"	f	class:ManageWindow
+socket	qtsrc/connectionthread.h	/^    QTcpSocket *socket;$/;"	m	class:ConnectThread
+sockfd	src/amservice.c	/^int sockfd;$/;"	v
+sockfd	src/sampleclient.c	/^int sockfd;$/;"	v
+sockthread_t	src/amservice.c	/^}sockthread_t;$/;"	t	typeref:struct:__sockthread	file:
+speed	qtsrc/managewindow.h	/^			double speed;$/;"	m	struct:ManageWindow::__downloadindex
+speed	qtsrc/widgets/webPage.h	/^		double speed;$/;"	m	class:webPage
+speed	qtsrc/widgets/webPage.h	/^	double speed;$/;"	m	struct:__downloadindex
+spinBoxBufferLimit	qtsrc/ui_logcatdialog.h	/^    QSpinBox *spinBoxBufferLimit;$/;"	m	class:Ui_LogcatDialog
+stackedWidget	qtsrc/ui_managewindow.h	/^    QStackedWidget *stackedWidget;$/;"	m	class:Ui_ManageWindow
+startLogcat	qtsrc/dialogs/logcatdialog.cpp	/^void LogcatDialog::startLogcat()$/;"	f	class:LogcatDialog
+startNextDownload	qtsrc/classes/downloadmanager.cpp	/^void DownloadManager::startNextDownload()$/;"	f	class:DownloadManager
+startNextDownload	qtsrc/widgets/webPage.cpp	/^void webPage::startNextDownload(QUrl url)$/;"	f	class:webPage
+started	qtsrc/moc_player.cpp	/^void Player::started()$/;"	f	class:Player
+stat	qtsrc/managewindow.h	/^			int stat;$/;"	m	struct:ManageWindow::__downloadindex
+stat	qtsrc/widgets/webPage.h	/^		int stat;$/;"	m	class:webPage
+stat	qtsrc/widgets/webPage.h	/^	int stat;$/;"	m	struct:__downloadindex
+staticMetaObject	qtsrc/moc_backpthread.cpp	/^const QMetaObject Backthread::staticMetaObject = {$/;"	m	class:Backthread	file:
+staticMetaObject	qtsrc/moc_connectionthread.cpp	/^const QMetaObject ConnectThread::staticMetaObject = {$/;"	m	class:ConnectThread	file:
+staticMetaObject	qtsrc/moc_daemon.cpp	/^const QMetaObject Daemon::staticMetaObject = {$/;"	m	class:Daemon	file:
+staticMetaObject	qtsrc/moc_downlist.cpp	/^const QMetaObject Downloadlist::staticMetaObject = {$/;"	m	class:Downloadlist	file:
+staticMetaObject	qtsrc/moc_downloadmanager.cpp	/^const QMetaObject DownloadManager::staticMetaObject = {$/;"	m	class:DownloadManager	file:
+staticMetaObject	qtsrc/moc_downloadpthread.cpp	/^const QMetaObject DownloadThread::staticMetaObject = {$/;"	m	class:DownloadThread	file:
+staticMetaObject	qtsrc/moc_ftpclient.cpp	/^const QMetaObject Ftpclient::staticMetaObject = {$/;"	m	class:Ftpclient	file:
+staticMetaObject	qtsrc/moc_ftpclientwindow.cpp	/^const QMetaObject FtpClientWindow::staticMetaObject = {$/;"	m	class:FtpClientWindow	file:
+staticMetaObject	qtsrc/moc_logcatdialog.cpp	/^const QMetaObject LogcatDialog::staticMetaObject = {$/;"	m	class:LogcatDialog	file:
+staticMetaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject LogcatModel::staticMetaObject = {$/;"	m	class:LogcatModel	file:
+staticMetaObject	qtsrc/moc_logcatmodel.cpp	/^const QMetaObject SortFilterProxyModel::staticMetaObject = {$/;"	m	class:SortFilterProxyModel	file:
+staticMetaObject	qtsrc/moc_managewindow.cpp	/^const QMetaObject ManageWindow::staticMetaObject = {$/;"	m	class:ManageWindow	file:
+staticMetaObject	qtsrc/moc_mms_dialog.cpp	/^const QMetaObject MMS_Dialog::staticMetaObject = {$/;"	m	class:MMS_Dialog	file:
+staticMetaObject	qtsrc/moc_picturelistmodel.cpp	/^const QMetaObject PictureListModel::staticMetaObject = {$/;"	m	class:PictureListModel	file:
+staticMetaObject	qtsrc/moc_player.cpp	/^const QMetaObject Player::staticMetaObject = {$/;"	m	class:Player	file:
+staticMetaObject	qtsrc/moc_processpthread.cpp	/^const QMetaObject ProcessThread::staticMetaObject = {$/;"	m	class:ProcessThread	file:
+staticMetaObject	qtsrc/moc_settings.cpp	/^const QMetaObject Mysetting::staticMetaObject = {$/;"	m	class:Mysetting	file:
+staticMetaObject	qtsrc/moc_webPage.cpp	/^const QMetaObject webPage::staticMetaObject = {$/;"	m	class:webPage	file:
+staticMetaObjectExtraData	qtsrc/moc_backpthread.cpp	/^const QMetaObjectExtraData Backthread::staticMetaObjectExtraData = {$/;"	m	class:Backthread	file:
+staticMetaObjectExtraData	qtsrc/moc_connectionthread.cpp	/^const QMetaObjectExtraData ConnectThread::staticMetaObjectExtraData = {$/;"	m	class:ConnectThread	file:
+staticMetaObjectExtraData	qtsrc/moc_daemon.cpp	/^const QMetaObjectExtraData Daemon::staticMetaObjectExtraData = {$/;"	m	class:Daemon	file:
+staticMetaObjectExtraData	qtsrc/moc_downlist.cpp	/^const QMetaObjectExtraData Downloadlist::staticMetaObjectExtraData = {$/;"	m	class:Downloadlist	file:
+staticMetaObjectExtraData	qtsrc/moc_downloadmanager.cpp	/^const QMetaObjectExtraData DownloadManager::staticMetaObjectExtraData = {$/;"	m	class:DownloadManager	file:
+staticMetaObjectExtraData	qtsrc/moc_downloadpthread.cpp	/^const QMetaObjectExtraData DownloadThread::staticMetaObjectExtraData = {$/;"	m	class:DownloadThread	file:
+staticMetaObjectExtraData	qtsrc/moc_ftpclient.cpp	/^const QMetaObjectExtraData Ftpclient::staticMetaObjectExtraData = {$/;"	m	class:Ftpclient	file:
+staticMetaObjectExtraData	qtsrc/moc_ftpclientwindow.cpp	/^const QMetaObjectExtraData FtpClientWindow::staticMetaObjectExtraData = {$/;"	m	class:FtpClientWindow	file:
+staticMetaObjectExtraData	qtsrc/moc_logcatdialog.cpp	/^const QMetaObjectExtraData LogcatDialog::staticMetaObjectExtraData = {$/;"	m	class:LogcatDialog	file:
+staticMetaObjectExtraData	qtsrc/moc_logcatmodel.cpp	/^const QMetaObjectExtraData LogcatModel::staticMetaObjectExtraData = {$/;"	m	class:LogcatModel	file:
+staticMetaObjectExtraData	qtsrc/moc_logcatmodel.cpp	/^const QMetaObjectExtraData SortFilterProxyModel::staticMetaObjectExtraData = {$/;"	m	class:SortFilterProxyModel	file:
+staticMetaObjectExtraData	qtsrc/moc_managewindow.cpp	/^const QMetaObjectExtraData ManageWindow::staticMetaObjectExtraData = {$/;"	m	class:ManageWindow	file:
+staticMetaObjectExtraData	qtsrc/moc_mms_dialog.cpp	/^const QMetaObjectExtraData MMS_Dialog::staticMetaObjectExtraData = {$/;"	m	class:MMS_Dialog	file:
+staticMetaObjectExtraData	qtsrc/moc_picturelistmodel.cpp	/^const QMetaObjectExtraData PictureListModel::staticMetaObjectExtraData = {$/;"	m	class:PictureListModel	file:
+staticMetaObjectExtraData	qtsrc/moc_player.cpp	/^const QMetaObjectExtraData Player::staticMetaObjectExtraData = {$/;"	m	class:Player	file:
+staticMetaObjectExtraData	qtsrc/moc_processpthread.cpp	/^const QMetaObjectExtraData ProcessThread::staticMetaObjectExtraData = {$/;"	m	class:ProcessThread	file:
+staticMetaObjectExtraData	qtsrc/moc_settings.cpp	/^const QMetaObjectExtraData Mysetting::staticMetaObjectExtraData = {$/;"	m	class:Mysetting	file:
+staticMetaObjectExtraData	qtsrc/moc_webPage.cpp	/^const QMetaObjectExtraData webPage::staticMetaObjectExtraData = {$/;"	m	class:webPage	file:
+status	qtsrc/classes/daemon.h	/^	int status;$/;"	m	struct:tag_timerdata
+stepButton	qtsrc/managewindow.h	/^		QPushButton *stepButton;$/;"	m	class:ManageWindow
+stopButton	qtsrc/managewindow.h	/^		QPushButton *stopButton;$/;"	m	class:ManageWindow
+storageinfo	inc/typestruct.h	/^storageinfo_t storageinfo;$/;"	v
+storageinfo_t	inc/typestruct_api.h	/^	}storageinfo_t;$/;"	t	typeref:struct:__storageinfo
+strPwd	qtsrc/widgets/ftpclient.h	/^    QString strSrvName, strSrvPort, strUser, strPwd;$/;"	m	class:Ftpclient
+strSrvName	qtsrc/widgets/ftpclient.h	/^    QString strSrvName, strSrvPort, strUser, strPwd;$/;"	m	class:Ftpclient
+strSrvPort	qtsrc/widgets/ftpclient.h	/^    QString strSrvName, strSrvPort, strUser, strPwd;$/;"	m	class:Ftpclient
+strUser	qtsrc/widgets/ftpclient.h	/^    QString strSrvName, strSrvPort, strUser, strPwd;$/;"	m	class:Ftpclient
+styleSheet	qtsrc/managewindow.h	/^		QString styleSheet;$/;"	m	class:ManageWindow
+switchDownloadBtn	qtsrc/widgets/ftpclientwindow.cpp	/^void FtpClientWindow::switchDownloadBtn(QListWidgetItem *item)$/;"	f	class:FtpClientWindow
+system_exit	src/manage.c	/^	void system_exit()$/;"	f
+tableView	qtsrc/ui_logcatdialog.h	/^    QTableView *tableView;$/;"	m	class:Ui_LogcatDialog
+tag_timerdata	qtsrc/classes/daemon.h	/^typedef struct tag_timerdata{$/;"	s
+tattr	src/amservice.c	/^	pthread_attr_t tattr;$/;"	m	struct:__sockthread	file:
+tattr	src/appthread.c	/^	pthread_attr_t tattr;$/;"	m	struct:__appthread	file:
+tattr	src/downthread.c	/^	pthread_attr_t tattr;$/;"	m	struct:__downthread	file:
+tattr	src/filethread.c	/^	pthread_attr_t tattr;$/;"	m	struct:__filethread	file:
+tattr	src/mainthread.c	/^		pthread_attr_t tattr;$/;"	m	struct:__mainthread	file:
+tattr	src/monitorusb.c	/^	pthread_attr_t tattr;$/;"	m	struct:__managermod	file:
+tattr	src/mutexpthread.c	/^	pthread_attr_t tattr;$/;"	m	struct:__mutexthread	file:
+tattr	src/netthread.c	/^	pthread_attr_t tattr;$/;"	m	struct:__netthread	file:
+tattr	src/usbpthread.c	/^		pthread_attr_t tattr;$/;"	m	struct:__usbthread	file:
+testapp	qtsrc/managewindow.h	/^		int testapp;$/;"	m	class:ManageWindow
+textBrowser	qtsrc/ui_logcatdialog.h	/^    QTextBrowser *textBrowser;$/;"	m	class:Ui_LogcatDialog
+thread_net_link	src/usbevent.c	/^int thread_net_link()$/;"	f
+tid	src/amservice.c	/^	pthread_t tid;$/;"	m	struct:__sockthread	file:
+tid	src/appthread.c	/^	pthread_t tid;$/;"	m	struct:__appthread	file:
+tid	src/downthread.c	/^	pthread_t tid;$/;"	m	struct:__downthread	file:
+tid	src/filethread.c	/^	pthread_t tid;$/;"	m	struct:__filethread	file:
+tid	src/mainthread.c	/^		pthread_t tid;$/;"	m	struct:__mainthread	file:
+tid	src/monitorusb.c	/^	pthread_t tid;$/;"	m	struct:__managermod	file:
+tid	src/mutexpthread.c	/^	pthread_t tid;$/;"	m	struct:__mutexthread	file:
+tid	src/netthread.c	/^	pthread_t tid;$/;"	m	struct:__netthread	file:
+tid	src/usbpthread.c	/^		pthread_t tid;$/;"	m	struct:__usbthread	file:
+time	qtsrc/classes/daemon.h	/^	char time[16];$/;"	m	struct:tag_timerdata
+timelast	src/monitorusb.c	/^static struct timeval timelast = {-1, -1};$/;"	v	typeref:struct:timeval	file:
+timercount	qtsrc/classes/daemon.h	/^		unsigned int timercount;$/;"	m	class:Daemon
+timerdata	qtsrc/classes/daemon.h	/^		timerdata_t timerdata;$/;"	m	class:Daemon
+timerdata_t	qtsrc/classes/daemon.h	/^}timerdata_t;$/;"	t	typeref:struct:tag_timerdata
+timeremain	src/monitorusb.c	/^static int timeremain;$/;"	v	file:
+timestamp	qtsrc/classes/models/logcatmodel.h	/^    QString timestamp;$/;"	m	class:LogcatMessage
+tmpclean	src/manage.c	/^	void tmpclean()$/;"	f
+tmpreturn	src/amservice.c	/^int tmpreturn = 0;$/;"	v
+toinstallapp	src/manage.c	/^	int toinstallapp()$/;"	f
+tosendmms	src/manage.c	/^	int tosendmms()$/;"	f
+tosize	src/amservice.c	/^char tosize[4] = {0};$/;"	v
+totalCount	qtsrc/classes/downloadmanager.h	/^    int totalCount;$/;"	m	class:DownloadManager
+tout	src/amservice.c	/^struct timeval tout;$/;"	v	typeref:struct:timeval
+tv	src/usbpthread.c	/^	struct timeval tv;$/;"	v	typeref:struct:timeval
+type	qtsrc/classes/models/logcatmodel.h	/^    QString type;$/;"	m	class:LogcatMessage
+typeId	inc/typestruct_api.h	/^		char typeId; $/;"	m	struct:__mmsinfo
+ui	qtsrc/dialogs/mms_dialog.h	/^		Ui::MMS_Dialog *ui;$/;"	m	class:MMS_Dialog
+ui	qtsrc/managewindow.h	/^		Ui::ManageWindow *ui;$/;"	m	class:ManageWindow
+ui	qtsrc/player.h	/^	ManageWindow *ui;$/;"	m	class:Player
+ui	qtsrc/widgets/downlist.h	/^    Ui::UiDownlist *ui;$/;"	m	class:Downloadlist
+ui	qtsrc/widgets/ftpclientwindow.h	/^    Ui::FtpClientWindow *ui;$/;"	m	class:FtpClientWindow
+uiappinfo	qtsrc/managewindow.h	/^		allappinfo_t uiappinfo;$/;"	m	class:ManageWindow
+uibookinfo	qtsrc/managewindow.h	/^		allbookinfo_t uibookinfo;$/;"	m	class:ManageWindow
+uimmsinfo	qtsrc/managewindow.h	/^		allmmsinfo_t uimmsinfo;$/;"	m	class:ManageWindow
+uirefresh	qtsrc/moc_downloadpthread.cpp	/^void DownloadThread::uirefresh(int _t1)$/;"	f	class:DownloadThread
+uistorageinfo	qtsrc/managewindow.h	/^		storageinfo_t uistorageinfo;$/;"	m	class:ManageWindow
+update	qtsrc/classes/textprogressbar.cpp	/^void TextProgressBar::update()$/;"	f	class:TextProgressBar
+updateCurrentTime	qtsrc/animation.h	/^    void updateCurrentTime(int currentTime)$/;"	f	class:Animation
+updateProgressBar	qtsrc/widgets/ftpclient.cpp	/^void Ftpclient::updateProgressBar(int done, int total)$/;"	f	class:Ftpclient
+upwardBtn	qtsrc/ui_ftpclientwindow.h	/^    QPushButton *upwardBtn;$/;"	m	class:Ui_FtpClientWindow
+url	qtsrc/classes/downloadpthread.h	/^		QString url = "";$/;"	m	class:DownloadThread
+url	qtsrc/widgets/ftpclient.h	/^    QUrl url;$/;"	m	class:Ftpclient
+urlAddr	qtsrc/managewindow.h	/^		QLineEdit *urlAddr;$/;"	m	class:ManageWindow
+urllist	qtsrc/widgets/webPage.h	/^		QStringList urllist;$/;"	m	class:webPage
+urlmanager	qtsrc/classes/downloadpthread.h	/^		DownloadManager *urlmanager;$/;"	m	class:DownloadThread
+usb_event	src/usbpthread.c	/^	int usb_event()$/;"	f
+usb_pthread	src/usbpthread.c	/^	void* usb_pthread(void* arg) $/;"	f
+usb_sock	src/usbpthread.c	/^	int usb_sock()$/;"	f
+usb_thread_init	src/usbpthread.c	/^	int usb_thread_init(void)$/;"	f
+usbthread	src/usbpthread.c	/^	static usbthread_t usbthread;$/;"	v	file:
+usbthread_t	src/usbpthread.c	/^	}usbthread_t;$/;"	t	typeref:struct:__usbthread	file:
+userName	qtsrc/classes/settings.h	/^	QString userName;$/;"	m	struct:Login
+usernameLB	qtsrc/ui_ftpclientwindow.h	/^    QLabel *usernameLB;$/;"	m	class:Ui_FtpClientWindow
+usernameLE	qtsrc/ui_ftpclientwindow.h	/^    QLineEdit *usernameLE;$/;"	m	class:Ui_FtpClientWindow
+value	qtsrc/classes/textprogressbar.h	/^    qint64 value;$/;"	m	class:TextProgressBar
+value	qtsrc/widgets/webPage.h	/^		qint64 value;$/;"	m	class:webPage
+valuechange	qtsrc/managewindow.cpp	/^void ManageWindow::valuechange(int value)$/;"	f	class:ManageWindow
+verticalSpacer	qtsrc/ui_logcatdialog.h	/^    QSpacerItem *verticalSpacer;$/;"	m	class:Ui_LogcatDialog
+verticalSpacer_2	qtsrc/ui_logcatdialog.h	/^    QSpacerItem *verticalSpacer_2;$/;"	m	class:Ui_LogcatDialog
+video	qtsrc/managewindow.h	/^	int video= 1;$/;"	m	struct:__refreshsign
+video_player	qtsrc/managewindow.cpp	/^void ManageWindow::video_player()$/;"	f	class:ManageWindow
+waitdata	src/amservice.c	/^int waitdata()$/;"	f
+webPage	qtsrc/widgets/webPage.cpp	/^webPage::webPage(QObject *parent) :$/;"	f	class:webPage
+webPage	qtsrc/widgets/webPage.h	/^class webPage : public QWebPage$/;"	c
+~AMEvent	qtsrc/backpthread.cpp	/^AMEvent::~AMEvent(){$/;"	f	class:AMEvent
+~Backthread	qtsrc/backpthread.cpp	/^Backthread::~Backthread(){$/;"	f	class:Backthread
+~Daemon	qtsrc/classes/daemon.cpp	/^Daemon::~Daemon(){$/;"	f	class:Daemon
+~Downloadlist	qtsrc/widgets/downlist.cpp	/^Downloadlist::~Downloadlist()$/;"	f	class:Downloadlist
+~FtpClientWindow	qtsrc/widgets/ftpclientwindow.cpp	/^FtpClientWindow::~FtpClientWindow()$/;"	f	class:FtpClientWindow
+~Ftpclient	qtsrc/widgets/ftpclient.cpp	/^Ftpclient::~Ftpclient()$/;"	f	class:Ftpclient
+~LogcatDialog	qtsrc/dialogs/logcatdialog.cpp	/^LogcatDialog::~LogcatDialog()$/;"	f	class:LogcatDialog
+~MMS_Dialog	qtsrc/dialogs/mms_dialog.cpp	/^MMS_Dialog::~MMS_Dialog()$/;"	f	class:MMS_Dialog
+~ManageWindow	qtsrc/managewindow.cpp	/^ManageWindow::~ManageWindow()$/;"	f	class:ManageWindow
+~Mysetting	qtsrc/classes/settings.cpp	/^Mysetting::~Mysetting(){$/;"	f	class:Mysetting
+~Player	qtsrc/player.cpp	/^Player::~Player()$/;"	f	class:Player
