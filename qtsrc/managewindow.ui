@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>10</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -350,7 +350,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
        <string>前进</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="skinstyle_2">
+     <widget class="QComboBox" name="Cmbx_otherstore">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -361,7 +361,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
       </property>
       <item>
        <property name="text">
-        <string>其他adnroid市场</string>
+        <string/>
        </property>
       </item>
      </widget>

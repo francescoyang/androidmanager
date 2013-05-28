@@ -84,6 +84,7 @@ void ManageWindow::UiToolInit()
 
 
 
+
 	video_player();
 	//	slotTrans(90);
 	//	Qssinit(1);
@@ -172,124 +173,7 @@ void ManageWindow::slotappclasschange(int Appclass)
 	setui_appclass(Appclass);
 }
 
-void ManageWindow::setui_downloadlist(int row)
-{
-	//	Downloadlist_table->setRowCount(uiappinfo.count + 1);
-	//	for (int i = 0; i <= 50; i++) {
-	downname[row] = new QLabel(&UiDownlist[row]);
-	downname[row]->setGeometry(QRect(0, 0, 111, 31));
 
-	downprogress[row] = new QProgressBar(&UiDownlist[row]);
-	downprogress[row]->setGeometry(QRect(134, 15, 532, 8));
-	downprogress[row]->setStyleSheet(QString::fromUtf8(""));
-	downprogress[row]->setValue(24);
-
-	downstat[row] = new QLabel(&UiDownlist[row]);
-	downstat[row]->setGeometry(QRect(710, 0, 71, 31));
-
-
-	Downloadlist_table->insertRow(row);
-	Downloadlist_item[row][0] = new QTableWidgetItem;
-	Downloadlist_table->setItem(row,0,Downloadlist_item[row][0]);
-	Downloadlist_table->setCellWidget(row, 0, &UiDownlist[row]);
-
-	/*
-	   QWidget *widget_test = new QWidget;
-
-	   QProgressBar *pushButton_test= new QProgressBar(widget_test);
-	   */
-
-	/*
-	   Downloadlist_item[i][0]->setText(QString(uiappinfo.get_info[i].appname));
-	   Downloadlist_item[i][1]->setText(QString(uiappinfo.get_info[i].appversion));
-	   Downloadlist_item[i][2]->setText(QString(uiappinfo.get_info[i].appsize));
-	   */
-	//	}
-
-}
-
-void ManageWindow::setui_appclass(int Appclass)     
-{
-
-	refreshsign.app = 0;
-	getappinfo(&uiappinfo);
-
-	//	if(StyleString=="系统应用")
-	switch(Appclass)
-	{
-		case 0:
-			testapp = -1;
-			qDebug() << "系统应用";
-			APPINDEX = 0;
-			App_table->setRowCount(0);
-
-			App_table->clearContents();
-			App_table->setRowCount(0);
-			for (int i = 0; i <= uiappinfo.count; i++) {
-				if(!uiappinfo.get_info[i].appattribute)
-				{
-
-					testapp++;
-					App_table->insertRow(testapp);
-
-					/*
-					   QComboBox *comBox = new QComboBox(); 
-					   comBox->addItem("F"); 
-					   comBox->addItem("M"); 
-					   Book_table->setCellWidget(0,2,comBox);
-					   */
-
-
-					for (int j = 0; j < 3; j++) {
-						App_item[testapp][j] = new QTableWidgetItem;
-						App_table->setItem(testapp,j,App_item[testapp][j]);
-					}
-					appindex[0][testapp] = i;
-
-					/*
-					   QProgressBar *pushButton_test= new QProgressBar;
-					   App_table->setCellWidget(testapp, 0, pushButton_test);
-					   */
-
-					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
-					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
-					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
-				}
-			}
-
-			break;
-		case 1:
-
-			testapp = -1;
-			qDebug() << "第三方应用";
-
-			APPINDEX = 1;
-			App_table->clearContents();
-			App_table->setRowCount(0);
-			//		App_table->removeRow(0);
-			//		App_table->setRowCount(uiappinfo.count + 1);
-			for (int i = 0; i <= uiappinfo.count; i++) {
-				if(uiappinfo.get_info[i].appattribute)
-				{
-					testapp++;
-					App_table->insertRow(testapp);
-					for (int j = 0; j < 3; j++) {
-						App_item[testapp][j] = new QTableWidgetItem;
-						App_table->setItem(testapp,j,App_item[testapp][j]);
-					}
-
-					appindex[1][testapp] = i;
-					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
-					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
-					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
-					//				printf("uiappinfo.get_info[i].appname = %s\n",uiappinfo.get_info[i].appname);
-				}
-			}
-			break;
-		default:
-			break;
-	}
-}
 
 void ManageWindow::StyleChange(int StyleString,QDialog *dialogsheet)     //透明度
 {
@@ -486,6 +370,7 @@ void ManageWindow::LoadBook()
 	Book_table->verticalHeader()->setVisible(false);   
 	Book_table->horizontalHeader()->setVisible(true); 
 	Book_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
+	Book_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	QStringList labels;
 	labels << tr("姓名") << tr("号码");
@@ -518,10 +403,10 @@ void ManageWindow::slotAboutApplication()
 				"<p>任何个人和组织都可以对源码进行自由的传播和修改。"
 				"<p>版本：			1.0<p>"
 				"<p>问题及建议？"
-				"<p>欢迎联系我:	 <a href=\"imcanoe@gmail.com\">imcanoe@gmail.com</a>."
-				"<p>博客:	 <a href=\"blogs.csdn.net/Acanoe\">blogs.csdn.net/Acanoe</a>."
+				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>"
+				"<p>博客:	 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
 				"<p>关注新浪微博了解最新更新："
-				"<p><a href=\"weibo.com/imcanoe\">weibo.com/imcanoe</a>."
+				"<a href = http://weibo.com/acanoe >weibo.com/acanoe</a>"
 				"<p>androidmanager by 杨小军 2013/5/24 "
 				));
 	// "<p>QtWebKit is based on the Open Source WebKit Project developed at <a href=\"http://webkit.org/\">http://webkit.org/</a>."
@@ -576,6 +461,7 @@ void ManageWindow::LoadDownloadlist()
 	Downloadlist_table->verticalHeader()->setVisible(false);   
 	Downloadlist_table->horizontalHeader()->setVisible(true); 
 	Downloadlist_table->setEditTriggers ( QAbstractItemView::NoEditTriggers ); // 不能进行编辑
+	Downloadlist_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	Downloadlist_table->horizontalHeader()->setFixedHeight(40); //修改表头合适的高度
 	Downloadlist_table->horizontalHeader()->setStyleSheet("QHeaderView::section {background-color:lightblue; \
@@ -597,6 +483,7 @@ void ManageWindow::LoadDownloadlist()
 	connect(Downloadlist_table,SIGNAL(cellClicked(int,int)),this,SLOT(Download_clicked(int,int)));
 
 }
+
 void ManageWindow::LoadApp()
 {
 	App_table = new QTableWidget(ui->app_widget);
@@ -617,6 +504,7 @@ void ManageWindow::LoadApp()
 	App_table->verticalHeader()->setVisible(false);   
 	App_table->horizontalHeader()->setVisible(true); 
 	App_table->setEditTriggers ( QAbstractItemView::NoEditTriggers ); // 不能进行编辑
+	App_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	//	App_table->horizontalHeader()->resizeSection(0,150);//修改表头第一列的宽度为150
 	App_table->horizontalHeader()->setFixedHeight(40); //修改表头合适的高度
@@ -627,7 +515,12 @@ void ManageWindow::LoadApp()
 		QStringList labels;
 	labels << tr("名称") << tr("版本")  << tr("大小") << tr("位置");
 	App_table->setHorizontalHeaderLabels(labels);
-
+/*
+	QPalette pal;
+	pal.setColor(QPalette::Base, QColor(255, 0, 0));
+	pal.setColor(QPalette::AlternateBase, QColor(0, 255, 0));
+	App_table->setPalette(pal);
+	*/
 
 	ui->Cmbx_appclass->addItem("系统应用");
 	ui->Cmbx_appclass->addItem("第三方应用");
@@ -676,6 +569,45 @@ void ManageWindow::LoadSettings()
 
 }
 
+
+
+void ManageWindow::setui_downloadlist(int row)
+{
+	//	Downloadlist_table->setRowCount(uiappinfo.count + 1);
+	//	for (int i = 0; i <= 50; i++) {
+	downname[row] = new QLabel(&UiDownlist[row]);
+	downname[row]->setGeometry(QRect(0, 0, 111, 31));
+
+	downprogress[row] = new QProgressBar(&UiDownlist[row]);
+	downprogress[row]->setGeometry(QRect(134, 15, 532, 8));
+	downprogress[row]->setStyleSheet(QString::fromUtf8(""));
+	downprogress[row]->setValue(24);
+
+	downstat[row] = new QLabel(&UiDownlist[row]);
+	downstat[row]->setGeometry(QRect(710, 0, 71, 31));
+
+
+	Downloadlist_table->insertRow(row);
+	Downloadlist_item[row][0] = new QTableWidgetItem;
+	Downloadlist_table->setItem(row,0,Downloadlist_item[row][0]);
+	Downloadlist_table->setCellWidget(row, 0, &UiDownlist[row]);
+
+	/*
+	   QWidget *widget_test = new QWidget;
+
+	   QProgressBar *pushButton_test= new QProgressBar(widget_test);
+	   */
+
+	/*
+	   Downloadlist_item[i][0]->setText(QString(uiappinfo.get_info[i].appname));
+	   Downloadlist_item[i][1]->setText(QString(uiappinfo.get_info[i].appversion));
+	   Downloadlist_item[i][2]->setText(QString(uiappinfo.get_info[i].appsize));
+	   */
+	//	}
+
+}
+
+
 void ManageWindow::goto_setdownloadpath()
 {
 	QString downloadpath;
@@ -716,6 +648,7 @@ void ManageWindow::LoadMms()
 	Mms_table->verticalHeader()->setVisible(false);     
 	Mms_table->horizontalHeader()->setVisible(true);  
 	Mms_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
+	Mms_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	QStringList labels;
 	labels << tr("号码") << tr("内容")  << tr("时间");
@@ -1463,6 +1396,90 @@ void ManageWindow::setui_mmsinfo()
 }
 
 
+void ManageWindow::setui_appclass(int Appclass)     
+{
+
+	refreshsign.app = 0;
+	getappinfo(&uiappinfo);
+
+	//	if(StyleString=="系统应用")
+	switch(Appclass)
+	{
+		case 0:
+			testapp = -1;
+			qDebug() << "系统应用";
+			APPINDEX = 0;
+			App_table->setRowCount(0);
+
+			App_table->clearContents();
+			App_table->setRowCount(0);
+			for (int i = 0; i <= uiappinfo.count; i++) {
+				if(!uiappinfo.get_info[i].appattribute)
+				{
+
+					testapp++;
+					App_table->insertRow(testapp);
+
+					/*
+					   QComboBox *comBox = new QComboBox(); 
+					   comBox->addItem("F"); 
+					   comBox->addItem("M"); 
+					   Book_table->setCellWidget(0,2,comBox);
+					   */
+
+
+					for (int j = 0; j < 3; j++) {
+						App_item[testapp][j] = new QTableWidgetItem;
+						App_table->setItem(testapp,j,App_item[testapp][j]);
+					}
+					appindex[0][testapp] = i;
+
+					/*
+					   QProgressBar *pushButton_test= new QProgressBar;
+					   App_table->setCellWidget(testapp, 0, pushButton_test);
+					   */
+
+					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
+					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
+					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
+				}
+			}
+
+			break;
+		case 1:
+
+			testapp = -1;
+			qDebug() << "第三方应用";
+
+			APPINDEX = 1;
+			App_table->clearContents();
+			App_table->setRowCount(0);
+			//		App_table->removeRow(0);
+			//		App_table->setRowCount(uiappinfo.count + 1);
+			for (int i = 0; i <= uiappinfo.count; i++) {
+				if(uiappinfo.get_info[i].appattribute)
+				{
+					testapp++;
+					App_table->insertRow(testapp);
+					for (int j = 0; j < 3; j++) {
+						App_item[testapp][j] = new QTableWidgetItem;
+						App_table->setItem(testapp,j,App_item[testapp][j]);
+					}
+
+					appindex[1][testapp] = i;
+					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
+					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
+					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
+					//				printf("uiappinfo.get_info[i].appname = %s\n",uiappinfo.get_info[i].appname);
+				}
+			}
+			break;
+		default:
+			break;
+	}
+}
+
+
 // add app
 
 void ManageWindow::setui_clean()
@@ -1709,6 +1726,11 @@ void ManageWindow::LoadWebview()
 	   */
 	page =new webPage(this);
 	ui->Webview->setPage(page);
+/*
+	ui->Cmbx_otherstore>addItem("安卓应用");
+	ui->Cmbx_otherstore>addItem("系统应用");
+	*/
+	
 
 	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
 	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
