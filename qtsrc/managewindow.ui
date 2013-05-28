@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -314,7 +314,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
      <widget class="QPushButton" name="Btn_back">
       <property name="geometry">
        <rect>
-        <x>870</x>
+        <x>880</x>
         <y>0</y>
         <width>41</width>
         <height>21</height>
@@ -327,7 +327,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
      <widget class="QPushButton" name="Btn_reload">
       <property name="geometry">
        <rect>
-        <x>910</x>
+        <x>920</x>
         <y>0</y>
         <width>41</width>
         <height>21</height>
@@ -340,7 +340,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
      <widget class="QPushButton" name="Btn_forward">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>960</x>
         <y>0</y>
         <width>41</width>
         <height>21</height>
@@ -349,6 +349,21 @@ background-color:rgb(212, 9, 12); color: white;</string>
       <property name="text">
        <string>前进</string>
       </property>
+     </widget>
+     <widget class="QComboBox" name="skinstyle_2">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>0</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>其他adnroid市场</string>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="P_Book">

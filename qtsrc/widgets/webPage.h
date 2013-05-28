@@ -141,7 +141,7 @@ signals:
 		void openLink(const QUrl & url);
 		void adddownloadurl(int,double,int,int,QString);
 		void addstartdownload(int,double,int,int,QString);
-		void downloadurlfinished(int,int,QString);
+		void downloadurlfinished(int,int,int,QString);
 
 		private slots:
 			void handleUnsupportedContent(QNetworkReply *reply); 

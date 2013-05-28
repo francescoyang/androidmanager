@@ -183,10 +183,9 @@ void ManageWindow::setui_downloadlist(int row)
 	downprogress[row]->setGeometry(QRect(134, 15, 532, 8));
 	downprogress[row]->setStyleSheet(QString::fromUtf8(""));
 	downprogress[row]->setValue(24);
-	/*
-	   downstat = new QLabel(&UiDownlist[row]);
-	   downstat.setGeometry(QRect(710, 0, 71, 31));
-	   */
+
+	downstat[row] = new QLabel(&UiDownlist[row]);
+	downstat[row]->setGeometry(QRect(710, 0, 71, 31));
 
 
 	Downloadlist_table->insertRow(row);
@@ -212,6 +211,7 @@ void ManageWindow::setui_downloadlist(int row)
 void ManageWindow::setui_appclass(int Appclass)     
 {
 
+	refreshsign.app = 0;
 	getappinfo(&uiappinfo);
 
 	//	if(StyleString=="系统应用")
@@ -595,7 +595,6 @@ void ManageWindow::LoadDownloadlist()
 	   */
 	//	connect(ui->Cmbx_downlist,SIGNAL(currentIndexChanged(int)),this,SLOT(slotappclasschange(int)));
 	connect(Downloadlist_table,SIGNAL(cellClicked(int,int)),this,SLOT(Download_clicked(int,int)));
-	//	setui_downloadlist(0);
 
 }
 void ManageWindow::LoadApp()
@@ -800,9 +799,11 @@ void ManageWindow::adbresult(int resulttype ,int adbcount,int result)
 			{
 				qDebug() << "Istall : " << adbcount  << " Success";
 				post_refresh(CMD_APP);
+				downstat[adbcount]->setText("安装成功");
 				dlg->accept();
 			} else {
 				qDebug() << "Istall : " << adbcount  << " Failure";
+				downstat[adbcount]->setText("安装失败");
 				dlg->accept();
 			}
 			break;
@@ -1203,7 +1204,8 @@ void ManageWindow::recv_uninstall(int res)
 	{
 		dialogUi ->L_uninstallinfo->setText("卸载成功");
 		dlg->accept();
-		setui_appinfo();
+		setui_appclass(APPINDEX);
+//		setui_appinfo();
 	} else{
 		dialogUi->L_uninstallinfo->setText("卸载失败");
 	}
@@ -1477,6 +1479,7 @@ void ManageWindow::setui_clean()
 }
 void ManageWindow::setui_appinfo()
 {
+	refreshsign.app = 0;
 	getappinfo(&uiappinfo);
 	App_table->setRowCount(0);
 
@@ -1709,7 +1712,7 @@ void ManageWindow::LoadWebview()
 
 	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
 	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
-	connect(this->page, SIGNAL(downloadurlfinished(int,int,QString)), this, SLOT(addadbcmdslot(int,int,QString)));
+	connect(this->page, SIGNAL(downloadurlfinished(int,int,int,QString)), this, SLOT(addadbcmdslot(int,int,int,QString)));
 
 	connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
 	connect(ui->Btn_forward, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
@@ -1726,10 +1729,12 @@ void ManageWindow::LoadWebview()
 		connect(ui->Webview, SIGNAL(titleChanged(const QString &)), this, SLOT(showTitle(const QString &)));
 		*/
 }
-void ManageWindow::addadbcmdslot(int adb_type, int adb_count, QString adb_list)
+void ManageWindow::addadbcmdslot(int downcount,int adb_type, int adb_count, QString adb_list)
 {
+
+	downstat[downcount]->setText("正在安装");
 	qDebug() << "ready install " << adb_list;
-	emit addadbcmd(adb_type,adb_count,adb_list);
+	emit addadbcmd(adb_type,downcount,adb_list);
 }
 void ManageWindow::addstartdownload(int downcount,double speed,int percent,int stat,QString filename)
 {
@@ -1742,6 +1747,7 @@ void ManageWindow::addstartdownload(int downcount,double speed,int percent,int s
 	connect(this, SIGNAL(refreshdowninfo(int,double,int,int,QString)), &downloadlist[downcount], SLOT(refreshdowninfo(int,double,int,int,QString)));
 
 	setui_downloadlist(downcount);
+	downstat[downcount]->setText("正在下载");
 	downname[downcount]->setText(filename);
 	//	emit refreshdowninfo(downcount,speed,percent,stat,filename); 
 	//	&downloadlist[downcount].ui->downname->setText(filename);
@@ -1768,7 +1774,6 @@ void ManageWindow::adddownloadurl(int downcount,double speed,int percent,int sta
 	   downloadlist[downcount].ui->downstat->setText(stat.toString());
 	   this.downloadlist[downcount].ui->downprogress->setValue(percent);
 	   */
-	//	setui_downloadlist(downcount);
 }
 
 void ManageWindow::loadUrlAddr()

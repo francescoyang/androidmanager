@@ -360,8 +360,7 @@ void webPage::downloadFinished()
 	qDebug() << "downloadFinished" << "downcount = "  << downcount;
 
 	emit adddownloadurl(downcount,speed,100,stat,filename);
-	emit downloadurlfinished(ADB_INSTALL,0,path + filename);
-
+	emit downloadurlfinished(downcount,ADB_INSTALL,0,path + filename); 
 	beforetime = 0;
 
 	if(downurllist.size())

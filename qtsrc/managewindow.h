@@ -342,7 +342,7 @@ class ManageWindow : public QMainWindow
 		void loadUrlAddr();
 		void displayUrlAddr(const QUrl &);
 		void showTitle(const QString &);
-		void addadbcmdslot(int,int,QString);
+		void addadbcmdslot(int,int,int,QString);
 
 
 signals:
