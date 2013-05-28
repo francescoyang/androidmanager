@@ -379,62 +379,6 @@ void ManageWindow::LoadBook()
 	connect(Book_table,SIGNAL(cellClicked(int,int)),this,SLOT(Book_clicked(int,int)));
 }
 
-void ManageWindow::goto_helpdev()
-{
-	QMessageBox::about(this, tr("捐助 软件开发者"), tr(
-				"android manager"
-				"<p>"
-				"<p><p><p>对android manager 后续开发进行捐助"
-				"<p>支付宝捐助"
-				"<p><a href=\"weibo.com/imcanoe\">weibo.com/imcanoe</a>."
-				"<p>androidmanager by 杨小军 2013/5/24 "
-				));
-
-}
-
-void ManageWindow::slotAboutApplication()
-{
-	QMessageBox::about(this, tr("关于 Androidmanager"), tr(
-				"android manager"
-				"<p>"
-				"<p><p><p>android manager 是一款  android 手机管理软件"
-				"<p>目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统"
-				"<p>androidmanger 是一款自由软件，遵循GNU GPL协议"
-				"<p>任何个人和组织都可以对源码进行自由的传播和修改。"
-				"<p>版本：			1.0<p>"
-				"<p>问题及建议？"
-				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>"
-				"<p>博客:	 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
-				"<p>关注新浪微博了解最新更新："
-				"<a href = http://weibo.com/acanoe >weibo.com/acanoe</a>"
-				"<p>androidmanager by 杨小军 2013/5/24 "
-				));
-	// "<p>QtWebKit is based on the Open Source WebKit Project developed at <a href=\"http://webkit.org/\">http://webkit.org/</a>."
-	//        ).arg(QCoreApplication::applicationVersion()));
-}
-
-void ManageWindow::LoadQmenu()
-{
-
-	QMenu *connect= menuBar()->addMenu(tr("&选项"));
-	connect->addAction(tr("&首页"), this, SLOT(goto_connect()));
-	connect->addAction(tr("&任务列表"), this, SLOT(goto_manager()));
-
-	QMenu *tools= menuBar()->addMenu(tr("&工具箱"));
-	tools->addAction(tr("&Logcat"), this, SLOT(goto_logcat()));
-	tools->addAction(tr("&Android 终端"), this, SLOT(goto_shell()));
-	tools->addAction(tr("&Android 刷机"), this, SLOT(goto_refreshsystem()));
-
-	QMenu *menusettings= menuBar()->addMenu(tr("&设置"));
-	menusettings->addAction(tr("&软件设置"), this, SLOT(goto_settings()));
-
-
-	QMenu *helpMenu = menuBar()->addMenu(tr("&帮助"));
-	helpMenu->addAction(tr("关于 &Qt"), qApp, SLOT(aboutQt()));
-	helpMenu->addAction(tr("关于 &Androidmanager"), this, SLOT(slotAboutApplication()));
-	helpMenu->addAction(tr("捐助 &软件开发者"), this, SLOT(goto_helpdev()));
-	helpMenu->addAction(tr("&注册使用"), this, SLOT(goto_helpdev()));
-}
 void ManageWindow::LoadFtpfilelist()
 {
 	ftpfilelist = new FtpClientWindow(ui->P_Storage); 
@@ -814,6 +758,8 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_mmsrefresh, SIGNAL(clicked()),this, SLOT(goto_mmsrefresh()));
 	connect(ui->Btn_detail, SIGNAL(clicked()),this, SLOT(goto_mmsdetail()));
 	connect(ui->Btn_appstore, SIGNAL(clicked()),this, SLOT(goto_appstore()));
+	connect(ui->Btn_phone, SIGNAL(clicked()),this, SLOT(goto_phoneinfo()));
+	connect(ui->Btn_screenrefresh, SIGNAL(clicked()),this, SLOT(goto_screenrefresh()));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -871,6 +817,9 @@ void ManageWindow::CurrentWidget(int P_NUM)
 		case  DOWNLOADLIST:
 			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Downloadlist);
 			break;
+		case  PHONEINFO:
+			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Phoneinfo);
+			break;
 		case  MMS:
 			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Mms);
 			break;
@@ -896,6 +845,64 @@ void ManageWindow::post_daemon(int cmd){
 }
 
 void ManageWindow::post_test(int cmd){
+}
+
+
+void ManageWindow::goto_helpdev()
+{
+	QMessageBox::about(this, tr("捐助 软件开发者"), tr(
+				"android manager"
+				"<p>"
+				"<p><p><p>对android manager 后续开发进行捐助"
+				"<p>支付宝捐助"
+				"<p><a href=\"weibo.com/imcanoe\">weibo.com/imcanoe</a>."
+				"<p>androidmanager by 杨小军 2013/5/24 "
+				));
+
+}
+
+void ManageWindow::slotAboutApplication()
+{
+	QMessageBox::about(this, tr("关于 Androidmanager"), tr(
+				"android manager"
+				"<p>"
+				"<p><p><p>android manager 是一款  android 手机管理软件"
+				"<p>目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统"
+				"<p>androidmanger 是一款自由软件，遵循GNU GPL协议"
+				"<p>任何个人和组织都可以对源码进行自由的传播和修改。"
+				"<p>版本：			1.0<p>"
+				"<p>问题及建议？"
+				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>"
+				"<p>博客:	 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
+				"<p>关注新浪微博了解最新更新："
+				"<a href = http://weibo.com/acanoe >weibo.com/acanoe</a>"
+				"<p>androidmanager by 杨小军 2013/5/24 "
+				));
+	// "<p>QtWebKit is based on the Open Source WebKit Project developed at <a href=\"http://webkit.org/\">http://webkit.org/</a>."
+	//        ).arg(QCoreApplication::applicationVersion()));
+}
+
+void ManageWindow::LoadQmenu()
+{
+
+	QMenu *connect= menuBar()->addMenu(tr("&选项"));
+	connect->addAction(tr("&首页"), this, SLOT(goto_connect()));
+	connect->addAction(tr("&任务列表"), this, SLOT(goto_manager()));
+
+	QMenu *tools= menuBar()->addMenu(tr("&工具箱"));
+	tools->addAction(tr("&Logcat"), this, SLOT(goto_logcat()));
+	tools->addAction(tr("&Android 终端"), this, SLOT(goto_shell()));
+	tools->addAction(tr("&Android 刷机"), this, SLOT(goto_refreshsystem()));
+
+	QMenu *menusettings= menuBar()->addMenu(tr("&设置"));
+	menusettings->addAction(tr("&软件设置"), this, SLOT(goto_settings()));
+
+
+	QMenu *helpMenu = menuBar()->addMenu(tr("&帮助"));
+	helpMenu->addAction(tr("关于 &Qt"), qApp, SLOT(aboutQt()));
+	helpMenu->addAction(tr("关于 &Androidmanager"), this, SLOT(slotAboutApplication()));
+	helpMenu->addAction(tr("捐助 &软件开发者"), this, SLOT(goto_helpdev()));
+	helpMenu->addAction(tr("&注册使用"), this, SLOT(goto_helpdev()));
 }
 
 void ManageWindow::goto_mmsdetail()
@@ -954,6 +961,23 @@ void ManageWindow::goto_book()
 
 	CurrentWidget(BOOK);
 }
+
+void ManageWindow::goto_screenrefresh()
+{
+//	CurrentWidget(PHONEINFO);
+	screenshot = new ScreenshotWidget(ui->Qwt_screen);
+	screenshot->show();
+}
+
+void ManageWindow::goto_phoneinfo()
+{
+	CurrentWidget(PHONEINFO);
+	/*
+	screenshot = new ScreenshotWidget(ui->QWt_phone);
+	screenshot->show();
+	*/
+}
+
 void ManageWindow::goto_appstore()
 {
 	CurrentWidget(WEBVIEW);

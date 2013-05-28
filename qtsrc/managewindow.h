@@ -28,6 +28,7 @@
 #include "widgets/webPage.h"
 #include "widgets/ftpclientwindow.h"
 #include "widgets/downlist.h"
+#include "widgets/screenshotwidget.h"
 
 #include "backpthread.h"
 
@@ -53,6 +54,8 @@
 #define	BOOK			11 
 #define	STORAGE			12
 #define	DOWNLOADLIST	13
+#define	PHONEINFO		14
+
 #define	TEST			18
 #define MAXLIST			1000
 
@@ -112,7 +115,7 @@ class ManageWindow : public QMainWindow
 		MMS_Dialog *mms_dialog;
 		Animation *m_anim;
 		Animation *refresh_anim;
-
+		ScreenshotWidget *screenshot;
 		webPage *page;
 		FtpClientWindow *ftpfilelist;
 		Downloadlist  downloadlist[1000];	
@@ -294,6 +297,8 @@ class ManageWindow : public QMainWindow
 		void goto_helpdev();
 		void goto_mmsrefresh();
 		void goto_mmsdetail();
+		void goto_screenrefresh();
+		void goto_phoneinfo();
 
 		void get_message();
 
