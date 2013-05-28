@@ -162,7 +162,7 @@ void FtpClientWindow::addToList(const QUrlInfo &urlInfo)
 
     item->setText(urlInfo.name().toLatin1());	/* 在listWidget中显示的名字 */  // toLatin1  转换中文乱码
 //	qDebug() << urlInfo.name().toLatin1();
-    const QIcon icon = QIcon(urlInfo.isDir() ? ":/images/dir.png" : ":/images/file.png");
+    const QIcon icon = QIcon(urlInfo.isDir() ? "/home/acanoe/qt/androidmanager/qtsrc/image/dir.png" : "/home/acanoe/qt/androidmanager/qtsrc/image/file.png");
 	listItemCtn.append(item);
 
     item->setIcon(icon);
@@ -178,6 +178,8 @@ void FtpClientWindow::mainWindowQuit()
 /* 连接FTP */
 void FtpClientWindow::ftpConnect()
 {
+
+    ftpclient.ftpLogout();
     ftpHostChanged();
     ftpPortChanged();
     ftpUserChanged();

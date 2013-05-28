@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -111,7 +111,7 @@ background-color:rgb(212, 9, 12); color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/mms.png);
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/images.png);
 background-color:rgb(184, 193, 7); color: white;</string>
       </property>
       <property name="text">
@@ -227,8 +227,8 @@ background-color:rgb(5, 255, 247); color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/video.png);
-background-color:rgb(212, 9, 12); color: white;</string>
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/wandoujia.png);
+background-color:rgb(118, 223, 116); color: white;</string>
       </property>
       <property name="text">
        <string/>

@@ -7,10 +7,15 @@
         <file>shipin.png</file>
         <file>app.png</file>
         <file>yinyue.jpg</file>
-        <file>mms.png</file>
-        <file>video.png</file>
         <file>music.png</file>
         <file>book.png</file>
         <file>process.png</file>
+        <file>wandoujia.png</file>
+        <file>mms.png</file>
+        <file>images.png</file>
+        <file>video.png</file>
+        <file>file.png</file>
+        <file>cdtoparent.png</file>
+        <file>dir.png</file>
     </qresource>
 </RCC>

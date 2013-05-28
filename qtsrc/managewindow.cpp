@@ -463,14 +463,14 @@ void ManageWindow::LoadDownloadlist()
 	Downloadlist_table->setEditTriggers ( QAbstractItemView::NoEditTriggers ); // 不能进行编辑
 	Downloadlist_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
-	Downloadlist_table->horizontalHeader()->setFixedHeight(40); //修改表头合适的高度
+	Downloadlist_table->horizontalHeader()->setFixedHeight(33); //修改表头合适的高度
 	Downloadlist_table->horizontalHeader()->setStyleSheet("QHeaderView::section {background-color:lightblue; \
 			color: black;padding-left: 4px;border: 1px solid #6c6c6c;}"); //设置表头字体，颜色，模式
 
 		Downloadlist_table->setRowCount(0);
 
 	QStringList labels;
-	labels << tr("名称") << tr("进度")  << tr("大小");
+	labels << tr("任务列表");
 	Downloadlist_table->setHorizontalHeaderLabels(labels);
 	/*
 
@@ -507,7 +507,7 @@ void ManageWindow::LoadApp()
 	App_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	//	App_table->horizontalHeader()->resizeSection(0,150);//修改表头第一列的宽度为150
-	App_table->horizontalHeader()->setFixedHeight(40); //修改表头合适的高度
+	App_table->horizontalHeader()->setFixedHeight(30); //修改表头合适的高度
 	App_table->horizontalHeader()->setStyleSheet("QHeaderView::section {background-color:lightblue; \
 			color: black;padding-left: 4px;border: 1px solid #6c6c6c;}"); //设置表头字体，颜色，模式
 
@@ -579,7 +579,7 @@ void ManageWindow::setui_downloadlist(int row)
 	downname[row]->setGeometry(QRect(0, 0, 111, 31));
 
 	downprogress[row] = new QProgressBar(&UiDownlist[row]);
-	downprogress[row]->setGeometry(QRect(134, 15, 532, 8));
+	downprogress[row]->setGeometry(QRect(134, 10, 532, 15));
 	downprogress[row]->setStyleSheet(QString::fromUtf8(""));
 	downprogress[row]->setValue(24);
 
@@ -1726,10 +1726,9 @@ void ManageWindow::LoadWebview()
 	   */
 	page =new webPage(this);
 	ui->Webview->setPage(page);
-/*
-	ui->Cmbx_otherstore>addItem("安卓应用");
-	ui->Cmbx_otherstore>addItem("系统应用");
-	*/
+	ui->Cmbx_otherstore->addItem("豌豆荚应用");
+	ui->Cmbx_otherstore->addItem("豌豆荚游戏");
+	ui->Cmbx_otherstore->addItem("安卓市场");
 	
 
 	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
