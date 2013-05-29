@@ -677,7 +677,10 @@ void ManageWindow::adbresult(int resulttype ,int adbcount,int result)
 			{
 				qDebug() << "Istall : " << adbcount  << " Success";
 				post_refresh(CMD_APP);
-//				downstat[adbcount]->setText("安装成功");
+				if(adbcount <  1000)
+				{
+					downstat[adbcount]->setText("安装成功");
+				}
 				dlg->accept();
 			} else {
 				qDebug() << "Istall : " << adbcount  << " Failure";

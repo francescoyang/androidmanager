@@ -270,6 +270,74 @@ background-color:rgb(118, 223, 116); color: white;</string>
        <string>截屏</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="Btn_search">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>20</y>
+        <width>31</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>查找</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Ledt_search">
+      <property name="geometry">
+       <rect>
+        <x>749</x>
+        <y>22</y>
+        <width>131</width>
+        <height>24</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="Cmbx_search">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>20</y>
+        <width>61</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>全部</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>短信</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>电话簿</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>应用</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>图片</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>视频</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>音乐</string>
+       </property>
+      </item>
+     </widget>
     </widget>
     <widget class="QWidget" name="P_Connect">
      <widget class="QLabel" name="Lab_info">

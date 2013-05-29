@@ -201,7 +201,7 @@ class ManageWindow : public QMainWindow
 		char BOOKSIGN = -1;
 		char MMSSIGN = -1;
 
-		int adbcount = 0;
+		int adbcount = 1001;
 		int testapp;
 		int next = 0;
 		int appindex[4][100];
