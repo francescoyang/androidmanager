@@ -11,6 +11,8 @@ ManageWindow::ManageWindow(QWidget *parent) :
 	ui(new Ui::ManageWindow)
 {
 	ui->setupUi(this);
+	dialogUi = new Ui::dialog;
+	dialogUi->setupUi(dlg);
 	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 
 #if 0
@@ -61,6 +63,9 @@ void ManageWindow::UiToolInit()
 	this->setWindowTitle("android manager 杨小军 自由软件");
 	ui->Lab_info->setStyleSheet("font-size:22px;");
 
+	screenshot = new ScreenshotWidget(ui->Qwt_screen);
+	screenshot->show();
+
 	/*
 	   ui->centralWidget->setWindowOpacity(0.7);
 	   ui->W_kouzhan->setWindowOpacity(0.7);
@@ -68,7 +73,6 @@ void ManageWindow::UiToolInit()
 	   */
 	Animationinit();
 	Refreshlabinit();
-	//SetWordCode();
 	LoadImage();
 	LoadVideo();
 	LoadMusic();
@@ -87,7 +91,6 @@ void ManageWindow::UiToolInit()
 
 	video_player();
 	//	slotTrans(90);
-	//	Qssinit(1);
 	connectinit();
 
 }
@@ -111,8 +114,6 @@ void ManageWindow::connectinit()
 	refresh_anim->stop();
 	setui_clean();
 
-
-	//	delete 	page;	
 }
 
 void ManageWindow::setIcon()
@@ -306,7 +307,6 @@ void ManageWindow::slotTrans(int value)     //透明度
 	qreal opacity = qreal(value)/100.0;
 	this->setWindowOpacity(opacity);
 	//	ui->stackedWidget->setWindowOpacity(opacity);
-	//	emit senopacity(opacity);
 }
 void ManageWindow::LoadImage()
 {
@@ -316,19 +316,18 @@ void ManageWindow::LoadImage()
 	ui->imagelist->setResizeMode(QListView::Adjust);
 	listModel = new PictureListModel(this);
 	ui->imagelist->setModel(listModel);
+	ui->Qwt_image->setHidden(true);
 	listModel->addPictures("/home/acanoe/图片");
 	connect(ui->imagelist->selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)),
 			this, SLOT(listItemChanged(QModelIndex, QModelIndex)));
-	/*
-	   label = new QLabel(ui->imagelist);
-	   label->setScaledContents(true);
 
+	   ui->Lab_image->setScaledContents(true);
 	   showPicture(listModel->index(0));
-	   */
 }
 void ManageWindow::listItemChanged(const QModelIndex &current, const QModelIndex &previous)
 {
-	qDebug() << current;
+	qDebug() << current << previous;
+	showPicture(current);
 }
 
 
@@ -337,9 +336,11 @@ void ManageWindow::showPicture(const QModelIndex &index)
 	if (!index.isValid())
 		return;
 
+	ui->Qwt_image->setHidden(false);
+
 	QPixmap pixmap = listModel->data(index, Qt::UserRole).value<QPixmap>();
-	label->setPixmap(pixmap);
-	label->adjustSize();
+	ui->Lab_image->setPixmap(pixmap);
+//	ui->Lab_image->adjustSize();
 	ui->imagelist->setCurrentIndex(index);
 }
 void ManageWindow::LoadVideo()
@@ -676,7 +677,7 @@ void ManageWindow::adbresult(int resulttype ,int adbcount,int result)
 			{
 				qDebug() << "Istall : " << adbcount  << " Success";
 				post_refresh(CMD_APP);
-				downstat[adbcount]->setText("安装成功");
+//				downstat[adbcount]->setText("安装成功");
 				dlg->accept();
 			} else {
 				qDebug() << "Istall : " << adbcount  << " Failure";
@@ -760,6 +761,8 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_appstore, SIGNAL(clicked()),this, SLOT(goto_appstore()));
 	connect(ui->Btn_phone, SIGNAL(clicked()),this, SLOT(goto_phoneinfo()));
 	connect(ui->Btn_screenrefresh, SIGNAL(clicked()),this, SLOT(goto_screenrefresh()));
+	connect(ui->Btn_imagenext, SIGNAL(clicked()),this, SLOT(goto_nextimage()));
+	connect(ui->Btn_hiden, SIGNAL(clicked()),this, SLOT(goto_hiden()));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -853,9 +856,7 @@ void ManageWindow::goto_helpdev()
 	QMessageBox::about(this, tr("捐助 软件开发者"), tr(
 				"android manager"
 				"<p>"
-				"<p><p><p>对android manager 后续开发进行捐助"
-				"<p>支付宝捐助"
-				"<p><a href=\"weibo.com/imcanoe\">weibo.com/imcanoe</a>."
+				"<p><p><p>(*^__^*) 嘻嘻…… 其实现在注不注册都一样的"
 				"<p>androidmanager by 杨小军 2013/5/24 "
 				));
 
@@ -922,6 +923,12 @@ void ManageWindow::goto_mmsrefresh()
 
 void ManageWindow::goto_call()
 {
+
+	if(BOOKSIGN >= 0)
+	{
+		setcallphone(uibookinfo.get_info[BOOKSIGN].booknumber);
+		post_refresh(CMD_CALLPHONE);
+	}
 }
 
 void ManageWindow::goto_booksendmms()
@@ -962,6 +969,16 @@ void ManageWindow::goto_book()
 	CurrentWidget(BOOK);
 }
 
+void ManageWindow::goto_hiden()
+{
+	ui->Qwt_image->setHidden(true);
+}
+
+void ManageWindow::goto_nextimage()
+{
+
+	showPicture(listModel->index(next ++));
+}
 void ManageWindow::goto_screenrefresh()
 {
 //	CurrentWidget(PHONEINFO);
@@ -1095,19 +1112,17 @@ void ManageWindow::goto_uninstall()
 	{
 		char tmpbuf[150] = { 0 };
 		//	QDialog *dlg = new QDialog;
-		dialogUi = new Ui::dialog;
-		dialogUi->setupUi(dlg);
 		//	dlg->exec();
 		//		dlg.move ((QApplication::desktop()->width() - dlg.width())/2,(QApplication::desktop()->height() - dlg.height())/2);
 		dlg->setWindowTitle("卸载 应用");
-		dlg->show();
 		memset(tmpbuf,0,150);
 
 
-		dialogUi->L_uninstallinfo->setText("");
 		sprintf(tmpbuf,"确认卸载 : %s",uiappinfo.get_info[APPSIGN].appname);
 		printf("APPSIGN = %d\n",APPSIGN);
-		dialogUi->L_uninstallinfo->setText(tmpbuf);
+		dialogUi->L_uninstallinfo->setText("");
+		dialogUi ->L_uninstallinfo->setText(tmpbuf);
+		dlg->show();
 
 		connect(dialogUi->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
 		connect(dialogUi->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
@@ -1633,6 +1648,9 @@ void ManageWindow::setui_storageinfo()
 	QString sdAvail =	uistorageinfo.sdAvail;
 	QString memorySize =	uistorageinfo.memorySize;
 	QString memoryAvail =	uistorageinfo.memoryAvail;
+	ui->Lab_phonestorage->setText("手机 " + memoryAvail + "/" + memorySize);
+	ui->Lab_sdstorage->setText("sd卡 " +sdAvail + "/" + sdSize);
+
 	if(sdSize.contains("GB"))
 	{
 		sdSize.remove("GB");

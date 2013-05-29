@@ -200,6 +200,7 @@ class ManageWindow : public QMainWindow
 
 		int adbcount = 0;
 		int testapp;
+		int next = 0;
 		int appindex[4][100];
 
 		QString mmsnumber;
@@ -299,6 +300,8 @@ class ManageWindow : public QMainWindow
 		void goto_mmsdetail();
 		void goto_screenrefresh();
 		void goto_phoneinfo();
+		void goto_nextimage();
+		void goto_hiden();
 
 		void get_message();
 

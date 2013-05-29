@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>13</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -155,7 +155,7 @@ background-color:rgb(5, 255, 247); color: white;</string>
      <widget class="QPushButton" name="Btn_storage">
       <property name="geometry">
        <rect>
-        <x>910</x>
+        <x>911</x>
         <y>610</y>
         <width>80</width>
         <height>40</height>
@@ -165,12 +165,12 @@ background-color:rgb(5, 255, 247); color: white;</string>
        <string>文件管理</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="Lab_phonestorage">
       <property name="geometry">
        <rect>
-        <x>833</x>
-        <y>606</y>
-        <width>61</width>
+        <x>750</x>
+        <y>610</y>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -178,12 +178,12 @@ background-color:rgb(5, 255, 247); color: white;</string>
        <string>手机存储</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="Lab_sdstorage">
       <property name="geometry">
        <rect>
-        <x>833</x>
-        <y>626</y>
-        <width>61</width>
+        <x>750</x>
+        <y>630</y>
+        <width>151</width>
         <height>21</height>
        </rect>
       </property>
@@ -196,8 +196,8 @@ background-color:rgb(5, 255, 247); color: white;</string>
        <rect>
         <x>48</x>
         <y>610</y>
-        <width>760</width>
-        <height>15</height>
+        <width>691</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="value">
@@ -209,8 +209,8 @@ background-color:rgb(5, 255, 247); color: white;</string>
        <rect>
         <x>48</x>
         <y>630</y>
-        <width>760</width>
-        <height>15</height>
+        <width>691</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="value">
@@ -320,9 +320,61 @@ background-color:rgb(118, 223, 116); color: white;</string>
         <x>10</x>
         <y>10</y>
         <width>1011</width>
-        <height>631</height>
+        <height>661</height>
        </rect>
       </property>
+     </widget>
+     <widget class="QWidget" name="Qwt_image" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>961</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <widget class="QLabel" name="Lab_image">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>870</width>
+         <height>531</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Btn_imagenext">
+       <property name="geometry">
+        <rect>
+         <x>830</x>
+         <y>570</y>
+         <width>99</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>next</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Btn_hiden">
+       <property name="geometry">
+        <rect>
+         <x>710</x>
+         <y>570</y>
+         <width>99</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Hiden</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="P_Web">
@@ -395,11 +447,6 @@ background-color:rgb(118, 223, 116); color: white;</string>
         <height>21</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="P_Book">

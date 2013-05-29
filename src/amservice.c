@@ -76,6 +76,11 @@ void setmessageinfo(char *char_mmsnumber,char *char_mmsdata)
 	memcpy(sendmessage.mmsdata,char_mmsdata,strlen(char_mmsdata));
 }
 
+void setcallphone(char *phonenumber)
+{
+	memcpy(sendmessage.mmsnumber,phonenumber,strlen(phonenumber));
+}
+
 int waitdata()
 {
 	tmpreturn = 0;
@@ -222,6 +227,9 @@ recv_pack()
 			OVERSIGN = 1;
 			SEND_CMD = 0;
 			break;
+		case CMD_CALLPHONE:
+			printf("SEND_CMD = %x\n",CMD_CALLPHONE);
+			break;
 		case CMD_SENDMMS:
 			printf("SEND_CMD = %x\n",CMD_SENDMMS);
 			ret = dtcmr_recv_timeout(sockfd, &recv_leng, 4,&tout);
@@ -303,6 +311,19 @@ send_pack()
 			printf("asking resend appinfo\n");
 			ret = dtcmr_send(sockfd, &SEND_CMD, 1);
 			SEND_CMD = 0;
+			break;
+		case CMD_CALLPHONE:
+			printf("asking call phone%s\n",sendmessage.mmsnumber);
+			ret = dtcmr_send(sockfd, &SEND_CMD, 1);
+
+			SIZE = sizeof(sendmessage.mmsnumber);
+			memcpy(tosize,&SIZE,4);
+			ret = dtcmr_send(sockfd, tosize, 4);
+			ret = dtcmr_send(sockfd,&(sendmessage.mmsnumber),sizeof(sendmessage.mmsnumber));
+			SEND_CMD = 0;
+
+			printf("int sizeof = %d\n",sizeof(int));
+			printf("char sizeof = %d\n",sizeof(char));
 			break;
 		case CMD_SENDMMS:
 			printf("asking resend sendmms %s,%s\n",sendmessage.mmsnumber,sendmessage.mmsdata);

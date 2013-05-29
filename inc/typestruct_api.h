@@ -13,6 +13,7 @@
 #define CMD_BOOK   0X06
 #define CMD_STORAGE 0X07
 #define CMD_SENDMMS 0X08
+#define CMD_CALLPHONE	9	
 
 
 #ifdef __cplusplus
@@ -90,6 +91,7 @@ extern "C" {
 	void getbookinfo(allbookinfo_t *uibookinfo);
 	void getstorageinfo(storageinfo_t *uistorageinfo);
 	void setmessageinfo(char *char_mmsnumber,char *char_mmsdata);
+	void setcallphone(char *phonenumber); 
 
 #ifdef __cplusplus
 }
