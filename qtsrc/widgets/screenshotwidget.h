@@ -15,11 +15,11 @@ class ScreenshotWidget : public QWidget
 public:
     explicit ScreenshotWidget(QWidget *parent = 0);
     ~ScreenshotWidget();
+	QPixmap screenshot;
     
 private:
     Ui::ScreenshotWidget *ui;
     ThreadScreenshot threadScreenshot;
-	QPixmap screenshot;
 private slots:
     void takeScreenshot();
     void showScreenshot(QImage, int, int);

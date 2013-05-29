@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>200</width>
-    <height>325</height>
+    <width>174</width>
+    <height>240</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,12 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>200</width>
-     <height>325</height>
+     <width>174</width>
+     <height>240</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(7, 7, 7);</string>
    </property>
    <property name="text">
     <string/>

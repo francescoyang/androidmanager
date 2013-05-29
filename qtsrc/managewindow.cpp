@@ -355,7 +355,7 @@ void ManageWindow::LoadConnect()
 void ManageWindow::LoadBook()
 {
 	Book_table = new QTableWidget(ui->W_Book);
-	Book_table->setGeometry(0,0,680,668);
+	Book_table->setGeometry(0,0,300,668);
 	Book_table->setFrameShape(QFrame::NoFrame);  //无边框
 	Book_table->setAutoScroll(false);
 	Book_table->setShowGrid(false); //设置不显示格子线
@@ -365,9 +365,9 @@ void ManageWindow::LoadBook()
 	Book_table->setSelectionMode(QAbstractItemView::SingleSelection); 
 	Book_table->setSelectionBehavior(QAbstractItemView::SelectRows); 
 	//	Book_table->setFont(15);   
-	Book_table->setColumnWidth(0,175);
-	Book_table->setColumnWidth(1,370);
-	//	Book_table->setColumnWidth(2,80);
+	Book_table->setColumnWidth(0,150);
+	Book_table->setColumnWidth(1,150);
+//	Book_table->setColumnWidth(2,80);
 	Book_table->verticalHeader()->setVisible(false);   
 	Book_table->horizontalHeader()->setVisible(true); 
 	Book_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
@@ -763,6 +763,7 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_screenrefresh, SIGNAL(clicked()),this, SLOT(goto_screenrefresh()));
 	connect(ui->Btn_imagenext, SIGNAL(clicked()),this, SLOT(goto_nextimage()));
 	connect(ui->Btn_hiden, SIGNAL(clicked()),this, SLOT(goto_hiden()));
+	connect(ui->Btn_savescreen, SIGNAL(clicked()),this, SLOT(goto_saveScreenshot()));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -979,9 +980,30 @@ void ManageWindow::goto_nextimage()
 
 	showPicture(listModel->index(next ++));
 }
+
+void ManageWindow::goto_saveScreenshot()
+{
+    QFile plik;
+    plik.setFileName(QFileDialog::getSaveFileName(this, tr("Save File..."), "./screenshot.png", tr("Png file")+" (*.png)"));
+    if (plik.fileName().isEmpty())
+        return;
+    if (plik.open(QFile::WriteOnly))
+    {
+        QMatrix matrix;
+//        matrix.rotate(this->rotation);
+        QImage image;
+        image = screenshot->screenshot.toImage();
+        image = image.transformed(matrix);
+        image.save(&plik, "PNG");
+        plik.close();
+    }
+}
+
+
 void ManageWindow::goto_screenrefresh()
 {
 //	CurrentWidget(PHONEINFO);
+	
 	screenshot = new ScreenshotWidget(ui->Qwt_screen);
 	screenshot->show();
 }
@@ -1396,17 +1418,28 @@ void ManageWindow::setui_bookinfo()
 {
 	getbookinfo(&uibookinfo);
 	Book_table->setRowCount(0);
-
+/*
+	QLabel *label = new QLabel;
+	label->setIcon(QIcon(QPixmap(":connects.png")));
 	printf("uibookinfo.count = %d\n",uibookinfo.count);
+	cubesHeaderItem = new QTableWidgetItem();
+	cubesHeaderItem->setIcon(QIcon(QPixmap(":connects.png")));
+	cubesHeaderItem->setTextAlignment(Qt::AlignVCenter);
+	*/
 
 	Book_table->setRowCount(uibookinfo.count + 1);
 	for (int i = 0; i <= uibookinfo.count; i++) {
 		for (int j = 0; j < 2; j++) {
 			Book_item[i][j] = new QTableWidgetItem;
+
 			Book_table->setItem(i,j,Book_item[i][j]);
 		}
+//		Book_table->setItem(i,0,cubesHeaderItem);
+
+		Book_item[i][0]->setIcon(QIcon(QPixmap(Iconpath + "connects.png")));
 		Book_item[i][0]->setText(QString(uibookinfo.get_info[i].bookname));
 		Book_item[i][1]->setText(QString(uibookinfo.get_info[i].booknumber));
+
 		//		printf("%s,%s\n",uibookinfo.get_info[i].bookname,uibookinfo.get_info[i].booknumber);
 		//		Book_item[i][2]->setText(QString(uibookinfo.get_info[i].bookdate));
 	}

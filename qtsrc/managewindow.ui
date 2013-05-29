@@ -60,7 +60,7 @@ background-color:rgb(255, 15, 251); color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/shouji.png);
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/htc.png);
 background-color:rgb(56, 76, 255); color: white;</string>
       </property>
       <property name="text">
@@ -237,33 +237,33 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QWidget" name="Qwt_screen" native="true">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>144</y>
-        <width>200</width>
-        <height>325</height>
+        <x>100</x>
+        <y>155</y>
+        <width>174</width>
+        <height>241</height>
        </rect>
       </property>
      </widget>
      <widget class="QPushButton" name="Btn_screenrefresh">
       <property name="geometry">
        <rect>
-        <x>111</x>
-        <y>570</y>
-        <width>41</width>
-        <height>21</height>
+        <x>49</x>
+        <y>532</y>
+        <width>50</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="text">
        <string>刷新</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Btn_screenrefresh_2">
+     <widget class="QPushButton" name="Btn_savescreen">
       <property name="geometry">
        <rect>
-        <x>227</x>
-        <y>570</y>
-        <width>41</width>
-        <height>21</height>
+        <x>272</x>
+        <y>532</y>
+        <width>50</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="text">
@@ -275,9 +275,9 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QLabel" name="Lab_info">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>428</x>
         <y>230</y>
-        <width>181</width>
+        <width>155</width>
         <height>51</height>
        </rect>
       </property>

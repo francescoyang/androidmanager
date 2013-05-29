@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include <QProcess>
 #include <QTableWidget>
+#include <QTableWidgetItem>
 #include <QCloseEvent>
 #include <string.h>
 #include <QDesktopServices>
@@ -101,6 +102,7 @@ class ManageWindow : public QMainWindow
 		allbookinfo_t uibookinfo;
 		storageinfo_t uistorageinfo;
 		DownloadManager *addmanager;
+		QString Iconpath = "/home/acanoe/qt/androidmanager/qtsrc/image/";
 
 	private:
 
@@ -147,6 +149,7 @@ class ManageWindow : public QMainWindow
 		QTableWidget* App_table;
 		QTableWidgetItem *App_item[300][3];
 
+		QTableWidgetItem *cubesHeaderItem;
 		// add mms ui
 		QTableWidget* Mms_table;
 		QTableWidgetItem *Mms_item[500][3];
@@ -302,6 +305,7 @@ class ManageWindow : public QMainWindow
 		void goto_phoneinfo();
 		void goto_nextimage();
 		void goto_hiden();
+		void goto_saveScreenshot();
 
 		void get_message();
 

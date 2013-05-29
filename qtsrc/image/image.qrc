@@ -17,5 +17,7 @@
         <file>file.png</file>
         <file>cdtoparent.png</file>
         <file>dir.png</file>
+        <file>htc.png</file>
+        <file>connects.png</file>
     </qresource>
 </RCC>
