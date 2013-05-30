@@ -383,11 +383,11 @@ void ManageWindow::LoadSearch()
 void ManageWindow::LoadBook()
 {
 	Book_table = new QTableWidget(ui->P_Book);
-	Book_table->setGeometry(360,0,300,668);
+	Book_table->setGeometry(360,0,400,668);
 	Book_table->setFrameShape(QFrame::NoFrame);  //无边框
 	Book_table->setAutoScroll(false);
 	Book_table->setShowGrid(false); //设置不显示格子线
-	Book_table->setColumnCount(2);  //  hang count 
+	Book_table->setColumnCount(3);  //  hang count 
 	Book_table->setMouseTracking(true);
 	Book_table->verticalHeader()->setDefaultSectionSize(30);
 	Book_table->setSelectionMode(QAbstractItemView::SingleSelection); 
@@ -395,7 +395,7 @@ void ManageWindow::LoadBook()
 	//	Book_table->setFont(15);   
 	Book_table->setColumnWidth(0,150);
 	Book_table->setColumnWidth(1,150);
-	//	Book_table->setColumnWidth(2,80);
+	Book_table->setColumnWidth(2,100);
 	Book_table->verticalHeader()->setVisible(false);   
 	Book_table->horizontalHeader()->setVisible(true); 
 	Book_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
@@ -1709,13 +1709,27 @@ void ManageWindow::customEvent(QEvent* e){
 
 void ManageWindow::setui_bookinfo()
 {
+	/*
+    QSqlDatabase db;
+	db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("./etc/mobile5.db");
+    if(!db.open())
+    {
+        QMessageBox::critical(0, tr("Cannot open database"),
+            tr("Unable to establish a database connection.\n"
+               "This example needs SQLite support. Please read "
+               "the Qt SQL driver documentation for information how "
+               "to build it."), QMessageBox::Cancel);
+    }
+	*/
+
 	refreshsign.book= 0;
 	getbookinfo(&uibookinfo);
 	Book_table->setRowCount(0);
 
 	Book_table->setRowCount(uibookinfo.count + 1);
 	for (int i = 0; i <= uibookinfo.count; i++) {
-		for (int j = 0; j < 2; j++) {
+		for (int j = 0; j < 3; j++) {
 			Book_item[i][j] = new QTableWidgetItem;
 
 			Book_table->setItem(i,j,Book_item[i][j]);
@@ -1725,10 +1739,22 @@ void ManageWindow::setui_bookinfo()
 		Book_item[i][0]->setIcon(QIcon(QPixmap(Iconpath + "connects.png")));
 		Book_item[i][0]->setText(QString(uibookinfo.get_info[i].bookname));
 		Book_item[i][1]->setText(QString(uibookinfo.get_info[i].booknumber));
+/*
+		QString cmd = "select city from mobilePhone where num =";
+        cmd.append(QString(uibookinfo.get_info[i].booknumber).left(7));
+        QSqlQuery query = db.exec(cmd);
+        while(query.next())
+        {
+			Book_item[i][2]->setText(query.value(0).toString());
+			qDebug() << query.value(0).toString();
+			break;
+        }
+		*/
 
 		//		printf("%s,%s\n",uibookinfo.get_info[i].bookname,uibookinfo.get_info[i].booknumber);
 		//		Book_item[i][2]->setText(QString(uibookinfo.get_info[i].bookdate));
 	}
+//	db.close();
 }
 
 

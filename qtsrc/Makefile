@@ -3,6 +3,7 @@ all:
 	qmake -project
 	echo "QT  += webkit" >> qtsrc.pro
 	echo "QT  +=network" >> qtsrc.pro
+#	echo "QT += sql" >> qtsrc.pro
 	qmake -o makefile-tmp
 	sed -e 's/\(^INCPATH.*\)\=/\1+=/' -e 's/\(^LIBS.*\)\=/\1+=/' < makefile-tmp >makefile-qt
 	rm -f makefile-tmp
