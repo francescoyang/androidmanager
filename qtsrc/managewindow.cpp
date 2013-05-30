@@ -85,6 +85,7 @@ void ManageWindow::UiToolInit()
 	LoadDownloadlist();
 	LoadFtpfilelist();
 	LoadQmenu();
+	LoadSearch();
 
 
 
@@ -169,10 +170,6 @@ void ManageWindow::Qssinit(int argc)     //透明度
 
 //void ManageWindow::slotappclasschange(QString StyleString)     //透明度
 
-void ManageWindow::slotappclasschange(int Appclass)     
-{
-	setui_appclass(Appclass);
-}
 
 
 
@@ -321,8 +318,8 @@ void ManageWindow::LoadImage()
 	connect(ui->imagelist->selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)),
 			this, SLOT(listItemChanged(QModelIndex, QModelIndex)));
 
-	   ui->Lab_image->setScaledContents(true);
-	   showPicture(listModel->index(0));
+	ui->Lab_image->setScaledContents(true);
+	showPicture(listModel->index(0));
 }
 void ManageWindow::listItemChanged(const QModelIndex &current, const QModelIndex &previous)
 {
@@ -340,7 +337,7 @@ void ManageWindow::showPicture(const QModelIndex &index)
 
 	QPixmap pixmap = listModel->data(index, Qt::UserRole).value<QPixmap>();
 	ui->Lab_image->setPixmap(pixmap);
-//	ui->Lab_image->adjustSize();
+	//	ui->Lab_image->adjustSize();
 	ui->imagelist->setCurrentIndex(index);
 }
 void ManageWindow::LoadVideo()
@@ -352,10 +349,42 @@ void ManageWindow::LoadMusic()
 void ManageWindow::LoadConnect()
 {
 }
+
+void ManageWindow::LoadSearch()
+{
+	Search_table = new QTableWidget(ui->P_Search);
+
+	Search_table->setGeometry(160,0,700,668);
+	Search_table->setFrameShape(QFrame::NoFrame);  //无边框
+	Search_table->setAutoScroll(false);
+	Search_table->setShowGrid(false); //设置不显示格子线
+	Search_table->setColumnCount(3);  //  hang count 
+	Search_table->setMouseTracking(true);
+	Search_table->verticalHeader()->setDefaultSectionSize(30);
+	Search_table->setSelectionMode(QAbstractItemView::SingleSelection); 
+	Search_table->setSelectionBehavior(QAbstractItemView::SelectRows); 
+	//	Search_table->setFont(15);   
+	Search_table->setColumnWidth(0,100);
+	Search_table->setColumnWidth(1,150);
+	Search_table->setColumnWidth(2,450);
+	Search_table->verticalHeader()->setVisible(false);   
+	Search_table->horizontalHeader()->setVisible(true); 
+	Search_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
+	Search_table->setAlternatingRowColors(true);  //奇偶行底色不同
+	QStringList labels;
+	labels << tr("类型") << tr("信息") << tr("详情");
+	Search_table->setHorizontalHeaderLabels(labels);
+
+	/*
+	   connect(Search_table,SIGNAL(cellClicked(int,int)),this,SLOT(Book_clicked(int,int)));
+	   */
+}
+
+
 void ManageWindow::LoadBook()
 {
-	Book_table = new QTableWidget(ui->W_Book);
-	Book_table->setGeometry(0,0,300,668);
+	Book_table = new QTableWidget(ui->P_Book);
+	Book_table->setGeometry(360,0,300,668);
 	Book_table->setFrameShape(QFrame::NoFrame);  //无边框
 	Book_table->setAutoScroll(false);
 	Book_table->setShowGrid(false); //设置不显示格子线
@@ -367,7 +396,7 @@ void ManageWindow::LoadBook()
 	//	Book_table->setFont(15);   
 	Book_table->setColumnWidth(0,150);
 	Book_table->setColumnWidth(1,150);
-//	Book_table->setColumnWidth(2,80);
+	//	Book_table->setColumnWidth(2,80);
 	Book_table->verticalHeader()->setVisible(false);   
 	Book_table->horizontalHeader()->setVisible(true); 
 	Book_table->setEditTriggers ( QAbstractItemView::NoEditTriggers );
@@ -442,10 +471,10 @@ void ManageWindow::LoadApp()
 	App_table->setSelectionMode(QAbstractItemView::SingleSelection); 
 	App_table->setSelectionBehavior(QAbstractItemView::SelectRows); //设置选择行为时每次选择一行
 	//	App_table->setFont(15);   
-	App_table->setColumnWidth(0,175);
-	App_table->setColumnWidth(1,370);
-	App_table->setColumnWidth(2,80);
-	App_table->setColumnWidth(3,80);
+	App_table->setColumnWidth(0,180);
+	App_table->setColumnWidth(1,320);
+	App_table->setColumnWidth(2,100);
+	App_table->setColumnWidth(3,200);
 	App_table->verticalHeader()->setVisible(false);   
 	App_table->horizontalHeader()->setVisible(true); 
 	App_table->setEditTriggers ( QAbstractItemView::NoEditTriggers ); // 不能进行编辑
@@ -460,12 +489,12 @@ void ManageWindow::LoadApp()
 		QStringList labels;
 	labels << tr("名称") << tr("版本")  << tr("大小") << tr("位置");
 	App_table->setHorizontalHeaderLabels(labels);
-/*
-	QPalette pal;
-	pal.setColor(QPalette::Base, QColor(255, 0, 0));
-	pal.setColor(QPalette::AlternateBase, QColor(0, 255, 0));
-	App_table->setPalette(pal);
-	*/
+	/*
+	   QPalette pal;
+	   pal.setColor(QPalette::Base, QColor(255, 0, 0));
+	   pal.setColor(QPalette::AlternateBase, QColor(0, 255, 0));
+	   App_table->setPalette(pal);
+	   */
 
 	ui->Cmbx_appclass->addItem("系统应用");
 	ui->Cmbx_appclass->addItem("第三方应用");
@@ -604,6 +633,62 @@ void ManageWindow::LoadMms()
 
 	connect(Mms_table,SIGNAL(cellClicked(int,int)),this,SLOT(Mms_clicked(int,int)));
 }
+
+
+
+void ManageWindow::LoadWebview()
+{
+	urlAddr = new QLineEdit;
+
+	//	view = new QWebView;	
+	//	view->load(QUrl("http://www.google.cn"));
+
+	/*
+
+	   QHBoxLayout *topLayout = new QHBoxLayout(ui->Webview);
+	   topLayout->addWidget(goBack);
+	   topLayout->addWidget(goForward);
+	   topLayout->addWidget(pageReload);
+	   topLayout->addWidget(pageStop);
+	   topLayout->addWidget(urlAddr);
+	   topLayout->setSpacing(0);
+
+	   QVBoxLayout *mainLayout = new QVBoxLayout(ui->Webview);
+	   mainLayout->addLayout(topLayout);
+	   mainLayout->addWidget(ui->Webview);
+	   mainLayout->setContentsMargins(0,0,0,0);
+	   */
+	page =new webPage(this);
+	ui->Webview->setPage(page);
+	ui->Cmbx_otherstore->addItem("豌豆荚应用");
+	ui->Cmbx_otherstore->addItem("豌豆荚游戏");
+	ui->Cmbx_otherstore->addItem("安卓市场");
+
+	ui->Cmbx_otherstore->setMaxVisibleItems(10);  // 设置最大显示下列项 超过要使用滚动条拖拉
+	ui->Cmbx_otherstore->setMaxCount(5); //设置最大下拉项 超过将不显示
+
+	connect(ui->Cmbx_otherstore,SIGNAL(currentIndexChanged(int)),this,SLOT(otherstorechange(int)));
+
+	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
+	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
+	connect(this->page, SIGNAL(downloadurlfinished(int,int,int,QString)), this, SLOT(addadbcmdslot(int,int,int,QString)));
+
+	connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
+	connect(ui->Btn_forward, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
+	connect(ui->Btn_reload, SIGNAL(clicked()), ui->Webview, SLOT(reload()));
+
+
+	ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+	//	ui->Webview->load(QUrl("http://www.wandoujia.com/apps"));
+	/*	
+
+		connect(urlAddr, SIGNAL(returnPressed()), this, SLOT(loadUrlAddr()));
+
+		connect(ui->Webview, SIGNAL(urlChanged(const QUrl &)), this, SLOT(displayUrlAddr(const QUrl &)));
+		connect(ui->Webview, SIGNAL(titleChanged(const QString &)), this, SLOT(showTitle(const QString &)));
+		*/
+}
+
 
 
 void ManageWindow::Mms_clicked(int a, int b)
@@ -767,6 +852,7 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_imagenext, SIGNAL(clicked()),this, SLOT(goto_nextimage()));
 	connect(ui->Btn_hiden, SIGNAL(clicked()),this, SLOT(goto_hiden()));
 	connect(ui->Btn_savescreen, SIGNAL(clicked()),this, SLOT(goto_saveScreenshot()));
+	connect(ui->Btn_search, SIGNAL(clicked()),this, SLOT(goto_search()));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -827,6 +913,9 @@ void ManageWindow::CurrentWidget(int P_NUM)
 		case  PHONEINFO:
 			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Phoneinfo);
 			break;
+		case  SEARCH:
+			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Search);
+			break;
 		case  MMS:
 			ui->stackedWidget->QStackedWidget::setCurrentWidget(ui->P_Mms);
 			break;
@@ -854,13 +943,26 @@ void ManageWindow::post_daemon(int cmd){
 void ManageWindow::post_test(int cmd){
 }
 
-
 void ManageWindow::goto_helpdev()
 {
 	QMessageBox::about(this, tr("捐助 软件开发者"), tr(
 				"android manager"
 				"<p>"
+				"<p><p><p>支付宝"
+				"i.m.canoe@gmail.com"
+				"<p>"
+				"<p>androidmanager by 杨小军 2013/5/24 "
+				));
+
+}
+
+void ManageWindow::goto_register()
+{
+	QMessageBox::about(this, tr("注册"), tr(
+				"android manager"
+				"<p>"
 				"<p><p><p>(*^__^*) 嘻嘻…… 其实现在注不注册都一样的"
+				"<p>"
 				"<p>androidmanager by 杨小军 2013/5/24 "
 				));
 
@@ -907,7 +1009,7 @@ void ManageWindow::LoadQmenu()
 	helpMenu->addAction(tr("关于 &Qt"), qApp, SLOT(aboutQt()));
 	helpMenu->addAction(tr("关于 &Androidmanager"), this, SLOT(slotAboutApplication()));
 	helpMenu->addAction(tr("捐助 &软件开发者"), this, SLOT(goto_helpdev()));
-	helpMenu->addAction(tr("&注册使用"), this, SLOT(goto_helpdev()));
+	helpMenu->addAction(tr("&注册使用"), this, SLOT(goto_register()));
 }
 
 void ManageWindow::goto_mmsdetail()
@@ -981,32 +1083,135 @@ void ManageWindow::goto_hiden()
 void ManageWindow::goto_nextimage()
 {
 
-	showPicture(listModel->index(next ++));
+	showPicture(listModel->index(++next));
+}
+
+void ManageWindow::goto_search()
+{
+
+	if(ui->Ledt_search->text().isEmpty())
+		return;
+	CurrentWidget(SEARCH);
+	testapp = -1;
+	Search_table->setRowCount(0);
+	searchbook();
+	searchmms();
+	searchapp();
+}
+
+void ManageWindow::searchapp()
+{
+	for (int i = 0; i <= uiappinfo.count; i++) {
+		if(QString(uiappinfo.get_info[i].appname).contains(ui->Ledt_search->text()))
+		{
+			testapp++;
+			Search_table->insertRow(testapp);
+
+
+			for (int j = 0; j < 3; j++) {
+				Search_item[testapp][j] = new QTableWidgetItem;
+				Search_table->setItem(testapp,j,Search_item[testapp][j]);
+			}
+			appindex[0][testapp] = i;
+			Search_item[testapp][0]->setText(QString("应用"));
+			Search_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appname));
+			Search_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appversion));
+		}
+	}
+
+}
+
+void ManageWindow::searchbook()
+{
+
+	for (int i = 0; i <= uibookinfo.count; i++) {
+		if(QString(uibookinfo.get_info[i].bookname).contains(ui->Ledt_search->text())
+				|| QString(uibookinfo.get_info[i].booknumber).contains(ui->Ledt_search->text())
+		  )
+		{
+			qDebug() << uibookinfo.get_info[i].bookname << uibookinfo.get_info[i].booknumber << " " <<i;
+			testapp++;
+			Search_table->insertRow(testapp);
+
+
+			for (int j = 0; j < 3; j++) {
+				Search_item[testapp][j] = new QTableWidgetItem;
+				Search_table->setItem(testapp,j,Search_item[testapp][j]);
+			}
+			appindex[0][testapp] = i;
+
+			/*
+			   QProgressBar *pushButton_test= new QProgressBar;
+			   Search_table->setCellWidget(testapp, 0, pushButton_test);
+			   */
+
+			Search_item[testapp][0]->setText(QString("电话簿"));
+			Search_item[testapp][1]->setText(QString(uibookinfo.get_info[i].bookname));
+			Search_item[testapp][2]->setText(QString(uibookinfo.get_info[i].booknumber));
+
+		}
+	}
+
+
+
+}
+
+void ManageWindow::searchmms()
+{
+	//	Search_table->setRowCount(0);
+
+	for (int i = 0; i <= uimmsinfo.count; i++) {
+		if(QString(uimmsinfo.get_info[i].mmsnumber).contains(ui->Ledt_search->text())
+				|| QString(uimmsinfo.get_info[i].mmsbody).contains(ui->Ledt_search->text())
+		  )
+		{
+			testapp++;
+			Search_table->insertRow(testapp);
+
+
+			for (int j = 0; j < 3; j++) {
+				Search_item[testapp][j] = new QTableWidgetItem;
+				Search_table->setItem(testapp,j,Search_item[testapp][j]);
+			}
+			appindex[0][testapp] = i;
+
+			/*
+			   QProgressBar *pushButton_test= new QProgressBar;
+			   Search_table->setCellWidget(testapp, 0, pushButton_test);
+			   */
+
+			Search_item[testapp][0]->setText(QString("短信"));
+			Search_item[testapp][1]->setText(QString(uimmsinfo.get_info[i].mmsnumber));
+			Search_item[testapp][2]->setText(QString(uimmsinfo.get_info[i].mmsbody));
+
+		}
+	}
+
 }
 
 void ManageWindow::goto_saveScreenshot()
 {
-    QFile plik;
-    plik.setFileName(QFileDialog::getSaveFileName(this, tr("Save File..."), "./screenshot.png", tr("Png file")+" (*.png)"));
-    if (plik.fileName().isEmpty())
-        return;
-    if (plik.open(QFile::WriteOnly))
-    {
-        QMatrix matrix;
-//        matrix.rotate(this->rotation);
-        QImage image;
-        image = screenshot->screenshot.toImage();
-        image = image.transformed(matrix);
-        image.save(&plik, "PNG");
-        plik.close();
-    }
+	QFile plik;
+	plik.setFileName(QFileDialog::getSaveFileName(this, tr("Save File..."), "/home/acanoe/图片/screenshot.png", tr("Png file")+" (*.png)"));
+	if (plik.fileName().isEmpty())
+		return;
+	if (plik.open(QFile::WriteOnly))
+	{
+		QMatrix matrix;
+		//        matrix.rotate(this->rotation);
+		QImage image;
+		image = screenshot->screenshot.toImage();
+		image = image.transformed(matrix);
+		image.save(&plik, "PNG");
+		plik.close();
+	}
 }
 
 
 void ManageWindow::goto_screenrefresh()
 {
-//	CurrentWidget(PHONEINFO);
-	
+	//	CurrentWidget(PHONEINFO);
+
 	screenshot = new ScreenshotWidget(ui->Qwt_screen);
 	screenshot->show();
 }
@@ -1015,9 +1220,9 @@ void ManageWindow::goto_phoneinfo()
 {
 	CurrentWidget(PHONEINFO);
 	/*
-	screenshot = new ScreenshotWidget(ui->QWt_phone);
-	screenshot->show();
-	*/
+	   screenshot = new ScreenshotWidget(ui->QWt_phone);
+	   screenshot->show();
+	   */
 }
 
 void ManageWindow::goto_appstore()
@@ -1202,7 +1407,7 @@ void ManageWindow::recv_uninstall(int res)
 		dialogUi ->L_uninstallinfo->setText("卸载成功");
 		dlg->accept();
 		setui_appclass(APPINDEX);
-//		setui_appinfo();
+		//		setui_appinfo();
 	} else{
 		dialogUi->L_uninstallinfo->setText("卸载失败");
 	}
@@ -1419,16 +1624,9 @@ void ManageWindow::customEvent(QEvent* e){
 
 void ManageWindow::setui_bookinfo()
 {
+	refreshsign.book= 0;
 	getbookinfo(&uibookinfo);
 	Book_table->setRowCount(0);
-/*
-	QLabel *label = new QLabel;
-	label->setIcon(QIcon(QPixmap(":connects.png")));
-	printf("uibookinfo.count = %d\n",uibookinfo.count);
-	cubesHeaderItem = new QTableWidgetItem();
-	cubesHeaderItem->setIcon(QIcon(QPixmap(":connects.png")));
-	cubesHeaderItem->setTextAlignment(Qt::AlignVCenter);
-	*/
 
 	Book_table->setRowCount(uibookinfo.count + 1);
 	for (int i = 0; i <= uibookinfo.count; i++) {
@@ -1437,7 +1635,7 @@ void ManageWindow::setui_bookinfo()
 
 			Book_table->setItem(i,j,Book_item[i][j]);
 		}
-//		Book_table->setItem(i,0,cubesHeaderItem);
+		//		Book_table->setItem(i,0,cubesHeaderItem);
 
 		Book_item[i][0]->setIcon(QIcon(QPixmap(Iconpath + "connects.png")));
 		Book_item[i][0]->setText(QString(uibookinfo.get_info[i].bookname));
@@ -1494,13 +1692,6 @@ void ManageWindow::setui_appclass(int Appclass)
 
 					testapp++;
 					App_table->insertRow(testapp);
-
-					/*
-					   QComboBox *comBox = new QComboBox(); 
-					   comBox->addItem("F"); 
-					   comBox->addItem("M"); 
-					   Book_table->setCellWidget(0,2,comBox);
-					   */
 
 
 					for (int j = 0; j < 3; j++) {
@@ -1677,6 +1868,9 @@ void ManageWindow::setui_storageinfo()
 	float memorysize = 0;
 	float memoryavail = 0;
 
+	screenshot = new ScreenshotWidget(ui->Qwt_screen);
+	screenshot->show();
+
 	getstorageinfo(&uistorageinfo);
 
 
@@ -1779,55 +1973,30 @@ void ManageWindow::slotBackMessage()
 }
 // end player
 
-
-void ManageWindow::LoadWebview()
+void ManageWindow::otherstorechange(int store)
 {
-	urlAddr = new QLineEdit;
-
-	//	view = new QWebView;	
-	//	view->load(QUrl("http://www.google.cn"));
-
-	/*
-
-	   QHBoxLayout *topLayout = new QHBoxLayout(ui->Webview);
-	   topLayout->addWidget(goBack);
-	   topLayout->addWidget(goForward);
-	   topLayout->addWidget(pageReload);
-	   topLayout->addWidget(pageStop);
-	   topLayout->addWidget(urlAddr);
-	   topLayout->setSpacing(0);
-
-	   QVBoxLayout *mainLayout = new QVBoxLayout(ui->Webview);
-	   mainLayout->addLayout(topLayout);
-	   mainLayout->addWidget(ui->Webview);
-	   mainLayout->setContentsMargins(0,0,0,0);
-	   */
-	page =new webPage(this);
-	ui->Webview->setPage(page);
-	ui->Cmbx_otherstore->addItem("豌豆荚应用");
-	ui->Cmbx_otherstore->addItem("豌豆荚游戏");
-	ui->Cmbx_otherstore->addItem("安卓市场");
-	
-
-	connect(this->page, SIGNAL(adddownloadurl(int,double,int,int,QString)), this, SLOT(adddownloadurl(int,double,int,int,QString)));
-	connect(this->page, SIGNAL(addstartdownload(int,double,int,int,QString)), this, SLOT(addstartdownload(int,double,int,int,QString)));
-	connect(this->page, SIGNAL(downloadurlfinished(int,int,int,QString)), this, SLOT(addadbcmdslot(int,int,int,QString)));
-
-	connect(ui->Btn_back, SIGNAL(clicked()), ui->Webview, SLOT(back()));
-	connect(ui->Btn_forward, SIGNAL(clicked()), ui->Webview, SLOT(forward()));
-	connect(ui->Btn_reload, SIGNAL(clicked()), ui->Webview, SLOT(reload()));
-
-
-	ui->Webview->load(QUrl("http://apk.hiapk.com/"));
-	//	ui->Webview->load(QUrl("http://www.wandoujia.com/apps"));
-	/*	
-
-		connect(urlAddr, SIGNAL(returnPressed()), this, SLOT(loadUrlAddr()));
-
-		connect(ui->Webview, SIGNAL(urlChanged(const QUrl &)), this, SLOT(displayUrlAddr(const QUrl &)));
-		connect(ui->Webview, SIGNAL(titleChanged(const QString &)), this, SLOT(showTitle(const QString &)));
-		*/
+	switch(store)
+	{
+		case 0:
+			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+			break;
+		case 1:
+			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+			break;
+		case 2:
+			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+			break;
+		default:
+			break;
+	}
 }
+
+void ManageWindow::slotappclasschange(int Appclass)     
+{
+	setui_appclass(Appclass);
+}
+
+
 void ManageWindow::addadbcmdslot(int downcount,int adb_type, int adb_count, QString adb_list)
 {
 

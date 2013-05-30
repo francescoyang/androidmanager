@@ -56,6 +56,7 @@
 #define	STORAGE			12
 #define	DOWNLOADLIST	13
 #define	PHONEINFO		14
+#define	SEARCH			15
 
 #define	TEST			18
 #define MAXLIST			1000
@@ -155,6 +156,9 @@ class ManageWindow : public QMainWindow
 		QTableWidgetItem *Mms_item[500][3];
 
 
+		QTableWidget* Search_table;
+		QTableWidgetItem *Search_item[1000][3];
+
 		// add book ui
 		QTableWidget* Book_table;
 		QTableWidgetItem *Book_item[1000][3];
@@ -224,6 +228,7 @@ class ManageWindow : public QMainWindow
 		void LoadDownloadlist();
 		void LoadFtpfilelist();
 		void LoadQmenu();
+		void LoadSearch();
 		void setIcon();
 		void Mysettingsinit();
 		void ProcessThreadInit();
@@ -260,6 +265,9 @@ class ManageWindow : public QMainWindow
 		void SoftInit();
 		void Makeconnect();
 		void CurrentWidget(int P_NUM);
+		void searchmms();
+		void searchbook();
+		void searchapp();
 
 		// add player
 
@@ -299,6 +307,7 @@ class ManageWindow : public QMainWindow
 		void goto_shell();
 		void goto_refreshsystem();
 		void goto_helpdev();
+		void goto_register();
 		void goto_mmsrefresh();
 		void goto_mmsdetail();
 		void goto_screenrefresh();
@@ -306,6 +315,8 @@ class ManageWindow : public QMainWindow
 		void goto_nextimage();
 		void goto_hiden();
 		void goto_saveScreenshot();
+		void goto_search();
+
 
 		void get_message();
 
@@ -330,6 +341,7 @@ class ManageWindow : public QMainWindow
 		void slotTrans(int value);
 		void slotStyleChange(int StyleString);
 		void StyleChange(int StyleString,QDialog *test);
+		void otherstorechange(int);
 		//		void slotappclasschange(QString StyleString);
 		void slotappclasschange(int);
 		void valuechange(int);

@@ -125,7 +125,7 @@ QPushButton{
     border: 2px solid white;		/* 边框 */
 /*	border:groove gray;*/
 	border-radius:10px;				/* 圆角优化 值 = 弧度 */
-	padding:1px 1px;				/* btn 边界大小		*/
+	padding:0px 0px;				/* btn 边界大小		*/
 }
 
 QPushButton{ color: back;}

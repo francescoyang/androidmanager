@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>13</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -155,11 +155,14 @@ background-color:rgb(5, 255, 247); color: white;</string>
      <widget class="QPushButton" name="Btn_storage">
       <property name="geometry">
        <rect>
-        <x>911</x>
+        <x>907</x>
         <y>610</y>
         <width>80</width>
         <height>40</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
       </property>
       <property name="text">
        <string>文件管理</string>
@@ -174,6 +177,9 @@ background-color:rgb(5, 255, 247); color: white;</string>
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
       <property name="text">
        <string>手机存储</string>
       </property>
@@ -186,6 +192,9 @@ background-color:rgb(5, 255, 247); color: white;</string>
         <width>151</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
       </property>
       <property name="text">
        <string>SD卡存储</string>
@@ -239,7 +248,7 @@ background-color:rgb(118, 223, 116); color: white;</string>
        <rect>
         <x>100</x>
         <y>155</y>
-        <width>174</width>
+        <width>175</width>
         <height>241</height>
        </rect>
       </property>
@@ -247,11 +256,14 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QPushButton" name="Btn_screenrefresh">
       <property name="geometry">
        <rect>
-        <x>49</x>
-        <y>532</y>
-        <width>50</width>
+        <x>80</x>
+        <y>570</y>
+        <width>41</width>
         <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
       </property>
       <property name="text">
        <string>刷新</string>
@@ -260,11 +272,14 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QPushButton" name="Btn_savescreen">
       <property name="geometry">
        <rect>
-        <x>272</x>
-        <y>532</y>
-        <width>50</width>
-        <height>30</height>
+        <x>229</x>
+        <y>570</y>
+        <width>41</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
       </property>
       <property name="text">
        <string>截屏</string>
@@ -273,20 +288,23 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QPushButton" name="Btn_search">
       <property name="geometry">
        <rect>
-        <x>890</x>
+        <x>878</x>
         <y>20</y>
         <width>31</width>
         <height>27</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/search.png);</string>
+      </property>
       <property name="text">
-       <string>查找</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLineEdit" name="Ledt_search">
       <property name="geometry">
        <rect>
-        <x>749</x>
+        <x>740</x>
         <y>22</y>
         <width>131</width>
         <height>24</height>
@@ -296,17 +314,12 @@ background-color:rgb(118, 223, 116); color: white;</string>
      <widget class="QComboBox" name="Cmbx_search">
       <property name="geometry">
        <rect>
-        <x>930</x>
+        <x>912</x>
         <y>20</y>
-        <width>61</width>
+        <width>71</width>
         <height>27</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>全部</string>
-       </property>
-      </item>
       <item>
        <property name="text">
         <string>短信</string>
@@ -335,6 +348,11 @@ background-color:rgb(118, 223, 116); color: white;</string>
       <item>
        <property name="text">
         <string>音乐</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>全部</string>
        </property>
       </item>
      </widget>
@@ -884,6 +902,34 @@ background-color:rgb(118, 223, 116); color: white;</string>
       </property>
       <property name="text">
        <string>删除任务</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="P_Search">
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>搜索到的信息</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>908</x>
+        <y>50</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>查看详情</string>
       </property>
      </widget>
     </widget>

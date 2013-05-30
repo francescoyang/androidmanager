@@ -19,5 +19,6 @@
         <file>dir.png</file>
         <file>htc.png</file>
         <file>connects.png</file>
+        <file>search.png</file>
     </qresource>
 </RCC>
