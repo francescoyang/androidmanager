@@ -203,12 +203,15 @@ class ManageWindow : public QMainWindow
 		char DOWNLOADSIGN = -1;
 		char APPINDEX = 0;
 		char BOOKSIGN = -1;
+		char SEARCHLINESIG = 0;
 		char MMSSIGN = -1;
+
 
 		int adbcount = 1001;
 		int testapp;
 		int next = 0;
 		int appindex[4][100];
+		int searcharg = 0;
 
 		QString mmsnumber;
 		QString mmsdata;
@@ -265,9 +268,9 @@ class ManageWindow : public QMainWindow
 		void SoftInit();
 		void Makeconnect();
 		void CurrentWidget(int P_NUM);
-		void searchmms();
-		void searchbook();
-		void searchapp();
+		char searchmms();
+		char searchbook();
+		char searchapp();
 
 		// add player
 
@@ -316,15 +319,13 @@ class ManageWindow : public QMainWindow
 		void goto_hiden();
 		void goto_saveScreenshot();
 		void goto_search();
-
-
+		void goto_searchinfo();
+		
+		void searchclass(int);
 		void get_message();
-
 		void listItemChanged(const QModelIndex &current, const QModelIndex &previous);
-
 		void btn_app_clicked();
 		void btn_book_clicked();
-
 		void setui_appinfo();
 		void setui_appclass(int);
 		void setui_downloadlist(int);
@@ -337,6 +338,7 @@ class ManageWindow : public QMainWindow
 		void App_clicked(int,int);
 		void Book_clicked(int,int);
 		void Download_clicked(int x,int y);
+		void Search_clicked(int,int);
 
 		void slotTrans(int value);
 		void slotStyleChange(int StyleString);

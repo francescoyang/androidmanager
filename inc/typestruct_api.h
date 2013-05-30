@@ -14,6 +14,7 @@
 #define CMD_STORAGE 0X07
 #define CMD_SENDMMS 0X08
 #define CMD_CALLPHONE	9	
+#define CMD_ALL			10
 
 
 #ifdef __cplusplus

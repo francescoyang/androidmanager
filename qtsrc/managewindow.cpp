@@ -375,9 +375,8 @@ void ManageWindow::LoadSearch()
 	labels << tr("类型") << tr("信息") << tr("详情");
 	Search_table->setHorizontalHeaderLabels(labels);
 
-	/*
-	   connect(Search_table,SIGNAL(cellClicked(int,int)),this,SLOT(Book_clicked(int,int)));
-	   */
+	connect(ui->Cmbx_search,SIGNAL(currentIndexChanged(int)),this,SLOT(searchclass(int)));
+	connect(Search_table,SIGNAL(cellClicked(int,int)),this,SLOT(Search_clicked(int,int)));
 }
 
 
@@ -543,7 +542,11 @@ void ManageWindow::LoadSettings()
 
 }
 
-
+void ManageWindow::searchclass(int search)
+{
+	searcharg = search;
+	qDebug() << searcharg;
+}
 
 void ManageWindow::setui_downloadlist(int row)
 {
@@ -853,6 +856,8 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_hiden, SIGNAL(clicked()),this, SLOT(goto_hiden()));
 	connect(ui->Btn_savescreen, SIGNAL(clicked()),this, SLOT(goto_saveScreenshot()));
 	connect(ui->Btn_search, SIGNAL(clicked()),this, SLOT(goto_search()));
+	connect(ui->Btn_searchinfo, SIGNAL(clicked()),this, SLOT(goto_searchinfo()));
+	connect(ui->Ledt_search, SIGNAL(returnPressed()),this, SLOT(goto_search()));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -1064,13 +1069,15 @@ void ManageWindow::goto_storage()
 }
 void ManageWindow::goto_book()
 {
-	if(refreshsign.book)
-	{
-		ui->Lab_refresh->setHidden(false);
-		refresh_anim->start();
-		post_refresh(CMD_BOOK);
-		refreshsign.book= 0;
-	}
+	/*
+	   if(refreshsign.book)
+	   {
+	   ui->Lab_refresh->setHidden(false);
+	   refresh_anim->start();
+	   post_refresh(CMD_BOOK);
+	   refreshsign.book= 0;
+	   }
+	   */
 
 	CurrentWidget(BOOK);
 }
@@ -1086,20 +1093,72 @@ void ManageWindow::goto_nextimage()
 	showPicture(listModel->index(++next));
 }
 
+
+void ManageWindow::goto_searchinfo()
+{
+	QMessageBox::about(this, tr("搜索详细信息.."), tr(
+				"信息: %1 "
+				"<p>%2"
+				).arg(Search_item[SEARCHLINESIG][1]->text(),Search_item[SEARCHLINESIG][2]->text()));
+
+}
+
+
+void ManageWindow::Search_clicked(int x, int y)
+{
+	SEARCHLINESIG = x;	
+}
+
 void ManageWindow::goto_search()
 {
 
 	if(ui->Ledt_search->text().isEmpty())
 		return;
-	CurrentWidget(SEARCH);
 	testapp = -1;
 	Search_table->setRowCount(0);
-	searchbook();
-	searchmms();
-	searchapp();
+	switch(searcharg)
+	{
+		case 0:
+			if(!searchmms())
+				return;
+			break;
+		case 1:
+			if(!searchbook())
+				return;
+			break;
+		case 2:
+			if(!searchapp()){
+
+				ui->Webview->load(QUrl("http://www.wandoujia.com/search?key=" + ui->Ledt_search->text()));
+				CurrentWidget(WEBVIEW);
+			}
+			return;
+			break;
+		case 3:
+			return;
+			break;
+		case 4:
+			return;
+			break;
+		case 5:
+			return;
+			break;
+		case 6:
+			searchmms();
+			searchbook();
+			searchapp();
+			break;
+		case 7:
+			return;
+			break;
+		default:
+			return;
+			break;
+	}
+	CurrentWidget(SEARCH);
 }
 
-void ManageWindow::searchapp()
+char ManageWindow::searchapp()
 {
 	for (int i = 0; i <= uiappinfo.count; i++) {
 		if(QString(uiappinfo.get_info[i].appname).contains(ui->Ledt_search->text()))
@@ -1118,10 +1177,18 @@ void ManageWindow::searchapp()
 			Search_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appversion));
 		}
 	}
-
+	if(testapp == -1)
+	{
+		QMessageBox::about(this, tr("应用搜索提示.."), tr(
+					"您尚未安装 %1 应用，现在就去豌豆荚市场搜索应用。"
+					).arg(ui->Ledt_search->text()));
+		return 0;
+	}else {
+		return 1;
+	}
 }
 
-void ManageWindow::searchbook()
+char ManageWindow::searchbook()
 {
 
 	for (int i = 0; i <= uibookinfo.count; i++) {
@@ -1139,24 +1206,24 @@ void ManageWindow::searchbook()
 				Search_table->setItem(testapp,j,Search_item[testapp][j]);
 			}
 			appindex[0][testapp] = i;
-
-			/*
-			   QProgressBar *pushButton_test= new QProgressBar;
-			   Search_table->setCellWidget(testapp, 0, pushButton_test);
-			   */
-
 			Search_item[testapp][0]->setText(QString("电话簿"));
 			Search_item[testapp][1]->setText(QString(uibookinfo.get_info[i].bookname));
 			Search_item[testapp][2]->setText(QString(uibookinfo.get_info[i].booknumber));
 
 		}
 	}
-
-
-
+	if(testapp == -1)
+	{
+		QMessageBox::about(this, tr("电话簿搜索提示.."), tr(
+					"没有搜索到包含 %1 的联系人或号码。"
+					).arg(ui->Ledt_search->text()));
+		return 0;
+	}else {
+		return 1;
+	}
 }
 
-void ManageWindow::searchmms()
+char ManageWindow::searchmms()
 {
 	//	Search_table->setRowCount(0);
 
@@ -1185,6 +1252,15 @@ void ManageWindow::searchmms()
 			Search_item[testapp][2]->setText(QString(uimmsinfo.get_info[i].mmsbody));
 
 		}
+	}
+	if(testapp == -1)
+	{
+		QMessageBox::about(this, tr("短信搜索提示.."), tr(
+					"没有搜索到包含 %1 的短信或号码。"
+					).arg(ui->Ledt_search->text()));
+		return 0;
+	}else {
+		return 1;
 	}
 
 }
@@ -1388,6 +1464,11 @@ void ManageWindow::recv_refresh(int res)
 			qDebug() << "refresh MMS";
 			setui_mmsinfo();
 			break;
+		case CMD_ALL:
+			setui_storageinfo();
+			setui_mmsinfo();
+			setui_bookinfo();
+			setui_appclass(APPINDEX);
 		default:
 			break;
 	}
@@ -1469,13 +1550,15 @@ void ManageWindow::accept()
 }
 void ManageWindow::goto_applist()
 {
-	if(refreshsign.app)
-	{
-		ui->Lab_refresh->setHidden(false);
-		refresh_anim->start();
-		post_refresh(CMD_APP);
-		refreshsign.app = 0;
-	}
+	/*
+	   if(refreshsign.app)
+	   {
+	   ui->Lab_refresh->setHidden(false);
+	   refresh_anim->start();
+	   post_refresh(CMD_APP);
+	   refreshsign.app = 0;
+	   }
+	   */
 	CurrentWidget(APP);
 }
 void ManageWindow::goto_imagelist()
@@ -1526,13 +1609,15 @@ void  ManageWindow::on_Btn_music_clicked()
 }
 void  ManageWindow::on_Btn_massage_clicked()
 {
-	if(refreshsign.mms)
-	{
-		ui->Lab_refresh->setHidden(false);
-		refresh_anim->start();
-		post_refresh(CMD_MMS);
-		refreshsign.mms= 0;
-	}
+	/*
+	   if(refreshsign.mms)
+	   {
+	   ui->Lab_refresh->setHidden(false);
+	   refresh_anim->start();
+	   post_refresh(CMD_MMS);
+	   refreshsign.mms= 0;
+	   }
+	   */
 
 	CurrentWidget(MMS);
 }
@@ -1978,10 +2063,10 @@ void ManageWindow::otherstorechange(int store)
 	switch(store)
 	{
 		case 0:
-			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+			ui->Webview->load(QUrl("http://www.wandoujia.com/apps/apps"));
 			break;
 		case 1:
-			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
+			ui->Webview->load(QUrl("http://www.wandoujia.com/tag/game"));
 			break;
 		case 2:
 			ui->Webview->load(QUrl("http://apk.hiapk.com/"));
