@@ -153,6 +153,8 @@ extern "C" {
 	int dtcmr_serv_creat(short sport, int listenback, int type)
 	{
 		int i;
+		int opt = 1;
+		int len = sizeof(opt);
 		if (!(i = getminmsglibfd())) {	
 			return ERR_TOOMANYSOCKET;
 		}
@@ -181,6 +183,13 @@ extern "C" {
 		msglibfd[i].dtmsg->s_addr.sin_family = AF_INET;
 		msglibfd[i].dtmsg->s_addr.sin_port = htons(sport);
 		msglibfd[i].dtmsg->s_addr.sin_addr.s_addr = INADDR_ANY;	
+
+		if(setsockopt(msglibfd[i].dtmsg->sfd,SOL_SOCKET,SO_REUSEADDR,(char *)&opt,len)==-1)
+		{
+			perror("setsockopt fail:");
+			close(msglibfd[i].dtmsg->sfd);
+			exit(1);
+		}
 
 		if (bind(msglibfd[i].dtmsg->sfd, 
 					(struct sockaddr *)&msglibfd[i].dtmsg->s_addr, 
@@ -256,7 +265,7 @@ extern "C" {
 			}
 		}
 
-//		printf("recvleng = 0x%x\n", ret);
+		//		printf("recvleng = 0x%x\n", ret);
 		return ret;
 	}
 
