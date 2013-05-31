@@ -20,5 +20,8 @@
         <file>htc.png</file>
         <file>connects.png</file>
         <file>search.png</file>
+        <file>refresh.png</file>
+        <file>cut.png</file>
+        <file>managerfile.png</file>
     </qresource>
 </RCC>

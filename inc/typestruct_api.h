@@ -33,7 +33,7 @@ extern "C" {
 
 
 	typedef struct __appinfo{
-		int  apppath;       // in sdcard or phonestore
+		int  apppath;       // in sdcard or phonestore 0 is on phone 1 is on sdcard
 		int  appattribute;  // system app or user app
 		char appname[50];
 		char apppackname[100];

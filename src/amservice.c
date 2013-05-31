@@ -134,10 +134,7 @@ recv_book()
 recv_app()
 {
 			memset(&appinfo, 0, sizeof(allappinfo_t));
-			printf("SEND_CMD = %x\n",SEND_CMD);
 			ret = dtcmr_recv_timeout(sockfd, &recv_leng, 4,&tout);
-
-			printf("recv_leng= %d\n", recv_leng);
 			if(ret < 0){
 				printf("recv error");
 			}
@@ -147,7 +144,6 @@ recv_app()
 
 			allappinfo_t *apptmpinfo=(allappinfo_t *)getbuf;
 			memcpy(&appinfo.count, &(apptmpinfo->count), 4);
-			printf("appinfo.count = %d\n",appinfo.count);
 			for(i = 0;i <= appinfo.count; i ++)
 			{
 				appinfo.get_info[i].apppath = apptmpinfo->get_info[i].apppath;
@@ -164,10 +160,7 @@ recv_app()
 recv_storage()
 {
 			memset(&bookinfo, 0, sizeof(allbookinfo_t));
-			printf("SEND_CMD = %x\n",SEND_CMD);
 			ret = dtcmr_recv_timeout(sockfd, &recv_leng, 4,&tout);
-
-			printf("recv_leng= %d\n", recv_leng);
 			if(ret < 0){
 				printf("recv error");
 			}
@@ -181,28 +174,20 @@ recv_storage()
 			memcpy(storageinfo.sdAvail,storagetmpinfo->sdAvail,32);
 			memcpy(storageinfo.memorySize,storagetmpinfo->memorySize,32);
 			memcpy(storageinfo.memoryAvail,storagetmpinfo->memoryAvail,32);
-
 }
 
 recv_mms()
 {
 			memset(&mmsinfo, 0, sizeof(allmmsinfo_t));
 			memset(getmmsbuf,0, 1024*10000);
-
-			printf("RECV_CMD = %x\n",SEND_CMD);
-
 			ret = dtcmr_recv_timeout(sockfd, &recv_leng, 4,&tout);
-
-			printf("recv_leng= %d\n", recv_leng);
 			if(ret < 0){
 				printf("recv error");
 			}
 
 			ret = dtcmr_recv_timeout(sockfd, getmmsbuf, recv_leng,&tout);
-
 			allmmsinfo_t *mmstmpinfo=(allmmsinfo_t *)getmmsbuf;
 			mmsinfo.count = mmstmpinfo->count;
-			printf("mmsinfo.count = %d\n",mmsinfo.count);
 			for(i = 0;i <= mmsinfo.count; i ++)
 			{
 				memcpy(mmsinfo.get_info[i].mmsname,mmstmpinfo->get_info[i].mmsname,20);

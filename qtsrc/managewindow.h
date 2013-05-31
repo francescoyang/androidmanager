@@ -87,6 +87,7 @@ typedef struct __settingsargv{
 	int skin = 1;
 	int opacity = 0;
 	QString downloadpath;
+	QString binpath;
 }settingsargv_t;
 
 namespace Ui {
@@ -151,7 +152,7 @@ class ManageWindow : public QMainWindow
 		QTableWidgetItem *Downloadlist_item[300][3];
 
 		QTableWidget* App_table;
-		QTableWidgetItem *App_item[300][3];
+		QTableWidgetItem *App_item[300][4];
 
 		QTableWidgetItem *cubesHeaderItem;
 		// add mms ui
@@ -323,7 +324,8 @@ class ManageWindow : public QMainWindow
 		void goto_saveScreenshot();
 		void goto_search();
 		void goto_searchinfo();
-		
+		void goto_key();
+
 		void searchclass(int);
 		void get_message();
 		void listItemChanged(const QModelIndex &current, const QModelIndex &previous);
@@ -378,7 +380,10 @@ signals:
 		void addadbcmd(int,int,QString);
 		void refreshdowninfo(int,double,int,int,QString);
 
+
+
 	protected:
+		void keyPressEvent(QKeyEvent *e);
 		void closeEvent(QCloseEvent *event);
 		//bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type);
 };

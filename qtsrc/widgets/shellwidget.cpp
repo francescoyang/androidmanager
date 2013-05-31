@@ -41,7 +41,8 @@ ShellWidget::ShellWidget(QWidget *parent) :
     this->setContextMenuPolicy(Qt::CustomContextMenu);
 
     QSettings settings;
-    this->sdk=settings.value("sdkPath").toString();
+//    this->sdk=settings.value("sdkPath","./bin").toString();
+    this->sdk=settings.value("binpath","./bin/").toString();
 
     this->fontColor = settings.value("shellFontColor", Qt::black).value<QColor>();
 
@@ -367,6 +368,5 @@ void ShellWidget::readFromProcess()
         this->append(tmp);
     }
     this->ensureCursorVisible();
-
     //qDebug()<<"readShell() - "<<tmp;
 }

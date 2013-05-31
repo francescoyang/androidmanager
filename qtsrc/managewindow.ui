@@ -30,21 +30,22 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>13</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
       <property name="geometry">
        <rect>
-        <x>365</x>
-        <y>404</y>
-        <width>231</width>
+        <x>574</x>
+        <y>405</y>
+        <width>221</width>
         <height>161</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/mms.png);
-background-color:rgb(255, 15, 251); color: white;</string>
+background-color:rgb(255, 73, 192); color: white;
+</string>
       </property>
       <property name="text">
        <string/>
@@ -78,7 +79,9 @@ background-color:rgb(56, 76, 255); color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/app.png);
-background-color:rgb(48, 120, 57); color: white;</string>
+background-color:rgb(255, 122, 69); color: white;
+
+</string>
       </property>
       <property name="text">
        <string/>
@@ -95,7 +98,7 @@ background-color:rgb(48, 120, 57); color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/video.png);
-background-color:rgb(212, 9, 12); color: white;</string>
+background-color:rgb(199, 64, 47); color: white;</string>
       </property>
       <property name="text">
        <string/>
@@ -129,7 +132,7 @@ background-color:rgb(184, 193, 7); color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/music.png);
-background-color:rgb(255, 122, 69); color: white;</string>
+background-color:rgb(129, 175, 255); color: white;</string>
       </property>
       <property name="text">
        <string/>
@@ -138,15 +141,15 @@ background-color:rgb(255, 122, 69); color: white;</string>
      <widget class="QPushButton" name="Btn_book">
       <property name="geometry">
        <rect>
-        <x>595</x>
-        <y>404</y>
-        <width>201</width>
+        <x>364</x>
+        <y>405</y>
+        <width>210</width>
         <height>161</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/book.png);
-background-color:rgb(5, 255, 247); color: white;</string>
+background-color:rgb(175, 117, 255); color: white;</string>
       </property>
       <property name="text">
        <string/>
@@ -162,10 +165,11 @@ background-color:rgb(5, 255, 247); color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/managerfile.png);
+color: white;</string>
       </property>
       <property name="text">
-       <string>文件管理</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="Lab_phonestorage">
@@ -258,31 +262,33 @@ background-color:rgb(118, 223, 116); color: white;</string>
        <rect>
         <x>80</x>
         <y>570</y>
-        <width>41</width>
-        <height>30</height>
+        <width>33</width>
+        <height>33</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/refresh.png);
+color: white;</string>
       </property>
       <property name="text">
-       <string>刷新</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="Btn_savescreen">
       <property name="geometry">
        <rect>
-        <x>229</x>
+        <x>255</x>
         <y>570</y>
-        <width>41</width>
-        <height>31</height>
+        <width>33</width>
+        <height>33</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">background-image: url(:/home/acanoe/qt/androidmanage/qtsrc/image/cut.png);
+color: white;</string>
       </property>
       <property name="text">
-       <string>截屏</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="Btn_search">

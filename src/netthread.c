@@ -23,7 +23,7 @@ static netthread_t netthread;
 void* net_pthread(void* arg) 
 {
 	
-		sleep(1);
+//		sleep(1);
 		printf("Acanoe net_pthread create success\n");
 		amservicestart();
 }

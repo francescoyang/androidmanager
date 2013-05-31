@@ -10,30 +10,25 @@ ManageWindow::ManageWindow(QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::ManageWindow)
 {
+		QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+
+
+
+	DaemonQthreadInit();
+	ProcessThreadInit();
+	BackQthreadInit();
+
 	ui->setupUi(this);
 	dialogUi = new Ui::dialog;
 	dialogUi->setupUi(dlg);
-	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 
-#if 0
-	setStyleSheet(
-			"QPushButton{border:groove gray;border-radius:10px;padding:2px 4px;}"
-			"QPushButton{ color: white;}"
-			/*"QPushButton{background-color:pink; color: white;}"*/
-			"QPushButton:hover{background-color:green;}"
-			"QPushButton:pressed{background:qlineargradient(x1:0,y1:0.5,x2:1,y2:0.5,"
-			"stop:0 green,stop:0.5 cyan stop: 1 darkcyan)}");
-#endif
 
 	Makeconnect();
 	CurrentWidget(CONNECT);
 	//	ClassTestInit();
-	UiToolInit();
 	Mysettingsinit();
+	UiToolInit();
 
-	ProcessThreadInit();
-	BackQthreadInit();
-	DaemonQthreadInit();
 }
 
 
@@ -65,6 +60,8 @@ void ManageWindow::UiToolInit()
 
 	screenshot = new ScreenshotWidget(ui->Qwt_screen);
 	screenshot->show();
+
+    ui->Ledt_search->setPlaceholderText(QApplication::translate("LogcatDialog", "查找", 0, QApplication::UnicodeUTF8));
 
 	/*
 	   ui->centralWidget->setWindowOpacity(0.7);
@@ -717,6 +714,7 @@ void ManageWindow::Mysettingsinit()
 	settingsargv.skin = settings->value( "skin",1).toInt();
 	settingsargv.opacity = settings->value( "opacity", 100).toInt();
 	settingsargv.downloadpath = settings->value( "downloadpath", "/home/acanoe/下载").toString();
+	settingsargv.binpath= settings->value( "binpath", "./bin/").toString();
 
 	ui->skinstyle->setCurrentIndex(settingsargv.skin);
 	slotStyleChange(settingsargv.skin);
@@ -754,10 +752,9 @@ void ManageWindow::adbresult(int resulttype ,int adbcount,int result)
 			{
 				qDebug() << "Unistall : " << adbcount  << " Success";
 				post_refresh(CMD_APP);
-				dlg->accept();
 			} else {
 				qDebug() << "Unistall : " << adbcount  << " Failure";
-				dlg->accept();
+				QMessageBox::about(this, tr("卸载"), tr("卸载失败"));
 			}
 			break;
 		case ADB_INSTALL:
@@ -768,12 +765,18 @@ void ManageWindow::adbresult(int resulttype ,int adbcount,int result)
 				if(adbcount <  1000)
 				{
 					downstat[adbcount]->setText("安装成功");
+				}else {
+//					QMessageBox::about(this, tr("安装"), tr("安装成功"));
 				}
-				dlg->accept();
+
 			} else {
 				qDebug() << "Istall : " << adbcount  << " Failure";
-				downstat[adbcount]->setText("安装失败");
-				dlg->accept();
+				if(adbcount <  1000)
+				{
+					downstat[adbcount]->setText("安装失败");
+				} else {
+					QMessageBox::about(this, tr("安装"), tr("安装失败"));
+				}
 			}
 			break;
 		default:
@@ -951,12 +954,11 @@ void ManageWindow::post_test(int cmd){
 void ManageWindow::goto_helpdev()
 {
 	QMessageBox::about(this, tr("捐助 软件开发者"), tr(
-				"android manager"
-				"<p>"
-				"<p><p><p>支付宝"
+				"android manager\n"
+				"支付宝\n"
 				"i.m.canoe@gmail.com"
-				"<p>"
-				"<p>androidmanager by 杨小军 2013/5/24 "
+				"\n"
+				"androidmanager by 杨小军 2013/5/24 "
 				));
 
 }
@@ -964,11 +966,12 @@ void ManageWindow::goto_helpdev()
 void ManageWindow::goto_register()
 {
 	QMessageBox::about(this, tr("注册"), tr(
-				"android manager"
+				"android manager\n"
+				/*
+				"(*^__^*) 嘻嘻…… 其实现在注不注册都一样的\n"
 				"<p>"
-				"<p><p><p>(*^__^*) 嘻嘻…… 其实现在注不注册都一样的"
-				"<p>"
-				"<p>androidmanager by 杨小军 2013/5/24 "
+				*/
+				"androidmanager by 杨小军 2013/5/24 "
 				));
 
 }
@@ -976,19 +979,22 @@ void ManageWindow::goto_register()
 void ManageWindow::slotAboutApplication()
 {
 	QMessageBox::about(this, tr("关于 Androidmanager"), tr(
-				"android manager"
 				"<p>"
-				"<p><p><p>android manager 是一款  android 手机管理软件"
-				"<p>目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统"
-				"<p>androidmanger 是一款自由软件，遵循GNU GPL协议"
-				"<p>任何个人和组织都可以对源码进行自由的传播和修改。"
-				"<p>版本：			1.0<p>"
-				"<p>问题及建议？"
+				"<p>android manager"
+				"\n"
+				"android manager 是一款  android 手机管理软件\n"
+				"目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统\n"
+				"androidmanger 是一款自由软件，遵循GNU LGPL协议\n"
+				"任何个人和组织都可以对源码进行自由的传播和修改。\n"
+				"详细协议请参考LGPL\n"
+				"版本：			0.1\n"
+				"问题及建议？\n"
+				"<p>"
 				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>"
-				"<p>博客:	 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
-				"<p>关注新浪微博了解最新更新："
-				"<a href = http://weibo.com/acanoe >weibo.com/acanoe</a>"
-				"<p>androidmanager by 杨小军 2013/5/24 "
+				"<p>博客:			 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
+				"关注新浪微博了解最新更新：\n"
+				"<p><a href = http://weibo.com/acanoe >weibo.com/acanoe</a>\n"
+				"androidmanager by 杨小军 2013/5/24 "
 				));
 	// "<p>QtWebKit is based on the Open Source WebKit Project developed at <a href=\"http://webkit.org/\">http://webkit.org/</a>."
 	//        ).arg(QCoreApplication::applicationVersion()));
@@ -1000,6 +1006,7 @@ void ManageWindow::LoadQmenu()
 	QMenu *connect= menuBar()->addMenu(tr("&选项"));
 	connect->addAction(tr("&首页"), this, SLOT(goto_connect()));
 	connect->addAction(tr("&任务列表"), this, SLOT(goto_manager()));
+	connect->addAction(tr("&快捷键"), this, SLOT(goto_key()));
 
 	QMenu *tools= menuBar()->addMenu(tr("&工具箱"));
 	tools->addAction(tr("&Logcat"), this, SLOT(goto_logcat()));
@@ -1030,6 +1037,7 @@ void ManageWindow::goto_mmsdetail()
 void ManageWindow::goto_mmsrefresh()
 {
 	post_refresh(CMD_MMS);
+//	Mms_table->desable();
 }
 
 void ManageWindow::goto_call()
@@ -1059,6 +1067,21 @@ void ManageWindow::goto_booksendmms()
 	}
 
 }
+
+void ManageWindow::goto_key()
+{
+	 QMessageBox::about(this, tr("快捷键信息.."), tr(
+				 "CTRL+A		goto APP\n"
+				 "CTRL+B		goto BOOK\n"
+				 "CTRL+M		goto MESSAGE\n"
+				 "CTRL+V		goto Video\n"
+				 "CTRL+D		goto MENU\n"
+				 "CTRL+W		goto WEB\n"
+				 "CTRL+X		goto MUSIC\n"
+				 "CTRL+I		goto IMAGE\n"
+				 ));
+}
+
 void ManageWindow::goto_manager()
 {
 	CurrentWidget(DOWNLOADLIST);
@@ -1486,7 +1509,7 @@ void ManageWindow::recv_uninstall(int res)
 	if(res)
 	{
 		dialogUi ->L_uninstallinfo->setText("卸载成功");
-		dlg->accept();
+//		dlg->accept();
 		setui_appclass(APPINDEX);
 		//		setui_appinfo();
 	} else{
@@ -1509,6 +1532,7 @@ void ManageWindow::reject()
 
 void ManageWindow::accept()
 {
+	dlg->accept();
 	if(APPSIGN >= 0)
 	{
 		emit addadbcmd(ADB_UNINSTALL,adbcount,QString(uiappinfo.get_info[APPSIGN ].apppackname));
@@ -1773,6 +1797,7 @@ void ManageWindow::setui_mmsinfo()
 			Mms_item[i][j] = new QTableWidgetItem;
 			Mms_table->setItem(i,j,Mms_item[i][j]);
 		}
+		Mms_item[i][0]->setIcon(QIcon(QPixmap(Iconpath + "mms.png")));
 		Mms_item[i][0]->setText(QString(uimmsinfo.get_info[i].mmsnumber));
 		Mms_item[i][1]->setText(QString(uimmsinfo.get_info[i].mmsbody));
 		Mms_item[i][2]->setText(QString(uimmsinfo.get_info[i].mmsdate));
@@ -1805,7 +1830,7 @@ void ManageWindow::setui_appclass(int Appclass)
 					App_table->insertRow(testapp);
 
 
-					for (int j = 0; j < 3; j++) {
+					for (int j = 0; j < 4; j++) {
 						App_item[testapp][j] = new QTableWidgetItem;
 						App_table->setItem(testapp,j,App_item[testapp][j]);
 					}
@@ -1816,9 +1841,11 @@ void ManageWindow::setui_appclass(int Appclass)
 					   App_table->setCellWidget(testapp, 0, pushButton_test);
 					   */
 
+					App_item[testapp][0]->setIcon(QIcon(QPixmap(Iconpath + "connects.png")));
 					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
 					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
 					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
+					App_item[testapp][3]->setText("手机");
 				}
 			}
 
@@ -1838,15 +1865,22 @@ void ManageWindow::setui_appclass(int Appclass)
 				{
 					testapp++;
 					App_table->insertRow(testapp);
-					for (int j = 0; j < 3; j++) {
+					for (int j = 0; j < 4; j++) {
 						App_item[testapp][j] = new QTableWidgetItem;
 						App_table->setItem(testapp,j,App_item[testapp][j]);
 					}
 
 					appindex[1][testapp] = i;
+
+					App_item[testapp][0]->setIcon(QIcon(QPixmap(Iconpath + "connects.png")));
 					App_item[testapp][0]->setText(QString(uiappinfo.get_info[i].appname));
 					App_item[testapp][1]->setText(QString(uiappinfo.get_info[i].appversion));
 					App_item[testapp][2]->setText(QString(uiappinfo.get_info[i].appsize));
+					if(uiappinfo.get_info[i].apppath){
+						App_item[testapp][3]->setText("sd卡");
+					}else {
+						App_item[testapp][3]->setText("手机");
+					}
 					//				printf("uiappinfo.get_info[i].appname = %s\n",uiappinfo.get_info[i].appname);
 				}
 			}
@@ -2170,6 +2204,214 @@ void ManageWindow::displayUrlAddr(const QUrl &url)
 void ManageWindow::showTitle(const QString &title)
 {
 	this->setWindowTitle(title);
+}
+
+void ManageWindow::keyPressEvent(QKeyEvent *e)
+{
+    if (e->modifiers() == Qt::ControlModifier)
+    {
+        if (e->key() == Qt::Key_W)
+        {
+			CurrentWidget(WEBVIEW);
+        }
+        if (e->key() == Qt::Key_D)
+        {
+			CurrentWidget(MENU);
+        }
+        if (e->key() == Qt::Key_A)
+        {
+			CurrentWidget(APP);
+        }
+        if (e->key() == Qt::Key_M)
+        {
+			CurrentWidget(MMS);
+        }
+        if (e->key() == Qt::Key_B)
+        {
+			CurrentWidget(BOOK);
+        }
+        if (e->key() == Qt::Key_V)
+        {
+			CurrentWidget(VIDEO);
+        }
+        if (e->key() == Qt::Key_X)
+        {
+			CurrentWidget(MUSIC);
+        }
+        if (e->key() == Qt::Key_I)
+        {
+			CurrentWidget(IMAGE);
+        }
+	}
+
+    else if ((e->modifiers() & Qt::SHIFT) && (e->modifiers() & Qt::CTRL))
+	{
+
+	}
+
+	/*
+    if (e->modifiers() == Qt::ControlModifier)
+    {
+        if (e->key() == Qt::Key_C)
+        {
+            this->process.write(QString(QChar(0x3)).toAscii());
+        }
+        else if (e->key() == Qt::Key_Left)
+        {
+            if (this->cursorPosition < this->insertedChars)
+            {
+                int pos = this->cursor.position();
+                this->cursor.movePosition(QTextCursor::PreviousWord);
+                this->setTextCursor(this->cursor);
+                this->cursorPosition+=pos-this->cursor.position();
+            }
+        }
+        else if (e->key() == Qt::Key_Right)
+        {
+            if (this->cursorPosition > 0)
+            {
+                int pos = this->cursor.position();
+                this->cursor.movePosition(QTextCursor::NextWord);
+                this->setTextCursor(this->cursor);
+                this->cursorPosition-=this->cursor.position()-pos;
+            }
+        }
+        else if (e->key() == Qt::Key_Backspace)
+        {
+            //usun poprzedzajace slowo
+        }
+        else if (e->key() == Qt::Key_Delete)
+        {
+            //usun nastepne slowo
+        }
+        return;
+    }
+    else if ((e->modifiers() & Qt::SHIFT) && (e->modifiers() & Qt::CTRL))
+    {
+        if (e->key() == Qt::Key_V)
+        {
+            QClipboard *clipboard = QApplication::clipboard();
+            QString tmp = clipboard->text(QClipboard::Clipboard);
+            if (tmp.length()>0)
+            {
+                this->insertedChars+=tmp.length();
+                this->command.insert(this->command.length()-this->cursorPosition,tmp);
+                this->insertPlainText(tmp);
+            }
+        }
+        else if (e->key() == Qt::Key_C)
+        {
+            QClipboard *clipboard = QApplication::clipboard();
+            QString tmp = this->textCursor().selection().toPlainText();
+
+            clipboard->setText(tmp,QClipboard::Clipboard);
+        }
+        return;
+    }
+
+    this->cursor.movePosition(QTextCursor::End);
+    this->cursor.movePosition(QTextCursor::Left,QTextCursor::MoveAnchor,this->cursorPosition);
+    this->setTextCursor(this->cursor);
+
+    if (e->key() == Qt::Key_Return)
+    {
+        this->cursor.movePosition(QTextCursor::End);
+        this->setTextCursor(this->cursor);
+        this->cursorPosition = 0;
+        this->insertedChars = 0;
+        executeCommand(this->command);
+        this->command.clear();
+        this->commandHistoryPosition = -1;
+    }
+    else if (e->key() == Qt::Key_Up)
+    {
+        if (this->commandHistory.length() -1 > this->commandHistoryPosition)
+        {
+            if (command.length()>0)
+            {
+                this->cursor.movePosition(QTextCursor::End);
+                for (int i = 0 ; i < this->insertedChars ; i++)
+                    this->cursor.deletePreviousChar();
+                this->cursorPosition = 0;
+                this->insertedChars = 0;
+                command.clear();
+            }
+            this->commandHistoryPosition++;
+            this->command = this->commandHistory.at(this->commandHistoryPosition);
+            this->insertedChars = this->command.length();
+            this->insertPlainText(this->command);
+        }
+    }
+    else if (e->key() == Qt::Key_Down)
+    {
+        if (this->commandHistoryPosition > 0)
+        {
+            if (command.length()>0)
+            {
+                this->cursor.movePosition(QTextCursor::End);
+                for (int i = 0 ; i < this->insertedChars ; i++)
+                    this->cursor.deletePreviousChar();
+                this->cursorPosition = 0;
+                this->insertedChars = 0;
+                command.clear();
+            }
+            this->commandHistoryPosition--;
+            this->command = this->commandHistory.at(this->commandHistoryPosition);
+            this->insertedChars = this->command.length();
+            this->insertPlainText(this->command);
+        }
+    }
+    else if (e->key() == Qt::Key_Left)
+    {
+        if (this->cursorPosition < this->insertedChars)
+        {
+            this->cursor.movePosition(QTextCursor::Left);
+            this->setTextCursor(this->cursor);
+            this->cursorPosition++;
+        }
+    }
+    else if (e->key() == Qt::Key_Right)
+    {
+        if (this->cursorPosition > 0)
+        {
+            this->cursor.movePosition(QTextCursor::Right);
+            this->setTextCursor(this->cursor);
+            this->cursorPosition--;
+        }
+    }
+    else if (e->key() == Qt::Key_Delete)
+    {
+        if (this->cursorPosition > 0)
+        {
+            this->cursor.movePosition(QTextCursor::Right);
+            this->setTextCursor(this->cursor);
+            this->cursor.deletePreviousChar();
+            this->command.remove(this->command.length()-this->cursorPosition-1,1);
+            this->insertedChars--;
+            this->cursorPosition--;
+        }
+    }
+    else if (e->key() == Qt::Key_Backspace)
+    {
+        if (this->insertedChars > this->cursorPosition)
+        {
+            this->cursor.deletePreviousChar();
+            this->command.remove(this->command.length()-this->cursorPosition-1,1);
+            this->insertedChars--;
+        }
+    }
+    else if(e->key() == Qt::Key_Escape)
+    {
+        this->process.write(QString(QChar(0x3)).toAscii());
+    }
+    else if (e->text().length()>0)
+    {
+        this->insertPlainText(e->text());
+        this->insertedChars++;
+        this->command.insert(this->command.length()-this->cursorPosition,e->text());
+    }
+	*/
+
 }
 
 
