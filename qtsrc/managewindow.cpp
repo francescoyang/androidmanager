@@ -305,14 +305,15 @@ void ManageWindow::slotTrans(int value)     //透明度
 void ManageWindow::LoadImage()
 {
 
-	ui->imagelist->setViewMode(QListView::IconMode);
-	ui->imagelist->setIconSize(QSize(80,60));
-	ui->imagelist->setResizeMode(QListView::Adjust);
+	ui->Lstvimagelist->setViewMode(QListView::IconMode);
+	ui->Lstvimagelist->setIconSize(QSize(80,60));
+	ui->Lstvimagelist->setResizeMode(QListView::Adjust);
+
 	listModel = new PictureListModel(this);
-	ui->imagelist->setModel(listModel);
+	ui->Lstvimagelist->setModel(listModel);
 	ui->Qwt_image->setHidden(true);
 	listModel->addPictures("/home/acanoe/图片");
-	connect(ui->imagelist->selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)),
+	connect(ui->Lstvimagelist->selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)),
 			this, SLOT(listItemChanged(QModelIndex, QModelIndex)));
 
 	ui->Lab_image->setScaledContents(true);
@@ -333,9 +334,25 @@ void ManageWindow::showPicture(const QModelIndex &index)
 	ui->Qwt_image->setHidden(false);
 
 	QPixmap pixmap = listModel->data(index, Qt::UserRole).value<QPixmap>();
+	imagewidth = pixmap.width();
+	imageheight = pixmap.height();
+
+//	qDebug() << "imagewidth : " << (imagewidth >> 1)  << "imageheight :" <<  (imageheight >> 1);
+//        Lab_image->setGeometry(QRect(30, 20, 870, 531));
+	if(imagewidth <= 870 && imageheight <= 531)
+	{
+	    ui->Lab_image->setGeometry(QRect(480 - (imagewidth >> 1), 310 - (imageheight >> 1), imagewidth,  imageheight));
+	} else{
+		float bili = imagewidth/imageheight;
+		if(bili < 1)
+		    ui->Lab_image->setGeometry(QRect(0, 0, 960*(int )bili, 620));
+		else
+		    ui->Lab_image->setGeometry(QRect(0, 0, 960, (int )bili*620));
+	}
+
 	ui->Lab_image->setPixmap(pixmap);
 	//	ui->Lab_image->adjustSize();
-	ui->imagelist->setCurrentIndex(index);
+	ui->Lstvimagelist->setCurrentIndex(index);
 }
 void ManageWindow::LoadVideo()
 {
@@ -545,6 +562,8 @@ void ManageWindow::searchclass(int search)
 	qDebug() << searcharg;
 }
 
+
+
 void ManageWindow::setui_downloadlist(int row)
 {
 	//	Downloadlist_table->setRowCount(uiappinfo.count + 1);
@@ -582,27 +601,6 @@ void ManageWindow::setui_downloadlist(int row)
 }
 
 
-void ManageWindow::goto_setdownloadpath()
-{
-	QString downloadpath;
-
-	/*
-	   QFileDialog *chosedir= new QFileDialog(this);
-	   StyleChange(settings->value( "skin",1).toInt(),chosedir);
-	   downloadpath=chosedir->getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
-	   */
-
-	downloadpath=QFileDialog::getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
-	qDebug() << downloadpath;
-
-	if (downloadpath.isEmpty())
-		return;
-
-
-	ui->Lab_dirpath->setText(downloadpath);
-	settings->setValue("downloadpath", downloadpath);
-
-}
 void ManageWindow::LoadMms()
 {
 	Mms_table = new QTableWidget(ui->mms_widget);
@@ -980,21 +978,20 @@ void ManageWindow::slotAboutApplication()
 {
 	QMessageBox::about(this, tr("关于 Androidmanager"), tr(
 				"<p>"
-				"<p>android manager"
-				"\n"
-				"android manager 是一款  android 手机管理软件\n"
-				"目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统\n"
-				"androidmanger 是一款自由软件，遵循GNU LGPL协议\n"
-				"任何个人和组织都可以对源码进行自由的传播和修改。\n"
-				"详细协议请参考LGPL\n"
-				"版本：			0.1\n"
-				"问题及建议？\n"
+				"<p>android manager\n"
+				"<p>android manager 是一款  android 手机管理软件\n"
+				"<p>目前可运行环境为ubuntu 等已安装有qt4 库的Linux 操作系统\n"
+				"<p>androidmanger 是一款自由软件，遵循GNU LGPL协议\n"
+				"<p>任何个人和组织都可以对源码进行自由的传播和修改。\n"
+				"<p>详细协议请参考LGPL\n"
+				"<p>版本：			0.1\n"
+				"<p>问题及建议？\n"
 				"<p>"
-				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>"
-				"<p>博客:			 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>"
-				"关注新浪微博了解最新更新：\n"
+				"<p>欢迎联系我:	 <a href = https://mail.google.com >imcanoe@gmail.com</a>\n"
+				"<p>博客:			 <a href = http://blog.csdn.net/ACanoe >blog.csdn.net/ACanoe</a>\n"
+				"<p>关注新浪微博了解最新更新：\n"
 				"<p><a href = http://weibo.com/acanoe >weibo.com/acanoe</a>\n"
-				"androidmanager by 杨小军 2013/5/24 "
+				"<p>androidmanager by 杨小军 2013/5/24 "
 				));
 	// "<p>QtWebKit is based on the Open Source WebKit Project developed at <a href=\"http://webkit.org/\">http://webkit.org/</a>."
 	//        ).arg(QCoreApplication::applicationVersion()));
@@ -1018,7 +1015,7 @@ void ManageWindow::LoadQmenu()
 
 
 	QMenu *helpMenu = menuBar()->addMenu(tr("&帮助"));
-	helpMenu->addAction(tr("关于 &Qt"), qApp, SLOT(aboutQt()));
+//	helpMenu->addAction(tr("关于 &Qt"), qApp, SLOT(aboutQt()));
 	helpMenu->addAction(tr("关于 &Androidmanager"), this, SLOT(slotAboutApplication()));
 	helpMenu->addAction(tr("捐助 &软件开发者"), this, SLOT(goto_helpdev()));
 	helpMenu->addAction(tr("&注册使用"), this, SLOT(goto_register()));
@@ -1037,7 +1034,7 @@ void ManageWindow::goto_mmsdetail()
 void ManageWindow::goto_mmsrefresh()
 {
 	post_refresh(CMD_MMS);
-//	Mms_table->desable();
+	Mms_table->setEnabled(false);
 }
 
 void ManageWindow::goto_call()
@@ -1423,6 +1420,7 @@ void ManageWindow::goto_install()
 
 		   setinstallapp(char_list);
 		   */
+		App_table->setEnabled(false);
 		emit addadbcmd(ADB_INSTALL,adbcount,list);
 
 		//		post_install(1);
@@ -1442,7 +1440,6 @@ void ManageWindow::goto_uninstall()
 		char tmpbuf[150] = { 0 };
 		//	QDialog *dlg = new QDialog;
 		//	dlg->exec();
-		//		dlg.move ((QApplication::desktop()->width() - dlg.width())/2,(QApplication::desktop()->height() - dlg.height())/2);
 		dlg->setWindowTitle("卸载 应用");
 		memset(tmpbuf,0,150);
 
@@ -1458,6 +1455,7 @@ void ManageWindow::goto_uninstall()
 		connect(dialogUi->checkBox,SIGNAL(stateChanged(int)),this,SLOT(valuechange(int)));
 	}
 }
+
 
 void ManageWindow::recv_refresh(int res)
 {
@@ -1535,6 +1533,7 @@ void ManageWindow::accept()
 	dlg->accept();
 	if(APPSIGN >= 0)
 	{
+		App_table->setEnabled(false);
 		emit addadbcmd(ADB_UNINSTALL,adbcount,QString(uiappinfo.get_info[APPSIGN ].apppackname));
 	}
 	//		post_uninstall(APPSIGN);
@@ -1599,6 +1598,28 @@ void ManageWindow::btn_app_clicked()
 }
 void ManageWindow::btn_book_clicked()
 {
+
+}
+
+void ManageWindow::goto_setdownloadpath()
+{
+	QString downloadpath;
+
+	/*
+	   QFileDialog *chosedir= new QFileDialog(this);
+	   StyleChange(settings->value( "skin",1).toInt(),chosedir);
+	   downloadpath=chosedir->getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
+	   */
+
+	downloadpath=QFileDialog::getExistingDirectory(NULL,QObject::tr("选择一个下载保存目录"),"/");
+	qDebug() << downloadpath;
+
+	if (downloadpath.isEmpty())
+		return;
+
+
+	ui->Lab_dirpath->setText(downloadpath);
+	settings->setValue("downloadpath", downloadpath);
 
 }
 
@@ -1749,6 +1770,7 @@ void ManageWindow::setui_bookinfo()
 
 	refreshsign.book= 0;
 	getbookinfo(&uibookinfo);
+	Book_table->setEnabled(true);
 	Book_table->setRowCount(0);
 
 	Book_table->setRowCount(uibookinfo.count + 1);
@@ -1786,6 +1808,7 @@ void ManageWindow::setui_mmsinfo()
 {
 	memset(&uimmsinfo,0,sizeof(allmmsinfo_t));
 	getmmsinfo(&uimmsinfo);
+	Mms_table->setEnabled(true);
 	Mms_table->setRowCount(0);
 
 	Mms_table->clearContents();
@@ -1805,11 +1828,27 @@ void ManageWindow::setui_mmsinfo()
 }
 
 
+void ManageWindow::setui_image()
+{
+
+}
+
+void ManageWindow::setui_video()
+{
+
+}
+
+void ManageWindow::setui_music()
+{
+
+}
+
 void ManageWindow::setui_appclass(int Appclass)     
 {
 
 	refreshsign.app = 0;
 	getappinfo(&uiappinfo);
+	App_table->setEnabled(true);
 
 	//	if(StyleString=="系统应用")
 	switch(Appclass)
@@ -2147,6 +2186,7 @@ void ManageWindow::addadbcmdslot(int downcount,int adb_type, int adb_count, QStr
 
 	downstat[downcount]->setText("正在安装");
 	qDebug() << "ready install " << adb_list;
+	App_table->setEnabled(false);
 	emit addadbcmd(adb_type,downcount,adb_list);
 }
 void ManageWindow::addstartdownload(int downcount,double speed,int percent,int stat,QString filename)

@@ -33,17 +33,16 @@ QVariant PictureListModel::data(const QModelIndex &index, int role) const
 			filename.remove(9, filename.length()-9);
 			filename.append("...");
 		}
+//		qDebug() << "QVariant PictureListModel::data" << filename;
 		return filename;
 	}
 	else if (role == Qt::UserRole)
 		return pixmaps.value(index.row());
-
 	return QVariant();
 }
 
 void PictureListModel::addPictures(QString directory)
 {
-	// clear
 	if (pixmaps.size() != 0)
 	{
 		beginRemoveRows(QModelIndex(), 0, pixmaps.size()-1);
@@ -60,6 +59,7 @@ void PictureListModel::addPictures(QString directory)
 	for (uint i = 0; i < count; i++)
 	{
 		QString filename = dir.path() + "/" + fileList.at(i);
+//		qDebug() << "PictureListModel::addPictures" << filename;
 		QPixmap pixmap(filename);
 		if (!pixmap.isNull())
 		{

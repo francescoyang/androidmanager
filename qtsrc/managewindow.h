@@ -217,6 +217,9 @@ class ManageWindow : public QMainWindow
 		int appindex[4][100];
 		int searcharg = 0;
 
+		int imagewidth;
+		int imageheight;
+
 		QString mmsnumber;
 		QString mmsdata;
 
@@ -338,6 +341,9 @@ class ManageWindow : public QMainWindow
 		void setui_bookinfo();
 		void setui_storageinfo();
 		void setui_clean();
+		void setui_image();
+		void setui_video();
+		void setui_music();
 
 		void Mms_clicked(int,int);
 		void App_clicked(int,int);

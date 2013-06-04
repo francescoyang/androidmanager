@@ -29,7 +29,7 @@ extern "C" {
 	typedef struct __allinfo{
 		int count;
 		fileinfo_t get_info[MAXNU];
-	}allinfo_t;
+	}media_t;
 
 
 	typedef struct __appinfo{
@@ -83,7 +83,6 @@ extern "C" {
 	}allmmsinfo_t;
 
 
-	//	allinfo_t imageinfo;
 	//	allappinfo_t appinfo;
 
 

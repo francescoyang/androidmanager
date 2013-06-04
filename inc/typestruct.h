@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "typestruct_api.h"
 
-allinfo_t imageinfo;
+media_t	imageinfo;
 allappinfo_t appinfo;
 allbookinfo_t bookinfo;
 allmmsinfo_t mmsinfo;
