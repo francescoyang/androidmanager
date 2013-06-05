@@ -11,9 +11,7 @@
 #include <QCloseEvent>
 #include <string.h>
 #include <QDesktopServices>
-
-//#include <QSqlDatabase>
-//#include <QSqlQuery>
+#include <QSqlQuery>
 
 
 #include "ui_dialog.h"

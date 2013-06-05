@@ -6,7 +6,7 @@ src:
 	make -C src
 qtsrc:
 	make -C qtsrc
-	cp qtsrc/qtsrc bin/androidmanage
+	cp qtsrc/qtsrc ./androidmanager
 clean:
 	make -C src clean
 	make -C qtsrc clean

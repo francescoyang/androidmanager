@@ -9,7 +9,7 @@ QFrame {
 */
 
 
-QMainWindow,QDialog{
+QMainWindow,QDialog,QTableView{
      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                        stop: 0 #8FBFEF,stop: 0.2 #589FE7, stop: 0.4 #2080DF,stop: 0.6 #1860A7,stop: 0.8 #104070,stop: 1.0 #082038);
 }

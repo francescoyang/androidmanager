@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -369,9 +369,18 @@ color: white;</string>
        <rect>
         <x>428</x>
         <y>230</y>
-        <width>155</width>
+        <width>181</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>方正书宋_GBK</family>
+        <pointsize>6</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;正在链接手机&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -411,17 +420,17 @@ color: white;</string>
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>1011</width>
-        <height>661</height>
+        <width>1001</width>
+        <height>621</height>
        </rect>
       </property>
      </widget>
      <widget class="QWidget" name="Qwt_image" native="true">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>40</y>
-        <width>960</width>
+        <x>10</x>
+        <y>9</y>
+        <width>1000</width>
         <height>620</height>
        </rect>
       </property>
@@ -431,10 +440,10 @@ color: white;</string>
       <widget class="QLabel" name="Lab_image">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>20</y>
-         <width>870</width>
-         <height>531</height>
+         <x>10</x>
+         <y>10</y>
+         <width>990</width>
+         <height>600</height>
         </rect>
        </property>
        <property name="text">
@@ -445,8 +454,8 @@ color: white;</string>
      <widget class="QPushButton" name="Btn_imagenext">
       <property name="geometry">
        <rect>
-        <x>890</x>
-        <y>10</y>
+        <x>910</x>
+        <y>640</y>
         <width>99</width>
         <height>27</height>
        </rect>
@@ -458,8 +467,8 @@ color: white;</string>
      <widget class="QPushButton" name="Btn_hiden">
       <property name="geometry">
        <rect>
-        <x>770</x>
-        <y>10</y>
+        <x>790</x>
+        <y>640</y>
         <width>99</width>
         <height>27</height>
        </rect>
@@ -468,14 +477,6 @@ color: white;</string>
        <string>Hiden</string>
       </property>
      </widget>
-     <zorder>Lstvimagelist</zorder>
-     <zorder>Qwt_image</zorder>
-     <zorder>Lab_image</zorder>
-     <zorder>Lab_image</zorder>
-     <zorder>Lab_image</zorder>
-     <zorder>Btn_hiden</zorder>
-     <zorder>Btn_imagenext</zorder>
-     <zorder>Btn_hiden</zorder>
     </widget>
     <widget class="QWidget" name="P_Web">
      <property name="styleSheet">
@@ -947,18 +948,7 @@ color: white;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="P_Phoneinfo">
-     <widget class="QWidget" name="QWt_phone" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>291</width>
-        <height>411</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
+    <widget class="QWidget" name="P_Phoneinfo"/>
     <widget class="QWidget" name="P_Test"/>
    </widget>
    <widget class="QLabel" name="Lab_refresh">

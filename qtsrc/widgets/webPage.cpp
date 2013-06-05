@@ -210,7 +210,6 @@ void webPage::Downloadthradinit()
 
 void webPage::handleUnsupportedContent(QNetworkReply *reply)
 {
-	qDebug() << "handleUnsupportedContent   -----------";
 	//	downloadcount ++;
 	if (!reply || reply->url().isEmpty())
 		return;
@@ -239,16 +238,13 @@ void webPage::handleUnsupportedContent(QNetworkReply *reply)
 		return;
 	}
 	*/
+	qDebug() << "webPage::handleUnsupportedContent downurllist.append";
 	downurllist.append(reply->url().toString());
 	if(downloadsign)
 	{
 		//		qDebug() << downurllist.size();
 		downloadsign = 0;
 		startNextDownload(QUrl::fromEncoded(downurllist.takeFirst().toLocal8Bit())); 
-	} else
-	{
-		downloadsign = 1;
-		return;
 	}
 }
 

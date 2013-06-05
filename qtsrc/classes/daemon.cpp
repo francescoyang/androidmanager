@@ -61,8 +61,9 @@ int Daemon::checkapp()
 		return 1;
 	}else {
 		qDebug() << outputLines;
-		phone->start("./bin/adb  install /home/acanoe/workspace/project/phonemanager/bin/phonemanager.apk");
+		phone->start("./bin/adb  install ./bin/phonemanager.apk");
 		phone->waitForFinished(30000);
+		c_delay(2);
 		outputLines = phone->readAll();
 		if (outputLines.contains("Success"))
 		{

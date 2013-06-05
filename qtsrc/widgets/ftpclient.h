@@ -23,7 +23,10 @@ public:
     void setCurrentPath(QString &path);
     QString getCurrentPath() const { return curPath; }
     QString getUrlStr(const QUrl &url);
+
 	bool isDir(const QString &str) const;
+    bool connected = false;
+
 	void downloadFile(const QString &filename);
     
 signals:
@@ -40,7 +43,6 @@ public slots:
 private:
     QFtp ftp;
     QUrl url;
-    bool connected;
     QFile *file;
     QProgressDialog *progressDlg;
 

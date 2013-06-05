@@ -321,7 +321,7 @@ void ManageWindow::LoadImage()
 }
 void ManageWindow::listItemChanged(const QModelIndex &current, const QModelIndex &previous)
 {
-	qDebug() << current << previous;
+//	qDebug() << current << previous;
 	showPicture(current);
 }
 
@@ -339,15 +339,15 @@ void ManageWindow::showPicture(const QModelIndex &index)
 
 //	qDebug() << "imagewidth : " << (imagewidth >> 1)  << "imageheight :" <<  (imageheight >> 1);
 //        Lab_image->setGeometry(QRect(30, 20, 870, 531));
-	if(imagewidth <= 870 && imageheight <= 531)
+	if(imagewidth <= 990 && imageheight <= 600)
 	{
-	    ui->Lab_image->setGeometry(QRect(480 - (imagewidth >> 1), 310 - (imageheight >> 1), imagewidth,  imageheight));
+	    ui->Lab_image->setGeometry(QRect(500 - (imagewidth >> 1), 310 - (imageheight >> 1), imagewidth,  imageheight));
 	} else{
 		float bili = imagewidth/imageheight;
 		if(bili < 1)
-		    ui->Lab_image->setGeometry(QRect(0, 0, 960*(int )bili, 620));
+		    ui->Lab_image->setGeometry(QRect(0, 0, 990*(int )bili, 620));
 		else
-		    ui->Lab_image->setGeometry(QRect(0, 0, 960, (int )bili*620));
+		    ui->Lab_image->setGeometry(QRect(0, 0, 990, (int )bili*620));
 	}
 
 	ui->Lab_image->setPixmap(pixmap);
@@ -416,7 +416,7 @@ void ManageWindow::LoadBook()
 	Book_table->setAlternatingRowColors(true);  //奇偶行底色不同
 
 	QStringList labels;
-	labels << tr("姓名") << tr("号码");
+	labels << tr("姓名") << tr("号码") << tr("归属地");
 	Book_table->setHorizontalHeaderLabels(labels);
 
 	connect(Book_table,SIGNAL(cellClicked(int,int)),this,SLOT(Book_clicked(int,int)));
@@ -1068,6 +1068,7 @@ void ManageWindow::goto_booksendmms()
 void ManageWindow::goto_key()
 {
 	 QMessageBox::about(this, tr("快捷键信息.."), tr(
+				 "CTRL+S		goto SETTINGS\n"
 				 "CTRL+A		goto APP\n"
 				 "CTRL+B		goto BOOK\n"
 				 "CTRL+M		goto MESSAGE\n"
@@ -1754,7 +1755,6 @@ void ManageWindow::customEvent(QEvent* e){
 
 void ManageWindow::setui_bookinfo()
 {
-	/*
     QSqlDatabase db;
 	db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("./etc/mobile5.db");
@@ -1766,7 +1766,6 @@ void ManageWindow::setui_bookinfo()
                "the Qt SQL driver documentation for information how "
                "to build it."), QMessageBox::Cancel);
     }
-	*/
 
 	refreshsign.book= 0;
 	getbookinfo(&uibookinfo);
@@ -1792,13 +1791,10 @@ void ManageWindow::setui_bookinfo()
         while(query.next())
         {
 			Book_item[i][2]->setText(query.value(0).toString());
-			qDebug() << query.value(0).toString();
 			break;
         }
 		*/
 
-		//		printf("%s,%s\n",uibookinfo.get_info[i].bookname,uibookinfo.get_info[i].booknumber);
-		//		Book_item[i][2]->setText(QString(uibookinfo.get_info[i].bookdate));
 	}
 //	db.close();
 }
@@ -2250,6 +2246,40 @@ void ManageWindow::keyPressEvent(QKeyEvent *e)
 {
     if (e->modifiers() == Qt::ControlModifier)
     {
+		switch(e->key())
+		{
+			case Qt::Key_W:
+				CurrentWidget(WEBVIEW);
+				break;
+			case Qt::Key_D:
+				CurrentWidget(MENU);
+				break;
+			case Qt::Key_A:
+				CurrentWidget(APP);
+				break;
+			case Qt::Key_M:
+				CurrentWidget(MMS);
+				break;
+			case Qt::Key_B:
+				CurrentWidget(BOOK);
+				break;
+			case Qt::Key_V:
+				CurrentWidget(VIDEO);
+				break;
+			case Qt::Key_X:
+				CurrentWidget(MUSIC);
+				break;
+			case Qt::Key_I:
+				CurrentWidget(IMAGE);
+				break;
+			case Qt::Key_S:
+				CurrentWidget(SETTINGS);
+				break;
+			default:
+				break;
+
+		}
+/*
         if (e->key() == Qt::Key_W)
         {
 			CurrentWidget(WEBVIEW);
@@ -2282,14 +2312,20 @@ void ManageWindow::keyPressEvent(QKeyEvent *e)
         {
 			CurrentWidget(IMAGE);
         }
+        if (e->key() == Qt::Key_S)
+        {
+			CurrentWidget(SETTINGS);
+		}
+
+		*/
 	}
+	/*
 
     else if ((e->modifiers() & Qt::SHIFT) && (e->modifiers() & Qt::CTRL))
 	{
 
 	}
 
-	/*
     if (e->modifiers() == Qt::ControlModifier)
     {
         if (e->key() == Qt::Key_C)

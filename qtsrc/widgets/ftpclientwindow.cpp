@@ -116,9 +116,10 @@ void FtpClientWindow::callDownload()
 {
 	QString str;
 
-	str = ui->listWidget->currentItem()->text();	/* filename */
-	if (isDir(str) == false)
+	if (ftpclient.connected)
 	{
+		str = ui->listWidget->currentItem()->text();	/* filename */
+		if(isDir(str) == false)
 		downLoadFile(str);
 	}
 }
