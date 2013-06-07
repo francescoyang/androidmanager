@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -407,11 +407,56 @@ color: white;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="P_Music"/>
+    <widget class="QWidget" name="P_Music">
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>250</y>
+        <width>491</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>方正小标宋_GBK</family>
+        <pointsize>26</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>请链接wifi ftp 对文件进行管理</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="P_Video">
      <property name="styleSheet">
       <string notr="true"/>
      </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>220</y>
+        <width>491</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>方正小标宋_GBK</family>
+        <pointsize>26</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>请链接wifi ftp 对文件进行管理</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="P_Massige"/>
     <widget class="QWidget" name="P_Image">
