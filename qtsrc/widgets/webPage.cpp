@@ -256,6 +256,19 @@ QString webPage::saveFileName(const QUrl &url)
 
 	if (basename.isEmpty())
 		basename = "download";
+//	QString home = QDir::homePath();
+	/*
+	QString home = QDesktopServices::storageLocation(QDesktopServices::HomeLocation);
+	home += "download";
+	if(QDir::exists("home"))
+	{
+		basename += home;
+	} else {
+		QDir::mkdir(home);
+		basename += home;
+	}
+*/
+	basename += "/home/acanoe/download/";
 
 	if (QFile::exists(basename)) {
 		// already exists, don't overwrite
@@ -265,6 +278,8 @@ QString webPage::saveFileName(const QUrl &url)
 			++i;
 
 		basename += QString::number(i);
+	}else{
+
 	}
 
 	return basename;
@@ -277,12 +292,14 @@ void webPage::startNextDownload(QUrl url)
 	qDebug() << "url" <<url ;
 
 	filename = saveFileName(url);
+	/*
 	path = "/home/acanoe/download/";
 	QString save = "";
 	save = path + filename;
+	*/
 
 	qDebug() << "filename" << filename;
-	output.setFileName(save);
+	output.setFileName(filename);
 
 	if (!output.open(QIODevice::WriteOnly)) {
 		fprintf(stderr, "Problem opening save file '%s' for download '%s': %s\n",

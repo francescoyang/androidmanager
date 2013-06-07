@@ -1,6 +1,7 @@
 ﻿#include <QtGui>
 #include <QFileDialog>
 #include <QSettings>
+#include <QtGui/QDesktopServices>
 
 #include "managewindow.h"
 #include "player.h"
@@ -1436,6 +1437,28 @@ void ManageWindow::goto_install()
 
 void ManageWindow::goto_uninstall()
 {
+	/*
+	QString defaultLocation = QDesktopServices::storageLocation(QDesktopServices::HomeLocation);
+	qDebug() << "Home dir :" << defaultLocation;
+
+
+	QString videodir = QDesktopServices::storageLocation(QDesktopServices::MoviesLocation);
+	qDebug() << "Movie dir :" << videodir;
+
+	videodir = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
+	qDebug() << "Data dir :" << videodir;
+
+
+	videodir = QDesktopServices::storageLocation(QDesktopServices::TempLocation);
+	qDebug() << "Temp dir :" << videodir;
+
+	videodir = QDesktopServices::storageLocation(QDesktopServices::ApplicationsLocation);
+	qDebug() << "ApplicationsLocation dir :" << videodir;
+
+	videodir = QDesktopServices::storageLocation(QDesktopServices::FontsLocation);
+	qDebug() << "FontsLocation dir :" << videodir;
+	*/
+
 	if(APPSIGN >= 0)
 	{
 		char tmpbuf[150] = { 0 };

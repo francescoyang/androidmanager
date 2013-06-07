@@ -11,6 +11,7 @@
 #include <QNetworkAccessManager>
 #include <QUrl>
 #include <QFile>
+#include <QDir>
 #include <QTime>
 #include <QThread>
 #include <QSettings>
