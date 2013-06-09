@@ -71,6 +71,8 @@ void ManageWindow::UiToolInit()
 	   */
 	Animationinit();
 	Refreshlabinit();
+	
+
 	LoadImage();
 	LoadVideo();
 	LoadMusic();
@@ -554,6 +556,8 @@ void ManageWindow::LoadSettings()
 	ui->skinstyle->addItem("蓝-紫");
 	ui->skinstyle->addItem("紫");
 	connect(ui->skinstyle,SIGNAL(currentIndexChanged(int)),this,SLOT(slotStyleChange(int)));
+
+	ui->Ckbx_installpath->setCheckState(Qt::Checked);
 
 }
 
@@ -1545,9 +1549,9 @@ void ManageWindow::valuechange(int value)
 void ManageWindow::installpath(int value)
 {
 	if(value == 2){
-		system("./bin/adb shell pm setInstallLocation 2");
+		system("./bin/adb shell pm setInstallLocation 2"); // install to sdcard
 	}else {
-		system("./bin/adb shell pm setInstallLocation 0");
+		system("./bin/adb shell pm setInstallLocation 0");	// auto install default to phone storage
 	}
 }
 void ManageWindow::reject()

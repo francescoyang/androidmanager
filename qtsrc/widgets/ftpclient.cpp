@@ -40,7 +40,7 @@ void Ftpclient::downloadFile(const QString &filename)
 		return;
 
 	qDebug() << "Ftpclient::downloadFile" << savefile;
-	file = new QFile(savefile + filename);
+	file = new QFile(savefile + "/"+ filename);
 	if (!file->open(QIODevice::ReadWrite))
 	{
 		qDebug() << "无法打开文件!" << endl;
