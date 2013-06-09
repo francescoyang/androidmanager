@@ -117,6 +117,12 @@ class webPage : public QWebPage
 		QStringList downurllist;
 		int downcount = -1;
 		QString filename;
+		QString basename;
+		QString savedir;
+		QString savefile;
+
+
+
 		QString path;
 		int percent;
 		int stat;

@@ -252,7 +252,7 @@ void webPage::handleUnsupportedContent(QNetworkReply *reply)
 QString webPage::saveFileName(const QUrl &url)
 {
 	QString path = url.path();
-	QString basename = QFileInfo(path).fileName();
+	basename = QFileInfo(path).fileName();
 
 	if (basename.isEmpty())
 		basename = "download";
@@ -268,13 +268,14 @@ QString webPage::saveFileName(const QUrl &url)
 		basename += home;
 	}
 */
-	basename += "/home/acanoe/download/";
+	savedir = "/home/acanoe/download/";
+	savefile = savedir  + basename;
 
-	if (QFile::exists(basename)) {
+	if (QFile::exists(savefile)) {
 		// already exists, don't overwrite
 		int i = 0;
 		basename += '.';
-		while (QFile::exists(basename + QString::number(i)))
+		while (QFile::exists(savedir + basename + QString::number(i)))
 			++i;
 
 		basename += QString::number(i);
@@ -282,7 +283,7 @@ QString webPage::saveFileName(const QUrl &url)
 
 	}
 
-	return basename;
+	return savedir + basename;
 }
 
 
@@ -309,7 +310,7 @@ void webPage::startNextDownload(QUrl url)
 		return;                 // skip this download
 	}
 	downcount ++;
-	emit addstartdownload(downcount,speed,percent,stat,filename);
+	emit addstartdownload(downcount,speed,percent,stat,basename);
 
 	QNetworkRequest request(url);
 	manager[downcount] = new QNetworkAccessManager;
@@ -359,7 +360,7 @@ void webPage::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
 	}
 	//        int hashes = percent / 2;
 	qDebug() << "speed: " << speed << " " << unit << "percent " << percent;
-	emit adddownloadurl(downcount,speed,percent,stat,filename);
+	emit adddownloadurl(downcount,speed,percent,stat,basename);
 }
 
 void webPage::downloadReadyRead()
@@ -372,8 +373,8 @@ void webPage::downloadFinished()
 	output.close();
 	qDebug() << "downloadFinished" << "downcount = "  << downcount;
 
-	emit adddownloadurl(downcount,speed,100,stat,filename);
-	emit downloadurlfinished(downcount,ADB_INSTALL,0,path + filename); 
+	emit adddownloadurl(downcount,speed,100,stat,basename);
+	emit downloadurlfinished(downcount,ADB_INSTALL,0,savedir + basename); 
 	beforetime = 0;
 
 	if(downurllist.size())
