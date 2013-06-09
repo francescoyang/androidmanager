@@ -104,11 +104,11 @@ void FtpClientWindow::switchDownloadBtn(QListWidgetItem *item)
 	filename = item->text();
 	if (this->isDir(filename))
 	{
-		ui->downloadBtn->setEnabled(false);
+//		ui->downloadBtn->setEnabled(false);
 	}
 	else
 	{
-		ui->downloadBtn->setEnabled(true);
+//		ui->downloadBtn->setEnabled(true);
 	}
 }
 /* 下载选中的文件 */
