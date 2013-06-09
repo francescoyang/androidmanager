@@ -356,6 +356,7 @@ class ManageWindow : public QMainWindow
 		//		void slotappclasschange(QString StyleString);
 		void slotappclasschange(int);
 		void valuechange(int);
+		void installpath(int);
 		void reject();
 		void accept();
 		// add player

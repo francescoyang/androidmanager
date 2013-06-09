@@ -90,8 +90,8 @@ void FtpClientWindow::configWidget()
 {
     ui->passwordLE->setEchoMode(QLineEdit::Password);
 
-//    ui->ftpHostLE->setText("192.168.1.204");
-    ui->ftpHostLE->setText("127.0.0.1");
+    ui->ftpHostLE->setText("192.168.1.10");
+//    ui->ftpHostLE->setText("127.0.0.1");
     ui->ftpPortLE->setText("2222");
     ui->usernameLE->setText("a");
     ui->passwordLE->setText("a");

@@ -46,55 +46,6 @@ typedef struct __alldownloadinfo{
 
 
 
-class Downloadthread: public QThread
-{
-	Q_OBJECT
-	public:
-		void run();
-		QStringList downurllist;
-		void startNextDownload(QUrl);
-	public:
-		QString saveFileName(const QUrl &url);
-	private:
-		int iteration = 0;
-		int downloadsign= 1;
-		int beforetime = 0;
-
-
-		int downcount = -1;
-		QString filename;
-		int percent;
-		int stat;
-		double speed;
-
-		qint64 value;
-		qint64 maximum;
-
-
-		QNetworkAccessManager *managertest ;
-//		QNetworkReply reply;
-		QNetworkRequest *requesttest;
-
-
-		//		QNetworkReply *currentDownload;
-		QNetworkReply *currentDownload[10000];
-		QFile output;
-		QTime downloadTime;
-
-		QNetworkAccessManager *manager;
-		//    TextProgressBar progressBar;
-
-
-signals:
-		void adddownloadurl(int,double,int,int,QString);
-		void addstartdownload(int,double,int,int,QString);
-
-		private slots:
-		void downloadReadyRead();
-		void downloadProgress(qint64, qint64);
-		void downloadFinished();
-
-};
 
 
 class webPage : public QWebPage
@@ -104,7 +55,7 @@ class webPage : public QWebPage
 
 	public:
 		explicit webPage(QObject *parent = 0);
-		Downloadthread *downloadthread[1000];
+//		Downloadthread *downloadthread[1000];
 		QString saveFileName(const QUrl &url);
 		alldownloadinfo_t alldownloadinfo;
 	private:

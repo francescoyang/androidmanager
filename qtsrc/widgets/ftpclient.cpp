@@ -1,6 +1,7 @@
 #include "ftpclient.h"
 #include <QListWidgetItem>
 #include <QIcon>
+#include <QFileDialog>
 
 Ftpclient::Ftpclient(QObject *parent) :
     QObject(parent)
@@ -33,7 +34,13 @@ void Ftpclient::updateProgressBar(int done, int total)
 
 void Ftpclient::downloadFile(const QString &filename)
 {
-	file = new QFile(filename);
+	QString savefile;
+	savefile=QFileDialog::getExistingDirectory(NULL,QObject::tr("选择一个保存目录"),"/");
+	if (savefile.isEmpty())
+		return;
+
+	qDebug() << "Ftpclient::downloadFile" << savefile;
+	file = new QFile(savefile + filename);
 	if (!file->open(QIODevice::ReadWrite))
 	{
 		qDebug() << "无法打开文件!" << endl;

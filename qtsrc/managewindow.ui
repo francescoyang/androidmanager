@@ -30,7 +30,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="P_Menu">
      <widget class="QPushButton" name="Btn_massage">
@@ -912,7 +912,7 @@ color: white;</string>
        <string>安装软件到SDcard</string>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_3">
+     <widget class="QCheckBox" name="Ckbx_installpath">
       <property name="geometry">
        <rect>
         <x>311</x>

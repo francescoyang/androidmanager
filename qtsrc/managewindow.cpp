@@ -860,6 +860,7 @@ void ManageWindow::Makeconnect()
 	connect(ui->Btn_search, SIGNAL(clicked()),this, SLOT(goto_search()));
 	connect(ui->Btn_searchinfo, SIGNAL(clicked()),this, SLOT(goto_searchinfo()));
 	connect(ui->Ledt_search, SIGNAL(returnPressed()),this, SLOT(goto_search()));
+	connect(ui->Ckbx_installpath,SIGNAL(stateChanged(int)),this,SLOT(installpath(int)));
 
 
 	/*    connect(this,SIGNAL(AppInstall()),this,SLOT(c_finddevice()));
@@ -1541,6 +1542,14 @@ void ManageWindow::valuechange(int value)
 	printf("checkBox value = %d\n",value);
 }
 
+void ManageWindow::installpath(int value)
+{
+	if(value == 2){
+		system("./bin/adb shell pm setInstallLocation 2");
+	}else {
+		system("./bin/adb shell pm setInstallLocation 0");
+	}
+}
 void ManageWindow::reject()
 {
 	dlg->reject();
